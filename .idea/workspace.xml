@@ -19,7 +19,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/MyTunesGP6" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="21RuWOapGxQ7j2ztxwiD9VgNfgh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -39,6 +39,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -91,7 +92,7 @@
       <workItem from="1637926901914" duration="1501000" />
       <workItem from="1637928486696" duration="2087000" />
       <workItem from="1637934378695" duration="5952000" />
-      <workItem from="1638181020449" duration="666000" />
+      <workItem from="1638181020449" duration="681000" />
     </task>
     <servers />
   </component>
