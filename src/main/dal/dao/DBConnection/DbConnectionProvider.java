@@ -9,7 +9,7 @@ public class DbConnectionProvider {
 
     private SQLServerDataSource ds;
 
-    public void DBConnectionProvider() {
+    private void DBConnectionProvider() {
         ds = new SQLServerDataSource();
         ds.setDatabaseName("MyTunesGP6");
         ds.setUser("CSe21B_29");
@@ -18,7 +18,7 @@ public class DbConnectionProvider {
         ds.setServerName("10.176.111.31");
     }
 
-    public Connection getConnection() throws SQLServerException {
+    private Connection getConnection() throws SQLServerException {
         return ds.getConnection();
     }
 }
