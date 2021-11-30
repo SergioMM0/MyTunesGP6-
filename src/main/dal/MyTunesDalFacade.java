@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface MyTunesDalFacade {
 
-    Song createSong(int id, String name, String artist, String category, int duration);
+    Song addSong(int id, String name, String artist, String category, int duration);
 
     List<Song> getAllSongs();
 

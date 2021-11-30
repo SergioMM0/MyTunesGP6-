@@ -8,7 +8,7 @@ import java.util.List;
 public class MyTunesDalController implements MyTunesDalFacade {
 
     @Override
-    public Song createSong(int id, String name, String artist, String category, int duration) {
+    public Song addSong(int id, String name, String artist, String category, int duration) {
         return null;
     }
 

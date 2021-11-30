@@ -1,11 +1,11 @@
-package dal.dao.DBConnection;
+package dal.db;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 import java.sql.Connection;
 
-public class DbConnectionProvider {
+public class DBConnectionProvider {
 
     private SQLServerDataSource ds;
 

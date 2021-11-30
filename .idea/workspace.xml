@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/dal/interfaces/IPLaylistRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/be/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/be/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/FacadeInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/FilesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/dao/DBConnection/DBConnectionSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/DBConnectionSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/dao/DBConnection/DbConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/DBConnectionProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -107,7 +107,7 @@
       <workItem from="1637928486696" duration="2087000" />
       <workItem from="1637934378695" duration="5952000" />
       <workItem from="1638181020449" duration="1344000" />
-      <workItem from="1638286189974" duration="9341000" />
+      <workItem from="1638286189974" duration="11178000" />
     </task>
     <servers />
   </component>
