@@ -8,9 +8,9 @@ public interface ISongRepository {
 
     Song addSong(int id, String name, String artist, String category, int duration);
 
-    void deleteSong(int id);
+    void deleteSong(Song song);
 
-    void updateSong(int id);
+    void updateSong(Song song);
 
     Song getSong(int id);
 
