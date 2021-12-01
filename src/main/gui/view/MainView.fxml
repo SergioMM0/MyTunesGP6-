@@ -19,7 +19,7 @@
          <children>
             <VBox>
                <children>
-                  <Slider fx:id="VolumeSlider" prefHeight="55.0" prefWidth="141.0" />
+                  <Slider fx:id="volslider" prefHeight="55.0" prefWidth="141.0" />
                   <HBox />
                   <HBox>
                      <children>
@@ -128,7 +128,7 @@
                   </HBox>
                </children>
             </VBox>
-            <ImageView fx:id="MoveButton" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mbtn" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets top="25.0" />
                </HBox.margin>
