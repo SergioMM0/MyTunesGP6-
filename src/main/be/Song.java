@@ -7,13 +7,23 @@ public class Song {
     private static String artist;
     private static String category;
     private static int duration;
+    private static String filePath;
 
-    public Song(int id, String name, String artist, String category, int duration) {
+    public Song(int id, String name, String artist, String category, int duration,String filePath) {
         this.id = id;
         this.name = name;
         this.artist = artist;
         this.category = category;
         this.duration = duration;
+        this.filePath = filePath;
+    }
+
+    public static String getFilePath() {
+        return filePath;
+    }
+
+    public static void setFilePath(String filePath) {
+        Song.filePath = filePath;
     }
 
     public static int getId() {
@@ -54,5 +64,15 @@ public class Song {
 
     public static void setDuration(int duration) {
         Song.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+        return id + "  " +
+                name + "  " +
+                artist + "  " +
+                category + "  " +
+                duration + "  " +
+                filePath;
     }
 }
