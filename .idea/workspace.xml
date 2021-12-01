@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="">
+    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,5 +118,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
