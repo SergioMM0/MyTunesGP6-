@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOPlaylist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/be/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/be/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/IPLaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/IPLaylistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/be/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/be/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/db/DBConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/DBConnectionProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/be/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/Song.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/CashManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/FacadeInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/FilesManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/controller/MyTunesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/view/hello-view.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MRS/MovieRecommendationSystem-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SECURED/Sneaky/MyTunes" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -56,7 +63,7 @@
       <recent name="gui.view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.TestingClass">
     <configuration name="InterfaceModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.model.InterfaceModel" />
       <module name="MyTunesGP6" />
@@ -77,8 +84,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestingClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dal.db.TestingClass" />
+      <module name="MyTunesGP6" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dal.db.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestingClass" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.InterfaceModel" />
       </list>
@@ -103,6 +124,7 @@
       <workItem from="1638184473341" duration="185000" />
       <workItem from="1638184737512" duration="345000" />
       <workItem from="1638344681267" duration="2200000" />
+      <workItem from="1638362582844" duration="10032000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>
