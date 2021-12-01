@@ -38,7 +38,9 @@ public class DbDAOSong implements ISongRepository {
 
     @Override
     public void deleteSong(Song song) throws SQLServerException {
+
         String sql = ("DELETE FROM Song WHERE id = ?");
+        int id = song.getId();
 
 
         try (Connection connection = connectionProvider.getConnection()){
