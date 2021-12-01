@@ -19,11 +19,11 @@
          <children>
             <VBox>
                <children>
-                  <Slider prefHeight="55.0" prefWidth="141.0" />
+                  <Slider fx:id="VolumeSlider" prefHeight="55.0" prefWidth="141.0" />
                   <HBox />
                   <HBox>
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="btbtn" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../data/Backtrack_button.png" />
                            </image>
@@ -31,12 +31,12 @@
                               <Insets left="10.0" right="5.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="pbtn" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../data/Play_button.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="sbtn" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../data/Skip_button.png" />
                            </image>
@@ -48,12 +48,12 @@
                   </HBox>
                </children>
             </VBox>
-            <Label text="Label">
+            <Label fx:id="Label" text="Label">
                <HBox.margin>
                   <Insets left="200.0" right="200.0" />
                </HBox.margin>
             </Label>
-            <TextField>
+            <TextField fx:id="searchfilter">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -66,8 +66,9 @@
                <children>
                   <TableView prefHeight="470.0" prefWidth="185.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
+                      <TableColumn prefWidth="50.0" text="Name" />
+                      <TableColumn prefWidth="50.0" text="Songs" />
+                        <TableColumn prefWidth="85.0" text="Time" />
                     </columns>
                      <VBox.margin>
                         <Insets left="10.0" />
@@ -75,17 +76,17 @@
                   </TableView>
                   <HBox>
                      <children>
-                        <Button mnemonicParsing="false" text="New...">
+                        <Button fx:id="npbtn" mnemonicParsing="false" text="New...">
                            <HBox.margin>
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="Edit...">
+                        <Button fx:id="epbtn" mnemonicParsing="false" text="Edit...">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="Delete">
+                        <Button fx:id="dpbtn" mnemonicParsing="false" text="Delete">
                            <HBox.margin>
                               <Insets right="15.0" top="5.0" />
                            </HBox.margin>
@@ -102,7 +103,7 @@
                   <ListView prefHeight="470.0" prefWidth="198.0" />
                   <HBox>
                      <children>
-                        <ImageView fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="ubtn" fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../data/Up_arrow.png" />
                            </image>
@@ -110,7 +111,7 @@
                               <Insets left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="dbtn" fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../data/Down_arrow.png" />
                            </image>
@@ -118,7 +119,7 @@
                               <Insets top="5.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Button mnemonicParsing="false" text="Delete">
+                        <Button fx:id="rmbtn" mnemonicParsing="false" text="Remove">
                            <HBox.margin>
                               <Insets left="20.0" right="15.0" top="10.0" />
                            </HBox.margin>
@@ -127,7 +128,7 @@
                   </HBox>
                </children>
             </VBox>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="MoveButton" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets top="25.0" />
                </HBox.margin>
@@ -142,23 +143,25 @@
                <children>
                   <TableView prefHeight="470.0" prefWidth="322.0">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="C1" />
-                      <TableColumn prefWidth="75.0" text="C2" />
+                      <TableColumn prefWidth="100.0" text="Title" />
+                      <TableColumn prefWidth="85.0" text="Artist" />
+                        <TableColumn prefWidth="85.0" text="Genres" />
+                        <TableColumn prefWidth="50.0" text="Time" />
                     </columns>
                   </TableView>
                   <HBox>
                      <children>
-                        <Button mnemonicParsing="false" text="Edit...">
+                        <Button fx:id="esbtn" mnemonicParsing="false" text="Edit...">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="New...">
+                        <Button fx:id="nsbtn" mnemonicParsing="false" text="New...">
                            <HBox.margin>
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="Delete">
+                        <Button fx:id="dsbtn" mnemonicParsing="false" text="Delete">
                            <HBox.margin>
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
