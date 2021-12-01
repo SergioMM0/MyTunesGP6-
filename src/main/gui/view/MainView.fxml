@@ -8,9 +8,10 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -18,12 +19,31 @@
          <children>
             <VBox>
                <children>
-                  <Slider prefHeight="52.0" prefWidth="140.0" />
+                  <Slider prefHeight="55.0" prefWidth="141.0" />
+                  <HBox />
                   <HBox>
                      <children>
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../Downloads/remotecontrolfastforwardbutton_87211.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" right="5.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../Downloads/musicplayerplaybutton_87243.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../Downloads/remotecontrolfastforwardbutton_87210.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="5.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
                      </children>
                   </HBox>
                </children>
@@ -49,22 +69,25 @@
                       <TableColumn prefWidth="75.0" text="C1" />
                       <TableColumn prefWidth="75.0" text="C2" />
                     </columns>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
                   </TableView>
                   <HBox>
                      <children>
-                        <Button mnemonicParsing="false" text="Button">
+                        <Button mnemonicParsing="false" text="New...">
                            <HBox.margin>
-                              <Insets left="15.0" />
+                              <Insets left="10.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="Button">
+                        <Button mnemonicParsing="false" text="Edit...">
                            <HBox.margin>
-                              <Insets left="5.0" right="5.0" />
+                              <Insets left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="Button">
+                        <Button mnemonicParsing="false" text="Delete">
                            <HBox.margin>
-                              <Insets right="15.0" />
+                              <Insets right="15.0" top="5.0" />
                            </HBox.margin>
                         </Button>
                      </children>
@@ -79,30 +102,39 @@
                   <ListView prefHeight="470.0" prefWidth="198.0" />
                   <HBox>
                      <children>
-                        <Button mnemonicParsing="false" text="Button">
+                        <ImageView fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../Downloads/backtrack_87254%20-%20Copy%20(2).png" />
+                           </image>
                            <HBox.margin>
-                              <Insets left="15.0" />
+                              <Insets left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
-                        </Button>
-                        <Button mnemonicParsing="false" text="Button">
+                        </ImageView>
+                        <ImageView fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../Downloads/backtrack_87254%20-%20Copy%20(3).png" />
+                           </image>
                            <HBox.margin>
-                              <Insets left="5.0" right="5.0" />
+                              <Insets top="5.0" />
                            </HBox.margin>
-                        </Button>
-                        <Button mnemonicParsing="false" text="Button">
+                        </ImageView>
+                        <Button mnemonicParsing="false" text="Delete">
                            <HBox.margin>
-                              <Insets right="15.0" />
+                              <Insets left="20.0" right="15.0" top="10.0" />
                            </HBox.margin>
                         </Button>
                      </children>
                   </HBox>
                </children>
             </VBox>
-            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="59.0" text="Button">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets top="25.0" />
                </HBox.margin>
-            </Button>
+               <image>
+                  <Image url="@../../../../../../../Downloads/backtrack_87254.png" />
+               </image>
+            </ImageView>
             <VBox>
                <HBox.margin>
                   <Insets left="15.0" />
@@ -116,19 +148,19 @@
                   </TableView>
                   <HBox>
                      <children>
-                        <Button mnemonicParsing="false" text="Button">
+                        <Button mnemonicParsing="false" text="Edit...">
                            <HBox.margin>
-                              <Insets left="15.0" />
+                              <Insets left="5.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="Button">
+                        <Button mnemonicParsing="false" text="New...">
                            <HBox.margin>
-                              <Insets left="10.0" />
+                              <Insets left="10.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" text="Button">
+                        <Button mnemonicParsing="false" text="Delete">
                            <HBox.margin>
-                              <Insets left="10.0" />
+                              <Insets left="10.0" top="5.0" />
                            </HBox.margin>
                         </Button>
                      </children>
