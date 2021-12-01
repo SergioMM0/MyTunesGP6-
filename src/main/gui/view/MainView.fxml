@@ -25,7 +25,7 @@
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../Downloads/remotecontrolfastforwardbutton_87211.png" />
+                              <Image url="@../../data/Backtrack_button.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="10.0" right="5.0" top="10.0" />
@@ -33,12 +33,12 @@
                         </ImageView>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../Downloads/musicplayerplaybutton_87243.png" />
+                              <Image url="@../../data/Play_button.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../Downloads/remotecontrolfastforwardbutton_87210.png" />
+                              <Image url="@../../data/Skip_button.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="5.0" top="10.0" />
@@ -104,7 +104,7 @@
                      <children>
                         <ImageView fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../Downloads/backtrack_87254%20-%20Copy%20(2).png" />
+                              <Image url="@../../data/Up_arrow.png" />
                            </image>
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" top="5.0" />
@@ -112,7 +112,7 @@
                         </ImageView>
                         <ImageView fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../Downloads/backtrack_87254%20-%20Copy%20(3).png" />
+                              <Image url="@../../data/Down_arrow.png" />
                            </image>
                            <HBox.margin>
                               <Insets top="5.0" />
@@ -132,7 +132,7 @@
                   <Insets top="25.0" />
                </HBox.margin>
                <image>
-                  <Image url="@../../../../../../../Downloads/backtrack_87254.png" />
+                  <Image url="@../../data/Left_arrow.png" />
                </image>
             </ImageView>
             <VBox>
