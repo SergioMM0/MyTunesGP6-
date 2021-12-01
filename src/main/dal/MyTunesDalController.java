@@ -7,13 +7,9 @@ import java.util.List;
 
 public class MyTunesDalController implements MyTunesDalFacade {
 
-    @Override
-    public Song addSong(int id, String name, String artist, String category, int duration) {
-        return null;
-    }
 
     @Override
-    public List<Song> getAllSongs() {
+    public Song addSong(int id, String name, String artist, String category, int duration) {
         return null;
     }
 
@@ -33,12 +29,12 @@ public class MyTunesDalController implements MyTunesDalFacade {
     }
 
     @Override
-    public Playlist createPlaylist() {
+    public List<Song> getAllSongs() {
         return null;
     }
 
     @Override
-    public List<Playlist> getAllPlaylist() {
+    public Playlist addPlaylist(int id, String name) {
         return null;
     }
 
@@ -48,12 +44,17 @@ public class MyTunesDalController implements MyTunesDalFacade {
     }
 
     @Override
-    public void updatePlaylist(Playlist playlist) {
+    public void renamePlaylist(Playlist playlist) {
 
     }
 
     @Override
     public Playlist getPlaylist(int id) {
+        return null;
+    }
+
+    @Override
+    public Playlist addSongToPlaylist(Song song) {
         return null;
     }
 }
