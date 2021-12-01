@@ -14,7 +14,7 @@ public interface ISongRepository {
 
     void updateSong(Song song) throws SQLException;
 
-    Song getSong(int id);
+    Song getSong(int id) throws SQLException;
 
     List<Song> getAllSongs();
 

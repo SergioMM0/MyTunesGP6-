@@ -4,9 +4,30 @@ import be.Song;
 import dal.db.dao.DbDAOSong;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class TestingClass {
     public static void main(String[] args) throws SQLException {
+        //updateSong();
+        //getSong();
+        List<Song> allSongs = getAllSongs();
+        for (Song song : allSongs){
+            System.out.println(song);
+        }
+
+    }
+
+    public static List<Song> getAllSongs(){
+        DbDAOSong dbDAOSong = new DbDAOSong();
+        return dbDAOSong.getAllSongs();
+    }
+
+    public static void getSong() throws SQLException {
+        DbDAOSong dbDAOSong = new DbDAOSong();
+        Song testSong = dbDAOSong.getSong(2);
+        System.out.println("testSong: "+testSong.getName());
+    }
+    public static void updateSong() throws SQLException {
         DbDAOSong daosong = new DbDAOSong();
 
         //System.out.println(daosong.addSong(1,"Nombre","Melendi", "rock", 345,"/data.miscojones"));

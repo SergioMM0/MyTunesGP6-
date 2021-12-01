@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/db/DBConnectionSingleton.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/Playlist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/Playlist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/Song.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/db/DBConnectionSingleton.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dal/db/TestingClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/TestingClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOSong.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOSong.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dal/interfaces/ISongRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/interfaces/ISongRepository.class" afterDir="false" />
@@ -42,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MRS-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SECURED/Sneaky/MyTunes" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />

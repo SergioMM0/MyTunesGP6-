@@ -7,12 +7,35 @@ import dal.interfaces.ISongRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DbDAOSong implements ISongRepository {
 
     private final DBConnectionProvider connectionProvider = new DBConnectionProvider();
+
+    @Override
+    public List<Song> getAllSongs() {
+        List<Song> allSongs = new ArrayList<>();
+        String sql = ("SELECT * FROM Song");
+        try (Connection connection = connectionProvider.getConnection()){
+            PreparedStatement st = connection.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()){
+                allSongs.add(new Song (rs.getInt("Id"),
+                        rs.getString("Title"),
+                        rs.getString("Artist"),
+                        rs.getString("Category"),
+                        rs.getInt("Duration"),
+                        rs.getString("FilePath")));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return allSongs;
+    }
 
     @Override
     public Song addSong(int id, String name, String artist, String category, int duration,String filePath) throws SQLException {
@@ -73,12 +96,26 @@ public class DbDAOSong implements ISongRepository {
     }
 
     @Override
-    public Song getSong(int id) {
-        return null;
-    }
-
-    @Override
-    public List<Song> getAllSongs() {
-        return null;
+    public Song getSong(int id) throws SQLException {
+        Song songSearched = null;
+        String sql = ("SELECT * FROM SONG WHERE id=?");
+        try(Connection connection = connectionProvider.getConnection()){
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1,id);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()) {
+                songSearched = new Song(
+                        rs.getInt("Id"),
+                        rs.getString("Title"),
+                        rs.getString("Artist"),
+                        rs.getString("Category"),
+                        rs.getInt("Duration"),
+                        rs.getString("FilePath")
+                );
+            }
+        } catch (SQLServerException throwables) {
+            throwables.printStackTrace();
+        }
+        return songSearched;
     }
 }
