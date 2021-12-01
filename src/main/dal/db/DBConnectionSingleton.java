@@ -1,6 +1,4 @@
-package dal.dao.DBConnection;
-
-import java.io.IOException;
+package dal.db;
 
 public class DBConnectionSingleton {
 /**

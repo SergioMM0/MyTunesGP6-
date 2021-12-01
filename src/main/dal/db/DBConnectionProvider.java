@@ -1,15 +1,15 @@
-package dal.dao.DBConnection;
+package dal.db;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
 
 import java.sql.Connection;
 
-public class DbConnectionProvider {
+public class DBConnectionProvider {
 
     private SQLServerDataSource ds;
 
-    public void DBConnectionProvider() {
+    private void DBConnectionProvider() {
         ds = new SQLServerDataSource();
         ds.setDatabaseName("MyTunesGP6");
         ds.setUser("CSe21B_29");
@@ -18,7 +18,7 @@ public class DbConnectionProvider {
         ds.setServerName("10.176.111.31");
     }
 
-    public Connection getConnection() throws SQLServerException {
+    private Connection getConnection() throws SQLServerException {
         return ds.getConnection();
     }
 }

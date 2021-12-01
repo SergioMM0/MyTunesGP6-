@@ -8,7 +8,12 @@ public class Song {
     private static String category;
     private static int duration;
 
-    public Song() {
+    public Song(int id, String name, String artist, String category, int duration) {
+        this.id = id;
+        this.name = name;
+        this.artist = artist;
+        this.category = category;
+        this.duration = duration;
     }
 
     public static int getId() {
