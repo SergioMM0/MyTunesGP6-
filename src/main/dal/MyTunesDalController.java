@@ -9,7 +9,7 @@ public class MyTunesDalController implements MyTunesDalFacade {
 
 
     @Override
-    public Song addSong(int id, String name, String artist, String category, int duration) {
+    public Song addSong(int id, String name, String artist, String category, int duration, String FilePath) {
         return null;
     }
 
