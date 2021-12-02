@@ -13,7 +13,7 @@ Initialises main window
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("gui/view/MainView.fxml"));
         Scene scene = new Scene(root, 320, 240);
-        stage.setTitle("Hello!");
+        stage.setTitle("MyTunesGP6");
         stage.setScene(scene);
         stage.show();
     }
