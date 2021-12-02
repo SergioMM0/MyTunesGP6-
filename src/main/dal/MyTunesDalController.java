@@ -3,13 +3,14 @@ package dal;
 import be.Playlist;
 import be.Song;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class MyTunesDalController implements MyTunesDalFacade {
 
 
     @Override
-    public Song addSong(int id, String name, String artist, String category, int duration, String FilePath) {
+    public Song addSong(int id, String name, String artist, String category, int duration, String filePath) throws SQLException {
         return null;
     }
 
@@ -19,17 +20,22 @@ public class MyTunesDalController implements MyTunesDalFacade {
     }
 
     @Override
-    public void updateSong(Song song) {
+    public void updateSong(Song song) throws SQLException {
 
     }
 
     @Override
-    public Song getSong(int id) {
+    public Song getSong(int id) throws SQLException {
         return null;
     }
 
     @Override
     public List<Song> getAllSongs() {
+        return null;
+    }
+
+    @Override
+    public List<Playlist> getAllPlaylist() {
         return null;
     }
 
@@ -54,7 +60,12 @@ public class MyTunesDalController implements MyTunesDalFacade {
     }
 
     @Override
-    public Playlist addSongToPlaylist(Song song) {
+    public Playlist getSongsFromPlaylist(Playlist playlist) {
+        return null;
+    }
+
+    @Override
+    public Playlist addSongToPlaylist(Playlist playlist, Song song) {
         return null;
     }
 }

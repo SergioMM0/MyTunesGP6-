@@ -10,9 +10,16 @@ import java.util.List;
 
 public class TestingClass {
     public static void main(String[] args) throws SQLException {
-        System.out.println();
+        for (Playlist s : getAllPlaylist()){
+            System.out.println(s);
+        }
     }
 
+
+    public static List<Playlist> getAllPlaylist(){
+        DbDAOPlaylist db = new DbDAOPlaylist();
+        return db.getAllPlaylist();
+    }
 
     public static List<Song> getAllSongs(){
         DbDAOSong dbDAOSong = new DbDAOSong();

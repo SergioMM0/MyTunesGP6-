@@ -3,6 +3,7 @@ package dal;
 import be.Playlist;
 import be.Song;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface MyTunesDalFacade {
@@ -10,17 +11,19 @@ public interface MyTunesDalFacade {
     /**
      * MAKE SURE BEFORE IMPLEMENTING BLL ALL METHOD INTERFACES ARE IMPLEMENTED
     */
-    Song addSong(int id, String name, String artist, String category, int duration, String FilePath);
+    Song addSong(int id, String name, String artist, String category, int duration,String filePath) throws SQLException;
 
     void deleteSong(Song song);
 
-    void updateSong(Song song);
+    void updateSong(Song song) throws SQLException;
 
-    Song getSong(int id);
+    Song getSong(int id) throws SQLException;
 
     List<Song> getAllSongs();
 
     //******
+
+    List<Playlist> getAllPlaylist();
 
     Playlist addPlaylist(int id, String name);
 
@@ -30,6 +33,8 @@ public interface MyTunesDalFacade {
 
     Playlist getPlaylist(int id);
 
-    Playlist addSongToPlaylist(Song song);
+    Playlist getSongsFromPlaylist(Playlist playlist);
+
+    Playlist addSongToPlaylist(Playlist playlist,Song song);
 
 }

@@ -9,10 +9,32 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DbDAOPlaylist implements IPLaylistRepository {
 
     private final DBConnectionProvider connectionProvider = new DBConnectionProvider();
+
+    @Override
+    public List<Playlist> getAllPlaylist() {
+        List<Playlist> allPlaylists = new ArrayList<>();
+        String sql = ("SELECT * FROM Playlist");
+        try (Connection connection = connectionProvider.getConnection()){
+            PreparedStatement st = connection.prepareStatement(sql);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()){
+                allPlaylists.add(new Playlist (rs.getInt("Id"),
+                        rs.getString("Name"),
+                        rs.getString("IdOfSongsInPLaylist"),
+                        rs.getInt("NumberOfSongs"),
+                        rs.getInt("TotalReproductionTime")));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return allPlaylists;
+    }
 
     @Override
     public Playlist addPlaylist(int id, String name) {

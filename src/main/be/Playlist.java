@@ -1,8 +1,5 @@
 package be;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Playlist {
     private int id;
     private String name;
@@ -52,5 +49,14 @@ public class Playlist {
 
     public void setTotalReproductionTime(int totalReproductionTime) {
         this.totalReproductionTime = totalReproductionTime;
+    }
+
+    @Override
+    public String toString() {
+        return id + "  " +
+                name + "  " +
+                idOfSongsInPlaylist + "  " +
+                howManySongs + "  " +
+                totalReproductionTime;
     }
 }
