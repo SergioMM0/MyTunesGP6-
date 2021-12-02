@@ -2,7 +2,6 @@ package dal.db;
 
 import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 import com.microsoft.sqlserver.jdbc.SQLServerException;
-import dal.interfaces.IPLaylistRepository;
 
 import java.sql.Connection;
 
