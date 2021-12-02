@@ -10,15 +10,9 @@ import java.util.List;
 
 public class TestingClass {
     public static void main(String[] args) throws SQLException {
-        System.out.println(getSongsFromPlaylist());
+        System.out.println();
     }
 
-    public static String getSongsFromPlaylist(){
-        DbDAOPlaylist db = new DbDAOPlaylist();
-        Playlist p = new Playlist(1,"2","2",0,0);
-        String returned = db.getSongsFromPlaylist(p);
-        return returned;
-    }
 
     public static List<Song> getAllSongs(){
         DbDAOSong dbDAOSong = new DbDAOSong();

@@ -89,8 +89,8 @@ public class DbDAOPlaylist implements IPLaylistRepository {
     }
 
     @Override
-    public String getSongsFromPlaylist(Playlist playlist) {
-        String stringWithIds = null;
+    public Playlist getSongsFromPlaylist(Playlist playlist) {
+        Playlist recollected = null;
         int id = playlist.getId();
         String sql = "SELECT IdOfSongsInPLaylist FROM Playlist WHERE Id = ?";
         try (Connection connection = connectionProvider.getConnection()){
@@ -98,17 +98,36 @@ public class DbDAOPlaylist implements IPLaylistRepository {
             st.setInt(1,id);
             ResultSet rs = st.executeQuery();
             while (rs.next()){
-                stringWithIds = rs.getString("IdOfSongsInPLaylist");
+                recollected = new Playlist(playlist.getId(),playlist.getName(),
+                        rs.getString("IdOfSongsInPLaylist"), playlist.getHowManySongs(),
+                        playlist.getTotalReproductionTime());
             }
         }
         catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return stringWithIds;
+        return recollected;
     }
 
     @Override
-    public Playlist addSongToPlaylist(Song song) {
-            return null;
+    public Playlist addSongToPlaylist(Playlist playlist,Song song) {
+            Playlist finalPlaylist = null;
+            String idOfSongs = playlist.getIdOfSongsInPlaylist();
+            String idOfNewSong = String.valueOf(song.getId());
+            String sql = "INSERT INTO Playlist (IdOfSongsInPLaylist) VALUE ? WHERE Id=?";
+        try (Connection connection = connectionProvider.getConnection()){
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1,idOfSongs+","+idOfNewSong);
+            ResultSet rs = st.executeQuery();
+            while (rs.next()){
+                finalPlaylist = new Playlist(playlist.getId(),playlist.getName(),
+                        rs.getString("IdOfSongsInPLaylist"),playlist.getHowManySongs(),
+                        playlist.getTotalReproductionTime());
+            }
+        }
+        catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return finalPlaylist;
     }
 }

@@ -13,10 +13,10 @@ public interface IPLaylistRepository {
 
     Playlist getPlaylist(int id);
 
-    String getSongsFromPlaylist(Playlist playlist);
+    Playlist getSongsFromPlaylist(Playlist playlist);
 
     /** addSong OVERWRITE the field IdOfSongsInPlaylist in DB, so getSongs
     need to be executed first */
 
-    Playlist addSongToPlaylist(Song song);
+    Playlist addSongToPlaylist(Playlist playlist,Song song);
 }
