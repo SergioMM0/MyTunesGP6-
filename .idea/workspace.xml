@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +52,7 @@
       <recent name="gui.view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestingClass">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="InterfaceModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.model.InterfaceModel" />
       <module name="MyTunesGP6" />
@@ -91,8 +88,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestingClass" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.TestingClass" />
         <item itemvalue="Application.InterfaceModel" />
       </list>
     </recent_temporary>
@@ -119,6 +116,7 @@
       <workItem from="1638362582844" duration="10032000" />
       <workItem from="1638385588472" duration="88000" />
       <workItem from="1638385693162" duration="86000" />
+      <workItem from="1638440585282" duration="1912000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>
