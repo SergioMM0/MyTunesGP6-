@@ -1,6 +1,8 @@
 package dal.db;
 
+import be.Playlist;
 import be.Song;
+import dal.db.dao.DbDAOPlaylist;
 import dal.db.dao.DbDAOSong;
 
 import java.sql.SQLException;
@@ -8,13 +10,14 @@ import java.util.List;
 
 public class TestingClass {
     public static void main(String[] args) throws SQLException {
-        //updateSong();
-        //getSong();
-        List<Song> allSongs = getAllSongs();
-        for (Song song : allSongs){
-            System.out.println(song);
-        }
+        System.out.println(getSongsFromPlaylist());
+    }
 
+    public static String getSongsFromPlaylist(){
+        DbDAOPlaylist db = new DbDAOPlaylist();
+        Playlist p = new Playlist(1,"2","2",0,0);
+        String returned = db.getSongsFromPlaylist(p);
+        return returned;
     }
 
     public static List<Song> getAllSongs(){

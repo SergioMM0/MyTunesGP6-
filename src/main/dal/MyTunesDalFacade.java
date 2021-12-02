@@ -7,6 +7,9 @@ import java.util.List;
 
 public interface MyTunesDalFacade {
 
+    /**
+     * MAKE SURE BEFORE IMPLEMENTING BLL ALL METHOD INTERFACES ARE IMPLEMENTED
+    */
     Song addSong(int id, String name, String artist, String category, int duration, String FilePath);
 
     void deleteSong(Song song);
