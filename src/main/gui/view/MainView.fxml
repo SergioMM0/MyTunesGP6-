@@ -13,13 +13,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="666.0" prefWidth="823.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="1080.0" maxWidth="1920.0" minHeight="550" minWidth="800" prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MainViewController">
    <children>
-      <HBox alignment="CENTER" prefHeight="110.0" prefWidth="607.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="600.0">
          <children>
             <VBox>
                <children>
-                  <Slider fx:id="volslider" prefHeight="55.0" prefWidth="141.0" />
+                  <Slider fx:id="volslider" prefHeight="55.0" prefWidth="140.0" />
                   <HBox />
                   <HBox>
                      <children>
@@ -60,7 +60,7 @@
             </TextField>
          </children>
       </HBox>
-      <HBox prefHeight="514.0" prefWidth="823.0">
+      <HBox prefHeight="515.0" prefWidth="825.0">
          <children>
             <VBox>
                <children>
@@ -95,12 +95,12 @@
                   </HBox>
                </children>
             </VBox>
-            <VBox prefHeight="494.0" prefWidth="198.0">
+            <VBox prefHeight="495.0" prefWidth="200.0">
                <HBox.margin>
                   <Insets left="20.0" right="15.0" />
                </HBox.margin>
                <children>
-                  <ListView prefHeight="470.0" prefWidth="198.0" />
+                  <ListView prefHeight="470.0" prefWidth="200.0" />
                   <HBox>
                      <children>
                         <ImageView fx:id="ubtn" fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
@@ -141,7 +141,7 @@
                   <Insets left="15.0" />
                </HBox.margin>
                <children>
-                  <TableView prefHeight="470.0" prefWidth="322.0">
+                  <TableView prefHeight="470.0" prefWidth="320.0">
                     <columns>
                       <TableColumn prefWidth="100.0" text="Title" />
                       <TableColumn prefWidth="85.0" text="Artist" />
@@ -175,6 +175,6 @@
             <Insets left="5.0" right="5.0" />
          </padding>
       </HBox>
-      <HBox alignment="BOTTOM_RIGHT" prefHeight="46.0" prefWidth="600.0" />
+      <HBox alignment="BOTTOM_RIGHT" prefHeight="45.0" prefWidth="600.0" />
    </children>
 </VBox>
