@@ -19,11 +19,11 @@
          <children>
             <VBox>
                <children>
-                  <Slider fx:id="volslider" prefHeight="55.0" prefWidth="140.0" />
+                  <Slider fx:id="volslider" onDragDropped="#changeVolume" prefHeight="55.0" prefWidth="140.0" />
                   <HBox />
                   <HBox>
                      <children>
-                        <ImageView fx:id="btbtn" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="btbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#previousSong" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../data/Backtrack_button.png" />
                            </image>
@@ -31,12 +31,12 @@
                               <Insets left="10.0" right="5.0" top="10.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fx:id="pbtn" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="pbtn" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#playSong" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../data/Play_button.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="sbtn" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="sbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#nextSong" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../data/Skip_button.png" />
                            </image>
@@ -53,7 +53,7 @@
                   <Insets left="200.0" right="200.0" />
                </HBox.margin>
             </Label>
-            <TextField fx:id="searchfilter">
+            <TextField fx:id="searchfilter" onKeyTyped="#showResult">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
@@ -76,17 +76,17 @@
                   </TableView>
                   <HBox>
                      <children>
-                        <Button fx:id="npbtn" mnemonicParsing="false" text="New...">
+                        <Button fx:id="npbtn" mnemonicParsing="false" onMouseClicked="#newPlaylist" text="New...">
                            <HBox.margin>
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="epbtn" mnemonicParsing="false" text="Edit...">
+                        <Button fx:id="epbtn" mnemonicParsing="false" onMouseClicked="#editPlaylist" text="Edit...">
                            <HBox.margin>
                               <Insets left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="dpbtn" mnemonicParsing="false" text="Delete">
+                        <Button fx:id="dpbtn" mnemonicParsing="false" onMouseClicked="#deletePlaylist" text="Delete">
                            <HBox.margin>
                               <Insets right="15.0" top="5.0" />
                            </HBox.margin>
@@ -103,7 +103,7 @@
                   <ListView prefHeight="470.0" prefWidth="200.0" />
                   <HBox>
                      <children>
-                        <ImageView fx:id="ubtn" fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="ubtn" fitHeight="40.0" fitWidth="45.0" onMouseClicked="#moveUp" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../data/Up_arrow.png" />
                            </image>
@@ -111,7 +111,7 @@
                               <Insets left="5.0" right="5.0" top="5.0" />
                            </HBox.margin>
                         </ImageView>
-                        <ImageView fx:id="dbtn" fitHeight="40.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="dbtn" fitHeight="40.0" fitWidth="45.0" onMouseClicked="#moveDown" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../data/Down_arrow.png" />
                            </image>
@@ -119,7 +119,7 @@
                               <Insets top="5.0" />
                            </HBox.margin>
                         </ImageView>
-                        <Button fx:id="rmbtn" mnemonicParsing="false" text="Remove">
+                        <Button fx:id="rmbtn" mnemonicParsing="false" onKeyPressed="#removeSong" text="Remove">
                            <HBox.margin>
                               <Insets left="20.0" right="15.0" top="10.0" />
                            </HBox.margin>
@@ -128,7 +128,7 @@
                   </HBox>
                </children>
             </VBox>
-            <ImageView fx:id="mbtn" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#addSong" pickOnBounds="true" preserveRatio="true">
                <HBox.margin>
                   <Insets top="25.0" />
                </HBox.margin>
@@ -151,17 +151,17 @@
                   </TableView>
                   <HBox>
                      <children>
-                        <Button fx:id="esbtn" mnemonicParsing="false" text="Edit...">
+                        <Button fx:id="esbtn" mnemonicParsing="false" onKeyPressed="#editSong" text="Edit...">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="nsbtn" mnemonicParsing="false" text="New...">
+                        <Button fx:id="nsbtn" mnemonicParsing="false" onKeyPressed="#newSong" text="New...">
                            <HBox.margin>
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="dsbtn" mnemonicParsing="false" text="Delete">
+                        <Button fx:id="dsbtn" mnemonicParsing="false" onKeyPressed="#deleteSong" text="Delete">
                            <HBox.margin>
                               <Insets left="10.0" top="5.0" />
                            </HBox.margin>
