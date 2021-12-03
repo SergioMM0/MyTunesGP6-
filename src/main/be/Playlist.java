@@ -1,19 +1,16 @@
 package be;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Playlist {
     private int id;
     private String name;
-    List<Song> listOfSongs;
+    private final String idOfSongsInPlaylist;
     private int howManySongs;
     private int totalReproductionTime;
 
-    public Playlist(int id, String name, List<Song> songsInPlaylist, int howManySongs, int totalReproductionTime) {
+    public Playlist(int id, String name, String idOfSongsInPlaylist, int howManySongs, int totalReproductionTime) {
         this.id = id;
         this.name = name;
-        listOfSongs = songsInPlaylist;
+        this.idOfSongsInPlaylist = idOfSongsInPlaylist;
         this.howManySongs = howManySongs;
         this.totalReproductionTime = totalReproductionTime;
     }
@@ -34,26 +31,32 @@ public class Playlist {
         this.name = name;
     }
 
-    public List<Song> getListOfSongs(){
-        listOfSongs = new ArrayList<>();
-        return listOfSongs;
+    public String getIdOfSongsInPlaylist() {
+        return idOfSongsInPlaylist;
     }
 
-    public void addSongToPlaylist(Song song){
-        List<Song> list = getListOfSongs();
-        list.add(song);
-    }
-
-    public void deleteSongFromPlaylist(Song song){
-        List<Song> list = getListOfSongs();
-        list.remove(song);
-    }
-    public int getHowManySongs(){
-        List<Song> list = getListOfSongs();
-        for (Song song : list){
-            howManySongs++;
-        }
+    public int getHowManySongs() {
         return howManySongs;
     }
-    //TODO implement total duration
+
+    public void setHowManySongs(int howManySongs) {
+        this.howManySongs = howManySongs;
+    }
+
+    public int getTotalReproductionTime() {
+        return totalReproductionTime;
+    }
+
+    public void setTotalReproductionTime(int totalReproductionTime) {
+        this.totalReproductionTime = totalReproductionTime;
+    }
+
+    @Override
+    public String toString() {
+        return id + "  " +
+                name + "  " +
+                idOfSongsInPlaylist + "  " +
+                howManySongs + "  " +
+                totalReproductionTime;
+    }
 }
