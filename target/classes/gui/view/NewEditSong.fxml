@@ -6,7 +6,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="225.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.view.NewEditSong">
+
+<AnchorPane prefHeight="225.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MainViewController">
+
    <children>
       <TextField layoutX="70.0" layoutY="25.0" prefHeight="25.0" prefWidth="150.0" />
       <Label layoutX="20.0" layoutY="30.0" text="Title:" />
