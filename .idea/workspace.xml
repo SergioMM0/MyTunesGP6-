@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="The FXML">
-      <change afterPath="$PROJECT_DIR$/src/main/gui/view/Delete.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/gui/view/NewEditPlaylist.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/gui/view/NewEditSong.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/MyTunesDalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/MyTunesDalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/MyTunesDalFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/MyTunesDalFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/db/TestingClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/TestingClass.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
