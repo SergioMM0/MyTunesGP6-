@@ -1,6 +1,7 @@
 package gui.model;
 
 import be.Song;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,4 +37,19 @@ public class SongModel {
         return cachedSongs;
     }
 
+    public void playSong(ObservableList<Song> selectedItems) {
+
+    }
+
+    public void previousSong(Song song) {
+
+    }
+
+    public void nextSong(Song song) {
+
+    }
+
+    public ObservableList<Song> getResult(String text) {
+        return null;
+    }
 }
