@@ -48,13 +48,12 @@ public class DbDAOPlaylist implements IPLaylistRepository {
             st.setString(3,"0");
             st.setInt(4,0);
             st.setInt(5, 0);
-            int executed = st.executeUpdate();
-            if(executed == 0 ){
-                addedPLaylist = new Playlist(id, name, "0", 0,0);
-            }
+            st.execute();
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        addedPLaylist = new Playlist(id, name, "0", 0,0);
         return addedPLaylist;
     }
 
@@ -136,10 +135,12 @@ public class DbDAOPlaylist implements IPLaylistRepository {
             Playlist finalPlaylist = null;
             String idOfSongs = playlist.getIdOfSongsInPlaylist();
             String idOfNewSong = String.valueOf(song.getId());
-            String sql = "INSERT INTO Playlist (IdOfSongsInPLaylist) VALUE ? WHERE Id=?";
+            int idOfPlaylist = playlist.getId();
+            String sql = "UPDATE Playlist (IdOfSongsInPLaylist) VALUE(?) WHERE Id=?;";
         try (Connection connection = connectionProvider.getConnection()){
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1,idOfSongs+","+idOfNewSong);
+            st.setInt(2,idOfPlaylist);
             ResultSet rs = st.executeQuery();
             while (rs.next()){
                 finalPlaylist = new Playlist(playlist.getId(),playlist.getName(),
