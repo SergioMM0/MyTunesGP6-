@@ -10,9 +10,14 @@ import java.util.List;
 
 public class TestingClass {
     public static void main(String[] args) throws SQLException {
-        System.out.println(getAndAddSongsFromPlaylist());
+        System.out.println(getIdOfSongsInPLaylist());
     }
 
+    public static Playlist getIdOfSongsInPLaylist (){
+        DbDAOPlaylist db = new DbDAOPlaylist();
+        Playlist p = new Playlist(12,"test", "1,2,3,54,18899",2332,899876);
+        return db.getSongsFromPlaylist(p);
+    }
 
     public static Song getSong() throws SQLException {
         DbDAOSong db = new DbDAOSong();
