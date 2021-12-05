@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ISongRepository {
 
-    Song addSong(int id, String name, String artist, String category, int duration,String filePath) throws SQLException;
+    Song addSong(Song song) throws SQLException;
 
     void deleteSong(Song song);
 

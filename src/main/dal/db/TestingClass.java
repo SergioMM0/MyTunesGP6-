@@ -13,6 +13,37 @@ public class TestingClass {
         System.out.println(getAndAddSongsFromPlaylist());
     }
 
+
+    public static Song getSong() throws SQLException {
+        DbDAOSong db = new DbDAOSong();
+        return db.getSong(20);
+
+    }
+
+    public static Song updateSong() throws SQLException {
+        DbDAOSong db = new DbDAOSong();
+        Song s = new Song(22,"itWorks","Worked","Dubstep",555,"data/notanormaldata.mp3");
+        db.updateSong(s);
+        return s;
+    }
+
+    public static void deleteSong(){
+        DbDAOSong db = new DbDAOSong();
+        Song s = new Song(24,"Hopefully","Maroon 5","Electronic",340,"data/data.mp3");
+        db.deleteSong(s);
+    }
+
+    public static List<Song> getAllSong(){
+        DbDAOSong db = new DbDAOSong();
+        return db.getAllSongs();
+    }
+
+    public static Song addSong() throws SQLException {
+        DbDAOSong db = new DbDAOSong();
+        Song s = new Song(1,"Hopefully","Maroon 5","Electronic",340,"data/data.mp3");
+        return db.addSong(s);
+    }
+
     public static List<Playlist> getAllPlaylist(){
         DbDAOPlaylist db = new DbDAOPlaylist();
         return db.getAllPlaylist();
@@ -20,7 +51,7 @@ public class TestingClass {
 
     public static Playlist addPLaylist(){
         DbDAOPlaylist db = new DbDAOPlaylist();
-        return db.addPlaylist(4,"My Music");
+        return db.addPlaylist("My Music");
     }
 
     public static void deletePlaylist(){
@@ -37,12 +68,18 @@ public class TestingClass {
 
     public static Playlist getPlaylist(){
         DbDAOPlaylist db = new DbDAOPlaylist();
-        return db.getPlaylist(2);
+        return db.getPlaylist(5);
+    }
+
+    public static Playlist getgetSongsFromPlaylist() throws SQLException {
+        DbDAOPlaylist db = new DbDAOPlaylist();
+        Playlist p = new Playlist(22,"Study Music","0",0,0);
+        return db.getSongsFromPlaylist(p);
     }
 
     public static Playlist getAndAddSongsFromPlaylist(){
         DbDAOPlaylist db = new DbDAOPlaylist();
-        Song s = new Song(1,"ee","eee","eee",31,"eee.data");
+        Song s = new Song(123,"ee","eee","eee",31,"eee.data");
         Playlist p = new Playlist(3,"Study Music","0",0,0);
         return db.addSongToPlaylist(p,s);
     }

@@ -5,10 +5,7 @@ import com.microsoft.sqlserver.jdbc.SQLServerException;
 import dal.db.DBConnectionProvider;
 import dal.interfaces.ISongRepository;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,21 +35,21 @@ public class DbDAOSong implements ISongRepository {
     }
 
     @Override
-    public Song addSong(int id, String name, String artist, String category, int duration,String filePath) throws SQLException {
-        String sql = ("INSERT INTO Song (Id, Title, Artist, Category, Duration, FilePath) VALUES (?,?,?,?,?,?)");
+    public Song addSong(Song song) throws SQLException {
         Song addedSong = null;
+        String sql = ("INSERT INTO Song(Title, Artist, Category, Duration, FilePath) VALUES (?,?,?,?,?)");
         try (Connection connection = connectionProvider.getConnection()) {
-            PreparedStatement st = connection.prepareStatement(sql);
-            st.setInt(1, id);
-            st.setString(2, name);
-            st.setString(3, artist);
-            st.setString(4, category);
-            st.setInt(5, duration);
-            st.setString(6, filePath);
-            boolean execute = st.execute(); //maybe give problems
-            if (!execute) {
-                addedSong = new Song(id, name, artist, category, duration, filePath);
-            }
+            PreparedStatement st = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            st.setString(1, song.getName());
+            st.setString(2, song.getArtist());
+            st.setString(3, song.getCategory());
+            st.setInt(4, song.getDuration());
+            st.setString(5, song.getFilePath());
+            st.execute();
+            ResultSet rs = st.getGeneratedKeys();
+            rs.next();
+                addedSong = new Song(rs.getInt(1 ),song.getName(), song.getArtist(),
+                            song.getCategory(), song.getDuration(), song.getFilePath());
         } catch (SQLServerException throwables) {
             throwables.printStackTrace();
         }
@@ -89,7 +86,7 @@ public class DbDAOSong implements ISongRepository {
             st.setInt(4,duration);
             st.setString(5,filepath);
             st.setInt(6,id);
-            st.executeUpdate();
+            st.execute();
         } catch (SQLServerException throwables) {
             throwables.printStackTrace();
         }

@@ -5,10 +5,7 @@ import be.Song;
 import dal.db.DBConnectionProvider;
 import dal.interfaces.IPLaylistRepository;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,23 +34,23 @@ public class DbDAOPlaylist implements IPLaylistRepository {
     }
 
     @Override
-    public Playlist addPlaylist(int id, String name) {
+    public Playlist addPlaylist(String name) {
         Playlist addedPLaylist = null;
-        String sql = "INSERT INTO Playlist (Id , Name, IdOfSongsInPLaylist, NumberOfSongs, TotalReproductionTime) " +
-                "VALUES (? , ? , ? , ? , ?)";
+        String sql = "INSERT INTO Playlist (Title, IdOfSongsInPLaylist, NumberOfSongs, TotalReproductionTime) " +
+                "VALUES (? , ? , ? , ?)";
         try (Connection connection = connectionProvider.getConnection()) {
-            PreparedStatement st = connection.prepareStatement(sql);
-            st.setInt(1,id);
-            st.setString(2,name);
-            st.setString(3,"0");
-            st.setInt(4,0);
-            st.setInt(5, 0);
+            PreparedStatement st = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            st.setString(1,name);
+            st.setString(2,"0");
+            st.setInt(3,0);
+            st.setInt(4, 0);
             st.execute();
-
+            ResultSet rs = st.getGeneratedKeys();
+            rs.next();
+            addedPLaylist = new Playlist(rs.getInt(1),name,"null",0,0);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        addedPLaylist = new Playlist(id, name, "0", 0,0);
         return addedPLaylist;
     }
 
@@ -75,7 +72,7 @@ public class DbDAOPlaylist implements IPLaylistRepository {
     public void renamePlaylist(Playlist playlist) {
         String renamed = playlist.getName();
         int id = playlist.getId();
-        String sql = "UPDATE Playlist SET Name = ? WHERE Id = ?";
+        String sql = "UPDATE Playlist SET Title = ? WHERE Id = ?";
         try (Connection connection = connectionProvider.getConnection()){
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1,renamed);
@@ -97,7 +94,7 @@ public class DbDAOPlaylist implements IPLaylistRepository {
             ResultSet rs = st.executeQuery();
             while (rs.next()){
                 searched = new Playlist(rs.getInt("Id"),
-                        rs.getString("Name"),
+                        rs.getString("Title"),
                         rs.getString("IdOfSongsInPLaylist"),
                         rs.getInt("NumberOfSongs"),
                         rs.getInt("TotalReproductionTime"));
@@ -113,16 +110,15 @@ public class DbDAOPlaylist implements IPLaylistRepository {
     public Playlist getSongsFromPlaylist(Playlist playlist) {
         Playlist recollected = null;
         int id = playlist.getId();
-        String sql = "SELECT IdOfSongsInPLaylist FROM Playlist WHERE Id = ?";
+        String sql = ("SELECT IdOfSongsInPLaylist FROM Playlist WHERE Id = ?");
         try (Connection connection = connectionProvider.getConnection()){
-            PreparedStatement st = connection.prepareStatement(sql);
+            PreparedStatement st = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             st.setInt(1,id);
-            ResultSet rs = st.executeQuery();
-            while (rs.next()){
-                recollected = new Playlist(playlist.getId(),playlist.getName(),
-                        rs.getString("IdOfSongsInPLaylist"), playlist.getHowManySongs(),
+            st.execute();
+            ResultSet rs = st.getGeneratedKeys();
+            recollected = new Playlist(playlist.getId(),playlist.getName(),
+                        rs.getString(3), playlist.getHowManySongs(),
                         playlist.getTotalReproductionTime());
-            }
         }
         catch (SQLException throwables) {
             throwables.printStackTrace();

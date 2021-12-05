@@ -6,13 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOPlaylist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/Playlist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/Playlist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bll/PlayController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/IPLaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/IPLaylistRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/ISongRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dal/MyTunesDalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/MyTunesDalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/MyTunesDalFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/MyTunesDalFacade.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dal/db/TestingClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/TestingClass.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOPlaylist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOPlaylist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOSong.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOSong.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/interfaces/IPLaylistRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/interfaces/IPLaylistRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/interfaces/ISongRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/interfaces/ISongRepository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,6 +130,9 @@
       <workItem from="1638385588472" duration="88000" />
       <workItem from="1638385693162" duration="86000" />
       <workItem from="1638486511866" duration="724000" />
+      <workItem from="1638526787759" duration="1499000" />
+      <workItem from="1638528393803" duration="3430000" />
+      <workItem from="1638533312998" duration="8024000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>
