@@ -11,7 +11,7 @@ public interface MyTunesDalFacade {
     /**
      * MAKE SURE BEFORE IMPLEMENTING BLL ALL METHOD INTERFACES ARE IMPLEMENTED
     */
-    Song addSong(int id, String name, String artist, String category, int duration,String filePath) throws SQLException;
+    Song addSong(Song song) throws SQLException;
 
     void deleteSong(Song song);
 
@@ -25,7 +25,7 @@ public interface MyTunesDalFacade {
 
     List<Playlist> getAllPlaylist();
 
-    Playlist addPlaylist(int id, String name);
+    Playlist addPlaylist(String name);
 
     void deletePlaylist(Playlist playlist);
 

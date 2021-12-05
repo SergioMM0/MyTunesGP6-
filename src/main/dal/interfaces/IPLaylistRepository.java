@@ -3,13 +3,14 @@ package dal.interfaces;
 import be.Playlist;
 import be.Song;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface IPLaylistRepository {
 
     List<Playlist> getAllPlaylist();
 
-    Playlist addPlaylist(int id, String name);
+    Playlist addPlaylist(String name);
 
     void deletePlaylist(Playlist playlist);
 

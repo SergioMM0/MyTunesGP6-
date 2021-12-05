@@ -21,8 +21,8 @@ public class MyTunesDalController implements MyTunesDalFacade {
     }
 
     @Override
-    public Song addSong(int id, String name, String artist, String category, int duration, String filePath) throws SQLException {
-        return songRepository.addSong(id,name,artist,category,duration,filePath);
+    public Song addSong(Song song) throws SQLException {
+        return songRepository.addSong(song);
     }
 
     @Override
@@ -51,8 +51,8 @@ public class MyTunesDalController implements MyTunesDalFacade {
     }
 
     @Override
-    public Playlist addPlaylist(int id, String name) {
-        return playlistRepository.addPlaylist(id,name);
+    public Playlist addPlaylist(String name) {
+        return playlistRepository.addPlaylist(name);
     }
 
     @Override
