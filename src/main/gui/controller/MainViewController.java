@@ -8,12 +8,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import gui.model.SongModel;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -131,9 +133,21 @@ public class MainViewController {
             Parent root = loader.load();
             NewEditPlaylist newPlaylist = loader.getController();
             newPlaylist.setParentController(this);
+            Stage stage = new Stage();
+            stage.setTitle("New Playlist");
+            stage.setScene(new Scene(root));
+            stage.show();
     }
-    public void editPlaylist(ActionEvent actionEvent) {
-
+    public void editPlaylist(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("NewEditPlaylist"));
+        Parent root = loader.load();
+        NewEditPlaylist newPlaylist = loader.getController();
+        newPlaylist.setPlaylistName(playlistList.getSelectionModel().getSelectedItems());
+        newPlaylist.setParentController(this);
+        Stage stage = new Stage();
+        stage.setTitle("Edit Playlist");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
     public void deletePlaylist(ActionEvent actionEvent) {
 
