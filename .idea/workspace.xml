@@ -6,16 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="The FXML">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/be/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/be/Playlist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOPlaylist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/IPLaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/IPLaylistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/db/TestingClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/TestingClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/model/SongModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/SongModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/view/Delete.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/view/NewEditPlaylist.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/view/NewEditSong.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOPlaylist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOPlaylist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/model/SongModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/model/SongModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/view/MainView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +29,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -61,7 +64,7 @@
       <recent name="gui.view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestingClass">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="InterfaceModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.model.InterfaceModel" />
       <module name="MyTunesGP6" />
@@ -97,8 +100,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestingClass" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.TestingClass" />
         <item itemvalue="Application.InterfaceModel" />
       </list>
     </recent_temporary>

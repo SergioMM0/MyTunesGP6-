@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="1080.0" maxWidth="1920.0" minHeight="550" minWidth="800" prefHeight="683.0" prefWidth="894.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MainViewController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="864.0">
+         <children>
+            <VBox>
+               <children>
+                  <HBox>
+                     <children>
+                        <ImageView fx:id="PreviousSongButton" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#previousSong" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../data/Backtrack_button.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="10.0" right="5.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="PlaySongButton" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#playSong" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../data/Play_button.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="NextSongButton" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#nextSong" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../data/Skip_button.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="5.0" top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <Slider fx:id="VolumeSlider" onDragDropped="#changeVolume" prefHeight="46.0" prefWidth="141.0" snapToPixel="false">
+               <effect>
+                  <SepiaTone />
+               </effect>
+            </Slider>
+            <Label fx:id="CurrentSongLabel" text="Label">
+               <HBox.margin>
+                  <Insets left="200.0" right="200.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="FilterSearchField" onKeyTyped="#showResult">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="515.0" prefWidth="825.0">
+         <children>
+            <VBox>
+               <children>
+                  <TableView fx:id="playlistList" prefHeight="470.0" prefWidth="185.0">
+                    <columns>
+                      <TableColumn prefWidth="50.0" text="Name" />
+                      <TableColumn prefWidth="50.0" text="Songs" />
+                        <TableColumn prefWidth="85.0" text="Time" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <HBox>
+                     <children>
+                        <Button fx:id="npbtn" mnemonicParsing="false" onMouseClicked="#openNEPWindow" text="New...">
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="epbtn" mnemonicParsing="false" onMouseClicked="#editPlaylist" text="Edit...">
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="dpbtn" mnemonicParsing="false" onMouseClicked="#deletePlaylist" text="Delete">
+                           <HBox.margin>
+                              <Insets right="15.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="495.0" prefWidth="200.0">
+               <HBox.margin>
+                  <Insets left="20.0" right="15.0" />
+               </HBox.margin>
+               <children>
+                  <ListView fx:id="songListFromPlayList" prefHeight="470.0" prefWidth="200.0" />
+                  <HBox>
+                     <children>
+                        <ImageView fx:id="ubtn" fitHeight="40.0" fitWidth="45.0" onMouseClicked="#moveUp" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../data/Up_arrow.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <ImageView fx:id="dbtn" fitHeight="40.0" fitWidth="45.0" onMouseClicked="#moveDown" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../data/Down_arrow.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Button fx:id="rmbtn" mnemonicParsing="false" onMouseClicked="#removeSong" text="Remove">
+                           <HBox.margin>
+                              <Insets left="20.0" right="15.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <ImageView fx:id="mbtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#addSong" pickOnBounds="true" preserveRatio="true">
+               <HBox.margin>
+                  <Insets top="25.0" />
+               </HBox.margin>
+               <image>
+                  <Image url="@../../data/Left_arrow.png" />
+               </image>
+            </ImageView>
+            <VBox>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+               <children>
+                  <TableView fx:id="songTableList" prefHeight="470.0" prefWidth="320.0">
+                    <columns>
+                      <TableColumn prefWidth="100.0" text="Title" />
+                      <TableColumn prefWidth="85.0" text="Artist" />
+                        <TableColumn prefWidth="85.0" text="Genres" />
+                        <TableColumn prefWidth="50.0" text="Time" />
+                    </columns>
+                  </TableView>
+                  <HBox>
+                     <children>
+                        <Button fx:id="esbtn" mnemonicParsing="false" onKeyPressed="#editSong" text="Edit...">
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="nsbtn" mnemonicParsing="false" onKeyPressed="#newSong" text="New...">
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="dsbtn" mnemonicParsing="false" onKeyPressed="#deleteSong" text="Delete">
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="BOTTOM_RIGHT" prefHeight="45.0" prefWidth="600.0" />
+   </children>
+</VBox>
