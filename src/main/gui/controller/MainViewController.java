@@ -23,59 +23,55 @@ public class MainViewController {
     private Label Label;
 
     @FXML
-    private ImageView btbtn;
+    private ImageView backtrackBtn;
 
     @FXML
-    private ImageView dbtn;
+    private Button deletePlaylistBtn;
 
     @FXML
-    private Button dpbtn;
+    private Button deleteSongBtn;
 
     @FXML
-    private Button dsbtn;
+    private ImageView downBtn;
 
     @FXML
-    private Button epbtn;
+    private Button editPlaylistBtn;
 
     @FXML
-    private Button esbtn;
+    private Button editSongBtn;
 
     @FXML
-    private ImageView mbtn;
+    private ImageView moveBtn;
 
     @FXML
-    private Button npbtn;
+    private Button newPlaylistBtn;
 
     @FXML
-    private Button nsbtn;
+    private Button newSongBtn;
 
     @FXML
-    private ImageView pbtn;
+    private ImageView playBtn;
 
     @FXML
-    private Button rmbtn;
+    private TableView<Playlist> playlistList;
 
     @FXML
-    private ImageView sbtn;
+    private Button removeBtn;
 
     @FXML
     private TextField searchfilter;
 
     @FXML
-    private ImageView ubtn;
-
-    @FXML
-    private Slider volslider;
+    private ImageView skipBtn;
 
     @FXML
     private ListView<Song> songListFromPlayList;
 
     @FXML
-    private TableView<Playlist> playlistList;
-
+    private ImageView upBtn;
 
     @FXML
-    private Label welcomeText;
+    private Slider volslider;
     @FXML
     private TableView<Song> songTableList;
     SongModel songModel = SongModel.getInstance();
@@ -131,8 +127,10 @@ public class MainViewController {
     }
     @FXML
     public void openNEPWindow(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("NewEditPlaylist"));
-        Parent root = loader.load();
+            FXMLLoader loader = new FXMLLoader(Main.class.getResource("NewEditPlaylist"));
+            Parent root = loader.load();
+            NewEditPlaylist newPlaylist = loader.getController();
+            newPlaylist.setParentController(this);
     }
     public void editPlaylist(ActionEvent actionEvent) {
 
