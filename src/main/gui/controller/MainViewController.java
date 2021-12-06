@@ -2,6 +2,7 @@ package gui.controller;
 
 import be.Playlist;
 import be.Song;
+import bll.MyTunesLogicController;
 import gui.model.PlaylistModel;
 import gui.model.SongModel;
 import javafx.event.ActionEvent;
@@ -15,15 +16,21 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.net.URL;
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class MainViewController implements Initializable{
 
 private PlaylistModel playlistModel;
 private SongModel songModel;
+private MediaPlayer mediaPlayer;
+private Media media;
 
     @FXML
     private TableView<Song> SongsListView; // Whole table of songs, do not write
@@ -109,9 +116,32 @@ private SongModel songModel;
         e.printStackTrace();}
     }
 
+
+
+
+    /*
+    private File directory;
+    private File[] files;
+    private ArrayList<File> songs;
+    private MediaPlayer mediaPlayer;
+    private Media media;
+    */
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        /*
+        songs = new ArrayList<>();
+        directory = new File("data/mp3/Song1.mp3");
+        files = directory.listFiles();
+        if (files != null){
+            for (File file : files){
+                songs.add(file);
+                System.out.println(file);
+            }
+        }
+        media = new Media(directory.toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+         */
     }
 
     @FXML
@@ -151,7 +181,7 @@ private SongModel songModel;
 
     @FXML
     void playSong(ActionEvent event) {
-
+        //mediaPlayer.play();
     }
 
     @FXML

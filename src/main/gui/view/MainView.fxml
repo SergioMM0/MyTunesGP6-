@@ -37,7 +37,7 @@
          </columnResizePolicy>
       </TableView>
       <Button fx:id="playSongButton" layoutX="111.0" layoutY="30.0" mnemonicParsing="false" onAction="#playSong" text="Play" />
-      <Button fx:id="previousSongButton" layoutX="36.0" layoutY="30.0" mnemonicParsing="false" onAction="#previousSong" onMouseClicked="#previousSong" text="Previous" />
+      <Button fx:id="previousSongButton" layoutX="36.0" layoutY="30.0" mnemonicParsing="false" onAction="#previousSong" text="Previous" />
       <Button fx:id="nextSongButton" layoutX="160.0" layoutY="30.0" mnemonicParsing="false" onAction="#nextSong" text="Next" />
       <Slider fx:id="volumeSlider" layoutX="60.0" layoutY="74.0" onDragDetected="#handleVolume">
          <effect>

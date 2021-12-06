@@ -5,11 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="The FXML">
-      <change afterPath="$PROJECT_DIR$/src/main/bll/mediaPlayer/IMediaPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/bll/mediaPlayer/MediaPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/bll/logicMediaPlayer/LogicMediaPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/bll/mediaPlayer/IMediaPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/logicMediaPlayer/ILogicMediaPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/bll/mediaPlayer/MediaPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/data/mp3/bensound-brazilsamba.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/Song (3).mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/data/mp3/bensound-dubstep.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/Song (4).mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/data/mp3/bensound-endlessmotion.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/Song1.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/data/mp3/bensound-house.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/data/mp3/Song (2).mp3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/mp3/bensound-brazilsamba.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/mp3/bensound-dubstep.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/mp3/bensound-endlessmotion.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/mp3/bensound-house.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/view/MainView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +56,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MRS-master" />
+    <property name="jdk.selected.JAVA_MODULE" value="liberica-17" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -50,6 +69,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Sergio M\IdeaProjects\MyTunesGP6" />
       <recent name="C:\Users\Sergio M\IdeaProjects\MyTunesGP6\src\main\gui\view" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -126,7 +146,8 @@
       <workItem from="1638533312998" duration="8024000" />
       <workItem from="1638724167721" duration="41000" />
       <workItem from="1638777336206" duration="7980000" />
-      <workItem from="1638802223310" duration="9512000" />
+      <workItem from="1638802223310" duration="15408000" />
+      <workItem from="1638820015717" duration="52000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>

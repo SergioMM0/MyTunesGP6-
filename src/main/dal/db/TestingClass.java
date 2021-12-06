@@ -40,14 +40,14 @@ public class TestingClass {
 
     public static Song updateSong() throws SQLException {
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(22,"itWorks","Worked","Dubstep",555,"data/notanormaldata.mp3");
+        Song s = new Song(22,"itWorks","Worked","Dubstep",555, "data/notanormaldata.mp3");
         db.updateSong(s);
         return s;
     }
 
     public static void deleteSong(){
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(24,"Hopefully","Maroon 5","Electronic",340,"data/data.mp3");
+        Song s = new Song(24,"Hopefully","Maroon 5","Electronic",340, "data/data.mp3");
         db.deleteSong(s);
     }
 
@@ -58,7 +58,7 @@ public class TestingClass {
 
     public static Song addSong() throws SQLException {
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(1,"Hopefully","Maroon 5","Electronic",340,"data/data.mp3");
+        Song s = new Song(1,"Hopefully","Maroon 5","Electronic",340, "data/data.mp3");
         return db.addSong(s);
     }
 

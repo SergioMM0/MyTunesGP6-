@@ -8,7 +8,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("gui/view/NewPlaylistView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("gui/view/MainView.fxml"));
         Scene scene = new Scene(root, 850, 600);
         stage.setTitle("MyTunesGP6");
         stage.setScene(scene);

@@ -38,5 +38,5 @@ public interface MyTunesLogicFacade {
 
     //*********
 
-
+    void playSong();
 }
