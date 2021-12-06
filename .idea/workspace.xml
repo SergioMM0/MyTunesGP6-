@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="Revert &quot;Revert &quot;.&quot;&quot;&#10;&#10;This reverts commit 30918cd71d9d87ef55d2fc5a55e995b6c3d356f1.">
-      <change afterPath="$PROJECT_DIR$/src/main/gui/controller/Delete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/gui/controller/NewEditPlaylist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/gui/controller/NewEditSong.java" afterDir="false" />
+    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/view/Delete.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/Delete.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/view/NewEditPlaylist.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/NewEditPlaylist.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/view/NewEditSong.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/NewEditSong.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOPlaylist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOPlaylist.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638441375819</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=".">
+      <created>1638796662844</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1638796662844</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
