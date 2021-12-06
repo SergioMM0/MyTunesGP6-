@@ -116,32 +116,32 @@ private SongModel songModel;
 
     @FXML
     void addSongToPlaylist(ActionEvent event) {
-
+        playlistModel.addSongToPlaylist();
     }
 
     @FXML
     void deletePlaylist(ActionEvent event) {
-
+        playlistModel.deletePlaylist();
     }
 
     @FXML
     void deleteSongFromPlaylist(ActionEvent event) {
-
+        playlistModel.deleteSongFromPlaylist();
     }
 
     @FXML
     void handleVolume(MouseEvent event) {
-
+                                                        //TODO
     }
 
     @FXML
     void moveDownSongInPlaylist(ActionEvent event) {
-
+        playlistModel.moveDownSongInPlaylist();
     }
 
     @FXML
     void moveUpSongInPlaylist(ActionEvent event) {
-
+        playlistModel.moveUpSongInPlaylist();
     }
 
     @FXML

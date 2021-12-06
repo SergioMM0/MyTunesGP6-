@@ -12,7 +12,7 @@ public class NewPlaylistController {
     private PlaylistModel playlistModel;
 
     @FXML
-    private Button addPlaylistButton;
+    private Button addPlaylistButton; //It works I guess :_)
 
     @FXML
     private Button closeWindowButton;
