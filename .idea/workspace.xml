@@ -5,19 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="The FXML">
+      <change afterPath="$PROJECT_DIR$/src/main/gui/controller/NewPlaylistController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/gui/view/NewPlaylistView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/model/SongModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/SongModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/view/Delete.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/view/NewEditPlaylist.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/view/NewEditSong.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOPlaylist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOPlaylist.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/model/SongModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/model/SongModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/view/Delete.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/view/Miscojones.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/view/NewEditPlaylist.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/view/NewEditSong.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +29,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -134,6 +135,7 @@
       <workItem from="1638533312998" duration="8024000" />
       <workItem from="1638724167721" duration="41000" />
       <workItem from="1638777336206" duration="7980000" />
+      <workItem from="1638802223310" duration="4801000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>
