@@ -3,7 +3,7 @@ package be;
 public class Playlist {
     private int id;
     private String name;
-    private final String idOfSongsInPlaylist;
+    private String idOfSongsInPlaylist;
     private int howManySongs;
     private int totalReproductionTime;
 

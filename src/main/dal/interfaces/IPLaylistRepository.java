@@ -24,4 +24,6 @@ public interface IPLaylistRepository {
     need to be executed first */
 
     Playlist addSongToPlaylist(Playlist playlist,Song song);
+
+    Playlist updatePlaylist (Playlist playlist);
 }

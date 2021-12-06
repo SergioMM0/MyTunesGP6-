@@ -79,4 +79,9 @@ public class MyTunesDalController implements MyTunesDalFacade {
     public Playlist addSongToPlaylist(Playlist playlist, Song song) {
         return playlistRepository.addSongToPlaylist(playlist,song);
     }
+
+    @Override
+    public Playlist updatePlaylist(Playlist playlist) {
+        return playlistRepository.updatePlaylist(playlist);
+    }
 }

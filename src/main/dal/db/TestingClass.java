@@ -10,7 +10,20 @@ import java.util.List;
 
 public class TestingClass {
     public static void main(String[] args) throws SQLException {
-        System.out.println(getIdOfSongsInPLaylist());
+        System.out.println(updatePlaylist());
+    }
+
+    public static Playlist updatePlaylist(){
+        DbDAOPlaylist db = new DbDAOPlaylist();
+        Playlist p = new Playlist(12,"WorkingUpdate","numbers,numbers and more numbers",123456,7890);
+        return db.updatePlaylist(p);
+    }
+
+    public static Playlist addSongToPlaylist(){
+        DbDAOPlaylist db = new DbDAOPlaylist();
+        Playlist p = new Playlist(12,"test","Miscojones",2332,899876);
+        Song s = new Song(900909,"AddedSong","eee","eee",122,"data.data.lel");
+        return db.addSongToPlaylist(p,s);
     }
 
     public static Playlist getIdOfSongsInPLaylist (){
@@ -73,7 +86,7 @@ public class TestingClass {
 
     public static Playlist getPlaylist(){
         DbDAOPlaylist db = new DbDAOPlaylist();
-        return db.getPlaylist(5);
+        return db.getPlaylist(12);
     }
 
     public static Playlist getgetSongsFromPlaylist() throws SQLException {

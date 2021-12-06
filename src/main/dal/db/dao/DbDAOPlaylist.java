@@ -13,6 +13,10 @@ public class DbDAOPlaylist implements IPLaylistRepository {
 
     private final DBConnectionProvider connectionProvider = new DBConnectionProvider();
 
+    /**
+     * Collect all Playlist from database
+     * @return List of PLaylist
+     */
     @Override
     public List<Playlist> getAllPlaylist() {
         List<Playlist> allPlaylists = new ArrayList<>();
@@ -32,6 +36,12 @@ public class DbDAOPlaylist implements IPLaylistRepository {
         }
         return allPlaylists;
     }
+
+    /**
+     * Adds a Playlist to the database based on name
+     * @param name
+     * @return Playlist
+     */
 
     @Override
     public Playlist addPlaylist(String name) {
@@ -131,15 +141,29 @@ public class DbDAOPlaylist implements IPLaylistRepository {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1, idOfSongs + "," + idOfNewSong);
             st.setInt(2, idOfPlaylist);
-            ResultSet rs = st.executeQuery();
-            while (rs.next()) {
-                finalPlaylist = new Playlist(playlist.getId(), playlist.getName(),
-                        rs.getString("IdOfSongsInPLaylist"), playlist.getHowManySongs(),
-                        playlist.getTotalReproductionTime());
-            }
+            st.execute(); //tested and working MAYBE give some problems in a future :_)
+            finalPlaylist = new Playlist(playlist.getId(), playlist.getName(), idOfSongs + "," + idOfNewSong, playlist.getHowManySongs(), playlist.getTotalReproductionTime());
+
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return finalPlaylist;
+    }
+
+    @Override
+    public Playlist updatePlaylist(Playlist playlist) {
+        String sql = "UPDATE Playlist SET Title = ?, IdOfSongsInPLaylist = ? , NumberOfSongs = ? , TotalReproductionTime = ? WHERE Id = ?;";
+        try (Connection connection = connectionProvider.getConnection()) {
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setString(1,playlist.getName());
+            st.setString(2,playlist.getIdOfSongsInPlaylist());
+            st.setInt(3,playlist.getHowManySongs());
+            st.setInt(4,playlist.getTotalReproductionTime());
+            st.setInt(5,playlist.getId());
+            st.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return new Playlist(playlist.getId(), playlist.getName(), playlist.getIdOfSongsInPlaylist(), playlist.getHowManySongs(), playlist.getTotalReproductionTime());
     }
 }

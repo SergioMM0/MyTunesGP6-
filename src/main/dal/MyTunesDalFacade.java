@@ -37,4 +37,5 @@ public interface MyTunesDalFacade {
 
     Playlist addSongToPlaylist(Playlist playlist,Song song);
 
+    Playlist updatePlaylist(Playlist playlist);
 }
