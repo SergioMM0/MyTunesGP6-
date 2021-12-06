@@ -2,19 +2,12 @@ package gui.controller;
 
 import be.Playlist;
 import be.Song;
-import bll.MyTunesLogicController;
 import gui.model.PlaylistModel;
 import gui.model.SongModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -22,15 +15,15 @@ import javafx.scene.media.MediaPlayer;
 import java.io.File;
 import java.net.URL;
 import java.sql.Time;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class MainViewController implements Initializable{
+public class MainViewController implements Initializable {
 
-private PlaylistModel playlistModel;
-private SongModel songModel;
-private MediaPlayer mediaPlayer;
-private Media media;
+    private PlaylistModel playlistModel;
+    private SongModel songModel;
+    private MediaPlayer mediaPlayer;
+    private Media media;
+    private int currentTable;
 
     @FXML
     private TableView<Song> SongsListView; // Whole table of songs, do not write
@@ -72,13 +65,16 @@ private Media media;
     private Button playSongButton;
 
     @FXML
-    private TableColumn<Playlist,String> playlistNameColumn;
+    private TableColumn<Playlist, String> playlistNameColumn;
 
     @FXML
-    private TableColumn<Song,Integer> playlistNSongsColumn;
+    private TableColumn<Song, Integer> playlistNSongsColumn;
 
     @FXML
-    private TableColumn<Song, String> playlistTimeColumn; /** TIME FOR PLAYLISTS */
+    private TableColumn<Song, String> playlistTimeColumn;
+    /**
+     * TIME FOR PLAYLISTS
+     */
 
     @FXML
     private TableView<Playlist> playlistTableView; // Whole table of Playlist, do not write
@@ -90,16 +86,19 @@ private Media media;
     private Button searchButton;
 
     @FXML
-    private TableColumn<Song,String> songArtistColumn;
+    private TableColumn<Song, String> songArtistColumn;
 
     @FXML
-    private TableColumn<Song,String> songCategoryColumn;
+    private TableColumn<Song, String> songCategoryColumn;
 
     @FXML
-    private TableColumn<Song,Time> songTimeColumn; /** TIME FOR SONGS*/
+    private TableColumn<Song, Time> songTimeColumn;
+    /**
+     * TIME FOR SONGS
+     */
 
     @FXML
-    private TableColumn<Song,String> songTitleColumn;
+    private TableColumn<Song, String> songTitleColumn;
 
     @FXML
     private ListView<Song> songsOnPlaylistListView;
@@ -107,17 +106,14 @@ private Media media;
     @FXML
     private Slider volumeSlider;
 
-    public MainViewController(){
-    try{
-        playlistModel = new PlaylistModel();
-        songModel = new SongModel();
+    public MainViewController() {
+        try {
+            playlistModel = new PlaylistModel();
+            songModel = new SongModel();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-    catch (Exception e) {
-        e.printStackTrace();}
-    }
-
-
-
 
     /*
     private File directory;
@@ -129,19 +125,12 @@ private Media media;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        /*
-        songs = new ArrayList<>();
-        directory = new File("data/mp3/Song1.mp3");
-        files = directory.listFiles();
-        if (files != null){
-            for (File file : files){
-                songs.add(file);
-                System.out.println(file);
-            }
-        }
-        media = new Media(directory.toURI().toString());
+        initMediaPlayer();
+    }
+
+    public void initMediaPlayer() {
+        media = new Media(new File(songModel.getFilePathOfCurrentPlayingSong()).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
-         */
     }
 
     @FXML
@@ -161,7 +150,7 @@ private Media media;
 
     @FXML
     void handleVolume(MouseEvent event) {
-                                                        //TODO
+        //TODO
     }
 
     @FXML
@@ -176,31 +165,41 @@ private Media media;
 
     @FXML
     void nextSong(ActionEvent event) {
+        if (currentTable == 1) {
 
+        }
     }
 
     @FXML
     void playSong(ActionEvent event) {
-        //mediaPlayer.play();
+        mediaPlayer.play();
     }
 
     @FXML
     void previousSong(ActionEvent event) {
-
+        //songModel.getPreviousSong();
     }
 
     @FXML
     void searchSong(ActionEvent event) {
-
+        //TODO
     }
 
     @FXML
     void searchSongTextField(ActionEvent event) {
-
+        //TODO
     }
 
     @FXML
     void updatePlaylistButton(ActionEvent event) {
+        playlistModel.updatePlaylist();
+    }
 
+    public void playSongFromPlaylist(MouseEvent mouseEvent) {
+        currentTable = 1;
+    }
+
+    public void playSongFromSongs(MouseEvent mouseEvent) {
+        currentTable = 2;
     }
 }

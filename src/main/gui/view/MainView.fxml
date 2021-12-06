@@ -24,8 +24,8 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <ListView fx:id="songsOnPlaylistListView" layoutX="247.0" layoutY="125.0" prefHeight="408.0" prefWidth="200.0" />
-      <TableView fx:id="SongsListView" layoutX="518.0" layoutY="125.0" prefHeight="408.0" prefWidth="286.0">
+      <ListView fx:id="songsOnPlaylistListView" layoutX="247.0" layoutY="125.0" onMouseClicked="#playSongFromPlaylist" prefHeight="408.0" prefWidth="200.0" />
+      <TableView fx:id="SongsListView" layoutX="518.0" layoutY="125.0" onMouseClicked="#playSongFromSongs" prefHeight="408.0" prefWidth="286.0">
         <columns>
           <TableColumn fx:id="songTitleColumn" prefWidth="75.0" text="Title" />
           <TableColumn fx:id="songArtistColumn" prefWidth="75.0" text="Artist" />

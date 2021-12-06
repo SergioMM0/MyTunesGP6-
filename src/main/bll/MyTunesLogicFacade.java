@@ -36,7 +36,4 @@ public interface MyTunesLogicFacade {
 
     Playlist updatePlaylist(Playlist playlist);
 
-    //*********
-
-    void playSong();
 }

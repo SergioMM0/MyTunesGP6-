@@ -2,7 +2,6 @@ package bll;
 
 import be.Playlist;
 import be.Song;
-import bll.logicMediaPlayer.LogicMediaPlayer;
 import dal.MyTunesDalController;
 import dal.MyTunesDalFacade;
 
@@ -12,11 +11,9 @@ import java.util.List;
 public class MyTunesLogicController implements MyTunesLogicFacade {
 
     private final MyTunesDalFacade dalFacade;
-    private LogicMediaPlayer logicMediaPlayer; // MEJORAR
 
     public MyTunesLogicController() {
         dalFacade = new MyTunesDalController();
-        logicMediaPlayer = new LogicMediaPlayer();
     }
 
 
@@ -84,11 +81,5 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     public Playlist updatePlaylist(Playlist playlist) {
         return dalFacade.updatePlaylist(playlist);
     }
-
-    @Override
-    public void playSong() {
-        logicMediaPlayer.playSong();
-    }
-
 
 }
