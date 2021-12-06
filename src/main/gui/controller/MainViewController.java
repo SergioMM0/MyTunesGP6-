@@ -1,150 +1,152 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
 package gui.controller;
 
 import be.Playlist;
 import be.Song;
-import gui.model.PlaylistModel;
+import com.sun.tools.javac.Main;
+import gui.model.SongModel;
+import java.io.IOException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Slider;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import gui.model.SongModel;
+import javafx.stage.Stage;
 
 public class MainViewController {
-
     @FXML
     private Label Label;
-
     @FXML
-    private ImageView btbtn;
-
+    private ImageView backtrackBtn;
     @FXML
-    private ImageView dbtn;
-
+    private Button deletePlaylistBtn;
     @FXML
-    private Button dpbtn;
-
+    private Button deleteSongBtn;
     @FXML
-    private Button dsbtn;
-
+    private ImageView downBtn;
     @FXML
-    private Button epbtn;
-
+    private Button editPlaylistBtn;
     @FXML
-    private Button esbtn;
-
+    private Button editSongBtn;
     @FXML
-    private ImageView mbtn;
-
+    private ImageView moveBtn;
     @FXML
-    private Button npbtn;
-
+    private Button newPlaylistBtn;
     @FXML
-    private Button nsbtn;
-
+    private Button newSongBtn;
     @FXML
-    private ImageView pbtn;
-
-    @FXML
-    private Button rmbtn;
-
-    @FXML
-    private ImageView sbtn;
-
-    @FXML
-    private TextField searchfilter;
-
-    @FXML
-    private ImageView ubtn;
-
-    @FXML
-    private Slider volslider;
-
-    @FXML
-    private ListView<Song> songListFromPlayList;
-
+    private ImageView playBtn;
     @FXML
     private TableView<Playlist> playlistList;
-
-
     @FXML
-    private Label welcomeText;
+    private Button removeBtn;
+    @FXML
+    private TextField searchfilter;
+    @FXML
+    private ImageView skipBtn;
+    @FXML
+    private ListView<Song> songListFromPlayList;
+    @FXML
+    private ImageView upBtn;
+    @FXML
+    private Slider volslider;
     @FXML
     private TableView<Song> songTableList;
     SongModel songModel = SongModel.getInstance();
 
-    @FXML
-    protected void onHelloButtonClick() {
-        songModel.getAllSongs();
+    public MainViewController() {
     }
 
+    @FXML
+    protected void onHelloButtonClick() {
+        this.songModel.getAllSongs();
+    }
 
     public void playSong(MouseEvent mouseEvent) {
-        songModel.playSong(songListFromPlayList.getSelectionModel().getSelectedItems());
+        this.songModel.playSong(this.songListFromPlayList.getSelectionModel().getSelectedItems());
     }
 
     public void previousSong(MouseEvent mouseEvent) {
-        if(songListFromPlayList.getSelectionModel().getSelectedIndex()>-1)
-            songModel.previousSong(songListFromPlayList.getItems().get(songListFromPlayList.getSelectionModel().getSelectedIndex()-1));
+        if (this.songListFromPlayList.getSelectionModel().getSelectedIndex() > -1) {
+            this.songModel.previousSong((Song)this.songListFromPlayList.getItems().get(this.songListFromPlayList.getSelectionModel().getSelectedIndex() - 1));
+        }
+
     }
 
     public void nextSong(MouseEvent mouseEvent) {
-        if(songListFromPlayList.getSelectionModel().getSelectedIndex()>-1)
-            songModel.nextSong(songListFromPlayList.getItems().get(songListFromPlayList.getSelectionModel().getSelectedIndex()+1));
+        if (this.songListFromPlayList.getSelectionModel().getSelectedIndex() > -1) {
+            this.songModel.nextSong((Song)this.songListFromPlayList.getItems().get(this.songListFromPlayList.getSelectionModel().getSelectedIndex() + 1));
+        }
+
     }
 
     public void changeVolume(DragEvent dragEvent) {
-        //TODO implement Volume Slider
     }
 
     public void showResult(KeyEvent keyEvent) {
-        songTableList.setItems(songModel.getResult(searchfilter.getText()));
+        this.songTableList.setItems(this.songModel.getResult(this.searchfilter.getText()));
     }
 
     public void addSong(MouseEvent mouseEvent) {
-        songListFromPlayList.getItems().add(songTableList.getSelectionModel().getSelectedItem());
-    }
-
-
-    public void editPlaylist(MouseEvent mouseEvent) {
-
-    }
-
-    public void deletePlaylist(MouseEvent mouseEvent) {
-
+        this.songListFromPlayList.getItems().add((Song)this.songTableList.getSelectionModel().getSelectedItem());
     }
 
     public void moveUp(MouseEvent mouseEvent) {
-
     }
 
     public void moveDown(MouseEvent mouseEvent) {
-
     }
 
-    public void removeSong(MouseEvent mouseEvent) {
-
+    public void removeSong(ActionEvent actionEvent) {
     }
 
-    public void editSong(KeyEvent keyEvent) {
-
+    public void editSong(ActionEvent actionEvent) {
     }
 
-    public void newSong(KeyEvent keyEvent) {
-
+    public void newSong(ActionEvent actionEvent) {
     }
 
-    public void deleteSong(KeyEvent keyEvent) {
-
+    public void deleteSong(ActionEvent actionEvent) {
     }
 
-    public void openNEPWindow(MouseEvent mouseEvent) {
+    @FXML
+    public void openNEPWindow(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("NewEditPlaylist"));
+        Parent root = (Parent)loader.load();
+        NewEditPlaylist newPlaylist = (NewEditPlaylist)loader.getController();
+        newPlaylist.setParentController(this);
+        Stage stage = new Stage();
+        stage.setTitle("New Playlist");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
-    public void newPlaylist(MouseEvent mouseEvent) {
+    public void editPlaylist(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("NewEditPlaylist"));
+        Parent root = (Parent)loader.load();
+        NewEditPlaylist newPlaylist = (NewEditPlaylist)loader.getController();
+        newPlaylist.setPlaylistName(this.playlistList.getSelectionModel().getSelectedItems());
+        newPlaylist.setParentController(this);
+        Stage stage = new Stage();
+        stage.setTitle("Edit Playlist");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 
-    public void closeNEPWindow(MouseEvent mouseEvent) {
+    public void deletePlaylist(ActionEvent actionEvent) {
     }
 }
