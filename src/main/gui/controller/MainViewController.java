@@ -3,148 +3,244 @@ package gui.controller;
 import be.Playlist;
 import be.Song;
 import gui.model.PlaylistModel;
-import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import gui.model.SongModel;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
-public class MainViewController {
+import java.io.File;
+import java.net.URL;
+import java.sql.Time;
+import java.util.List;
+import java.util.ResourceBundle;
 
-    @FXML
-    private Label Label;
+public class MainViewController implements Initializable {
 
-    @FXML
-    private ImageView btbtn;
-
-    @FXML
-    private ImageView dbtn;
-
-    @FXML
-    private Button dpbtn;
-
-    @FXML
-    private Button dsbtn;
-
-    @FXML
-    private Button epbtn;
-
-    @FXML
-    private Button esbtn;
-
-    @FXML
-    private ImageView mbtn;
+    private PlaylistModel playlistModel;
+    private SongModel songModel;
+    private MediaPlayer mediaPlayer;
+    private Media media;
+    private int currentTable;
+    private List<Song> allSongs;
 
     @FXML
-    private Button npbtn;
+    private TableView<Song> songsListView;
 
     @FXML
-    private Button nsbtn;
+    private TableColumn<Song, String> songArtistColumn;
 
     @FXML
-    private ImageView pbtn;
+    private TableColumn<Song, String> songCategoryColumn;
 
     @FXML
-    private Button rmbtn;
+    private TableColumn<Song, String> songTimeColumn;
 
     @FXML
-    private ImageView sbtn;
+    private TableView<Playlist> playlistListView;
 
     @FXML
-    private TextField searchfilter;
+    private TableColumn<Playlist, String> playlistNameColumn;
 
     @FXML
-    private ImageView ubtn;
+    private TableColumn<Playlist, Integer> playlistNSongsColumn;
 
     @FXML
-    private Slider volslider;
+    private TableColumn<Playlist, String> playlistTimeColumn;
 
     @FXML
-    private ListView<Song> songListFromPlayList;
+    private Button addSongToPlaylist;
 
     @FXML
-    private TableView<Playlist> playlistList;
-
-
-    @FXML
-    private Label welcomeText;
-    @FXML
-    private TableView<Song> songTableList;
-    SongModel songModel = SongModel.getInstance();
+    private Label currentlyPlayingSongLabel;
 
     @FXML
-    protected void onHelloButtonClick() {
-        songModel.getAllSongs();
+    private Button deleteFromPlaylist;
+
+    @FXML
+    private Button deletePlaylistButton;
+
+    @FXML
+    private Button editPlaylistButton;
+
+    @FXML
+    private TextField filterTextField;
+
+    @FXML
+    private Button moveDownButton;
+
+    @FXML
+    private Button moveUpButton;
+
+    @FXML
+    private Button newPlaylistButton;
+
+    @FXML
+    private Button newSongButton;
+
+    @FXML
+    private Button nextSongButton;
+
+    @FXML
+    private Button playSongButton;
+
+    @FXML
+    private Button previousSongButton;
+
+    @FXML
+    private Button searchButton;
+    /**
+     * TIME FOR SONGS
+     */
+
+    @FXML
+    private TableColumn<Song, String> songTitleColumn;
+
+    @FXML
+    private ListView<Song> songsOnPlaylistListView;
+
+    @FXML
+    private Slider volumeSlider;
+
+    public MainViewController() {
+        try {
+            playlistModel = new PlaylistModel();
+            songModel = new SongModel();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-
-    public void playSong(MouseEvent mouseEvent) {
-        songModel.playSong(songListFromPlayList.getSelectionModel().getSelectedItems());
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        updateSongTableView();
+        updatePLaylistTableView();
     }
 
-    public void previousSong(MouseEvent mouseEvent) {
-        if(songListFromPlayList.getSelectionModel().getSelectedIndex()>-1)
-            songModel.previousSong(songListFromPlayList.getItems().get(songListFromPlayList.getSelectionModel().getSelectedIndex()-1));
+    public void updateSongTableView(){
+        songsListView.getItems().clear();
+        songsListView.refresh();
+        songTitleColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        songArtistColumn.setCellValueFactory(new PropertyValueFactory<>("Artist"));
+        songCategoryColumn.setCellValueFactory(new PropertyValueFactory<>("Category"));
+        songTimeColumn.setCellValueFactory(new PropertyValueFactory<>("Duration"));
+        songsListView.getItems().setAll(songModel.getSongs());
     }
+    /*
+    @FXML
+    private TableColumn<Playlist, String> playlistNameColumn;
 
-    public void nextSong(MouseEvent mouseEvent) {
-        if(songListFromPlayList.getSelectionModel().getSelectedIndex()>-1)
-            songModel.nextSong(songListFromPlayList.getItems().get(songListFromPlayList.getSelectionModel().getSelectedIndex()+1));
-    }
+    @FXML
+    private TableColumn<Song, Integer> playlistNSongsColumn;
 
-    public void changeVolume(DragEvent dragEvent) {
-        //TODO implement Volume Slider
-    }
+    @FXML
+    private TableColumn<Song, String> playlistTimeColumn;
 
-    public void showResult(KeyEvent keyEvent) {
-        songTableList.setItems(songModel.getResult(searchfilter.getText()));
-    }
+    private int id;
+    private String name;
+    private String idOfSongsInPlaylist;
+    private int howManySongs;
+    private int totalReproductionTime;
+    */
 
-    public void addSong(MouseEvent mouseEvent) {
-        songListFromPlayList.getItems().add(songTableList.getSelectionModel().getSelectedItem());
-    }
-
-
-    public void editPlaylist(MouseEvent mouseEvent) {
-
-    }
-
-    public void deletePlaylist(MouseEvent mouseEvent) {
-
-    }
-
-    public void moveUp(MouseEvent mouseEvent) {
-
-    }
-
-    public void moveDown(MouseEvent mouseEvent) {
-
-    }
-
-    public void removeSong(MouseEvent mouseEvent) {
+    public void updatePLaylistTableView(){
+        playlistListView.getItems().clear();
+        playlistListView.refresh();
+        playlistNameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        playlistNSongsColumn.setCellValueFactory(new PropertyValueFactory<>("HowManySongs"));
+        playlistTimeColumn.setCellValueFactory(new PropertyValueFactory<>("TotalReproductionTime"));
+        playlistListView.getItems().setAll(playlistModel.getAllPlaylist());
 
     }
 
-    public void editSong(KeyEvent keyEvent) {
-
+    public void initMediaPlayer() {
+        media = new Media(new File(songModel.getFilePathOfCurrentPlayingSong()).toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+    }
+    //************************ TODO LATER
+    public String filePathOfNextSongInPlaylist(){
+        return null;
     }
 
-    public void newSong(KeyEvent keyEvent) {
-
+    public String filePathOfNextSongInAllSongs(){
+        return null;
     }
 
-    public void deleteSong(KeyEvent keyEvent) {
-
+    public void playSongFromPlaylist(MouseEvent mouseEvent) {
+        currentTable = 1;
     }
 
-    public void openNEPWindow(MouseEvent mouseEvent) {
+    public void playSongFromSongs(MouseEvent mouseEvent) {
+        currentTable = 2;
     }
 
-    public void newPlaylist(MouseEvent mouseEvent) {
+    @FXML
+    void addSongToPlaylist(ActionEvent event) {
+        playlistModel.addSongToPlaylist();
     }
 
-    public void closeNEPWindow(MouseEvent mouseEvent) {
+    //*********************** END OF TODO LATER
+
+    @FXML
+    void deletePlaylist(ActionEvent event) {
+        playlistModel.deletePlaylist();
     }
+
+    @FXML
+    void deleteSongFromPlaylist(ActionEvent event) {
+        playlistModel.deleteSongFromPlaylist();
+    }
+
+    @FXML
+    void handleVolume(MouseEvent event) {
+        //TODO
+    }
+
+    @FXML
+    void moveDownSongInPlaylist(ActionEvent event) {
+        playlistModel.moveDownSongInPlaylist();
+    }
+
+    @FXML
+    void moveUpSongInPlaylist(ActionEvent event) {
+        playlistModel.moveUpSongInPlaylist();
+    }
+
+    @FXML
+    void nextSong(ActionEvent event) {
+        if (currentTable == 1) {
+
+        }
+    }
+
+    @FXML
+    void playSong(ActionEvent event) {
+        mediaPlayer.play();
+    }
+
+    @FXML
+    void previousSong(ActionEvent event) {
+        //songModel.getPreviousSong();
+    }
+
+    @FXML
+    void searchSong(ActionEvent event) {
+        //TODO
+    }
+
+    @FXML
+    void searchSongTextField(ActionEvent event) {
+        //TODO
+    }
+
+    @FXML
+    void updatePlaylistButton(ActionEvent event) {
+        playlistModel.updatePlaylist();
+    }
+
 }

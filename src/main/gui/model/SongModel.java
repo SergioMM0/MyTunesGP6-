@@ -1,55 +1,27 @@
 package gui.model;
 
 import be.Song;
+import bll.MyTunesLogicController;
+import bll.MyTunesLogicFacade;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class SongModel {
-    // Static variable reference of single_instance
-    // of type Singleton
-    private static SongModel single_instance = null;
 
-    // Declaring a variable of type String
-    private List<Song> cachedSongs;
+    private final ObservableList<Song> songs;
+    private MyTunesLogicFacade logicFacade;
 
-    // Constructor
-    // Here we will be creating private constructor
-    // restricted to this class itself
-    private SongModel()
-    {
-        cachedSongs = new ArrayList<>();
-        //cahcedSongs = bllInterface.getAllSongs;
+    public SongModel(){
+    songs = FXCollections.observableArrayList();
+    logicFacade = new MyTunesLogicController();
+    songs.addAll(logicFacade.getAllSongs());
     }
 
-    // Static method
-    // Static method to create instance of Singleton class
-    public static SongModel getInstance()
-    {
-        if (single_instance == null)
-            single_instance = new SongModel();
-
-        return single_instance;
+    public ObservableList<Song> getSongs() {
+        return songs;
     }
 
-    public List<Song> getAllSongs(){
-        return cachedSongs;
-    }
-
-    public void playSong(ObservableList<Song> selectedItems) {
-
-    }
-
-    public void previousSong(Song song) {
-
-    }
-
-    public void nextSong(Song song) {
-
-    }
-
-    public ObservableList<Song> getResult(String text) {
+    public String getFilePathOfCurrentPlayingSong() {
         return null;
     }
 }
