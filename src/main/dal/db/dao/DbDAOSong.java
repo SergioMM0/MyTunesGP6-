@@ -25,7 +25,7 @@ public class DbDAOSong implements ISongRepository {
                         rs.getString("Title"),
                         rs.getString("Artist"),
                         rs.getString("Category"),
-                        rs.getInt("Duration"),
+                        rs.getString("Duration"),
                         rs.getString("FilePath")));
             }
         } catch (SQLException throwables) {
@@ -43,7 +43,7 @@ public class DbDAOSong implements ISongRepository {
             st.setString(1, song.getName());
             st.setString(2, song.getArtist());
             st.setString(3, song.getCategory());
-            st.setInt(4, song.getDuration());
+            st.setString(4, song.getDuration());
             st.setString(5, song.getFilePath());
             st.execute();
             ResultSet rs = st.getGeneratedKeys();
@@ -76,14 +76,14 @@ public class DbDAOSong implements ISongRepository {
         String name = song.getName();
         String artist = song.getArtist();
         String category = song.getCategory();
-        int duration = song.getDuration();
+        String duration = song.getDuration();
         String filepath = song.getFilePath();
         try(Connection connection = connectionProvider.getConnection()){
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1,name);
             st.setString(2,artist);
             st.setString(3,category);
-            st.setInt(4,duration);
+            st.setString(4,duration);
             st.setString(5,filepath);
             st.setInt(6,id);
             st.execute();
@@ -106,7 +106,7 @@ public class DbDAOSong implements ISongRepository {
                         rs.getString("Title"),
                         rs.getString("Artist"),
                         rs.getString("Category"),
-                        rs.getInt("Duration"),
+                        rs.getString("Duration"),
                         rs.getString("FilePath")
                 );
             }

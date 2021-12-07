@@ -6,11 +6,14 @@ import dal.MyTunesDalController;
 import dal.MyTunesDalFacade;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyTunesLogicController implements MyTunesLogicFacade {
 
     private final MyTunesDalFacade dalFacade;
+
+    private List<Song> allSongsDurationConverted;
 
     public MyTunesLogicController() {
         dalFacade = new MyTunesDalController();
@@ -19,7 +22,24 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
 
     @Override
     public List<Song> getAllSongs() {
-        return dalFacade.getAllSongs();
+        allSongsDurationConverted = new ArrayList<>();
+        for (Song song : dalFacade.getAllSongs()) {
+            convertSongDuration(song);
+            allSongsDurationConverted.add(song);
+        }
+        return allSongsDurationConverted;
+    }
+
+    private Song convertSongDuration(Song song) {
+        String oldDuration = song.getDuration();
+        if (!oldDuration.contains(":")) {
+            int intDuration = Integer.parseInt(oldDuration);
+            String nMinutes = String.valueOf(intDuration / 60);
+            String nSeconds = String.valueOf(intDuration % 60);
+            String newDuration = nMinutes + ":" + nSeconds;
+            song.setDuration(newDuration);
+        }
+        return song;
     }
 
     @Override
@@ -41,6 +61,8 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     public Song getSong(int id) throws SQLException {
         return dalFacade.getSong(id);
     }
+
+
 
     @Override
     public List<Playlist> getAllPlaylist() {
@@ -74,7 +96,7 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
 
     @Override
     public Playlist addSongToPlaylist(Playlist playlist, Song song) {
-        return dalFacade.addSongToPlaylist(playlist,song);
+        return dalFacade.addSongToPlaylist(playlist, song);
     }
 
     @Override

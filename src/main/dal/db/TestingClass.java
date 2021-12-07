@@ -10,7 +10,7 @@ import java.util.List;
 
 public class TestingClass {
     public static void main(String[] args) throws SQLException {
-        System.out.println(updatePlaylist());
+        addSong();
     }
 
     public static Playlist updatePlaylist(){
@@ -22,7 +22,7 @@ public class TestingClass {
     public static Playlist addSongToPlaylist(){
         DbDAOPlaylist db = new DbDAOPlaylist();
         Playlist p = new Playlist(12,"test","Miscojones",2332,899876);
-        Song s = new Song(900909,"AddedSong","eee","eee",122,"data.data.lel");
+        Song s = new Song(900909,"AddedSong","eee","eee","122","data.data.lel");
         return db.addSongToPlaylist(p,s);
     }
 
@@ -40,14 +40,14 @@ public class TestingClass {
 
     public static Song updateSong() throws SQLException {
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(22,"itWorks","Worked","Dubstep",555, "data/notanormaldata.mp3");
+        Song s = new Song(22,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3");
         db.updateSong(s);
         return s;
     }
 
     public static void deleteSong(){
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(24,"Hopefully","Maroon 5","Electronic",340, "data/data.mp3");
+        Song s = new Song(24,"Hopefully","Maroon 5","Electronic","340", "data/data.mp3");
         db.deleteSong(s);
     }
 
@@ -58,7 +58,7 @@ public class TestingClass {
 
     public static Song addSong() throws SQLException {
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(1,"Hopefully","Maroon 5","Electronic",340, "data/data.mp3");
+        Song s = new Song(1,"Spotless?","idk","classic","111", "data/song4.mp3");
         return db.addSong(s);
     }
 
@@ -97,7 +97,7 @@ public class TestingClass {
 
     public static Playlist getAndAddSongsFromPlaylist(){
         DbDAOPlaylist db = new DbDAOPlaylist();
-        Song s = new Song(123,"ee","eee","eee",31,"eee.data");
+        Song s = new Song(123,"ee","eee","eee","31","eee.data");
         Playlist p = new Playlist(3,"Study Music","0",0,0);
         return db.addSongToPlaylist(p,s);
     }

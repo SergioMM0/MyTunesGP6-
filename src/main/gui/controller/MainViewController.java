@@ -4,10 +4,12 @@ import be.Playlist;
 import be.Song;
 import gui.model.PlaylistModel;
 import gui.model.SongModel;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -15,6 +17,7 @@ import javafx.scene.media.MediaPlayer;
 import java.io.File;
 import java.net.URL;
 import java.sql.Time;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainViewController implements Initializable {
@@ -24,6 +27,7 @@ public class MainViewController implements Initializable {
     private MediaPlayer mediaPlayer;
     private Media media;
     private int currentTable;
+    private List<Song> allSongs;
 
     @FXML
     private TableView<Song> SongsListView; // Whole table of songs, do not write
@@ -92,7 +96,7 @@ public class MainViewController implements Initializable {
     private TableColumn<Song, String> songCategoryColumn;
 
     @FXML
-    private TableColumn<Song, Time> songTimeColumn;
+    private TableColumn<Song, String> songTimeColumn;
     /**
      * TIME FOR SONGS
      */
@@ -115,23 +119,42 @@ public class MainViewController implements Initializable {
         }
     }
 
-    /*
-    private File directory;
-    private File[] files;
-    private ArrayList<File> songs;
-    private MediaPlayer mediaPlayer;
-    private Media media;
-    */
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        initMediaPlayer();
+        updateSongTableView();
+    }
+
+    public void updateSongTableView(){
+        SongsListView.getItems().clear();
+        SongsListView.refresh();
+        songTitleColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        songArtistColumn.setCellValueFactory(new PropertyValueFactory<>("Artist"));
+        songCategoryColumn.setCellValueFactory(new PropertyValueFactory<>("Category"));
+        songTimeColumn.setCellValueFactory(new PropertyValueFactory<>("Duration"));
+        SongsListView.getItems().setAll(songModel.getSongs());
     }
 
     public void initMediaPlayer() {
         media = new Media(new File(songModel.getFilePathOfCurrentPlayingSong()).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
     }
+
+    public String filePathOfNextSongInPlaylist(){
+        return null;
+    }
+
+    public String filePathOfNextSongInAllSongs(){
+        return null;
+    }
+
+    public void playSongFromPlaylist(MouseEvent mouseEvent) {
+        currentTable = 1;
+    }
+
+    public void playSongFromSongs(MouseEvent mouseEvent) {
+        currentTable = 2;
+    }
+
 
     @FXML
     void addSongToPlaylist(ActionEvent event) {
@@ -195,11 +218,4 @@ public class MainViewController implements Initializable {
         playlistModel.updatePlaylist();
     }
 
-    public void playSongFromPlaylist(MouseEvent mouseEvent) {
-        currentTable = 1;
-    }
-
-    public void playSongFromSongs(MouseEvent mouseEvent) {
-        currentTable = 2;
-    }
 }
