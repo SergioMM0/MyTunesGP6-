@@ -1,1 +1,1 @@
- Music: https://www.bensound.com
+ Music credits: https://www.bensound.com
