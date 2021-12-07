@@ -30,7 +30,28 @@ public class MainViewController implements Initializable {
     private List<Song> allSongs;
 
     @FXML
-    private TableView<Song> SongsListView; // Whole table of songs, do not write
+    private TableView<Song> songsListView;
+
+    @FXML
+    private TableColumn<Song, String> songArtistColumn;
+
+    @FXML
+    private TableColumn<Song, String> songCategoryColumn;
+
+    @FXML
+    private TableColumn<Song, String> songTimeColumn;
+
+    @FXML
+    private TableView<Playlist> playlistListView;
+
+    @FXML
+    private TableColumn<Playlist, String> playlistNameColumn;
+
+    @FXML
+    private TableColumn<Playlist, Integer> playlistNSongsColumn;
+
+    @FXML
+    private TableColumn<Playlist, String> playlistTimeColumn;
 
     @FXML
     private Button addSongToPlaylist;
@@ -69,34 +90,10 @@ public class MainViewController implements Initializable {
     private Button playSongButton;
 
     @FXML
-    private TableColumn<Playlist, String> playlistNameColumn;
-
-    @FXML
-    private TableColumn<Song, Integer> playlistNSongsColumn;
-
-    @FXML
-    private TableColumn<Song, String> playlistTimeColumn;
-    /**
-     * TIME FOR PLAYLISTS
-     */
-
-    @FXML
-    private TableView<Playlist> playlistTableView; // Whole table of Playlist, do not write
-
-    @FXML
     private Button previousSongButton;
 
     @FXML
     private Button searchButton;
-
-    @FXML
-    private TableColumn<Song, String> songArtistColumn;
-
-    @FXML
-    private TableColumn<Song, String> songCategoryColumn;
-
-    @FXML
-    private TableColumn<Song, String> songTimeColumn;
     /**
      * TIME FOR SONGS
      */
@@ -122,23 +119,50 @@ public class MainViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         updateSongTableView();
+        updatePLaylistTableView();
     }
 
     public void updateSongTableView(){
-        SongsListView.getItems().clear();
-        SongsListView.refresh();
+        songsListView.getItems().clear();
+        songsListView.refresh();
         songTitleColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
         songArtistColumn.setCellValueFactory(new PropertyValueFactory<>("Artist"));
         songCategoryColumn.setCellValueFactory(new PropertyValueFactory<>("Category"));
         songTimeColumn.setCellValueFactory(new PropertyValueFactory<>("Duration"));
-        SongsListView.getItems().setAll(songModel.getSongs());
+        songsListView.getItems().setAll(songModel.getSongs());
+    }
+    /*
+    @FXML
+    private TableColumn<Playlist, String> playlistNameColumn;
+
+    @FXML
+    private TableColumn<Song, Integer> playlistNSongsColumn;
+
+    @FXML
+    private TableColumn<Song, String> playlistTimeColumn;
+
+    private int id;
+    private String name;
+    private String idOfSongsInPlaylist;
+    private int howManySongs;
+    private int totalReproductionTime;
+    */
+
+    public void updatePLaylistTableView(){
+        playlistListView.getItems().clear();
+        playlistListView.refresh();
+        playlistNameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        playlistNSongsColumn.setCellValueFactory(new PropertyValueFactory<>("HowManySongs"));
+        playlistTimeColumn.setCellValueFactory(new PropertyValueFactory<>("TotalReproductionTime"));
+        playlistListView.getItems().setAll(playlistModel.getAllPlaylist());
+
     }
 
     public void initMediaPlayer() {
         media = new Media(new File(songModel.getFilePathOfCurrentPlayingSong()).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
     }
-
+    //************************ TODO LATER
     public String filePathOfNextSongInPlaylist(){
         return null;
     }
@@ -155,11 +179,12 @@ public class MainViewController implements Initializable {
         currentTable = 2;
     }
 
-
     @FXML
     void addSongToPlaylist(ActionEvent event) {
         playlistModel.addSongToPlaylist();
     }
+
+    //*********************** END OF TODO LATER
 
     @FXML
     void deletePlaylist(ActionEvent event) {

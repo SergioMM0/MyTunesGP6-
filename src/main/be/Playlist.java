@@ -5,9 +5,9 @@ public class Playlist {
     private String name;
     private String idOfSongsInPlaylist;
     private int howManySongs;
-    private int totalReproductionTime;
+    private String totalReproductionTime;
 
-    public Playlist(int id, String name, String idOfSongsInPlaylist, int howManySongs, int totalReproductionTime) {
+    public Playlist(int id, String name, String idOfSongsInPlaylist, int howManySongs, String totalReproductionTime) {
         this.id = id;
         this.name = name;
         this.idOfSongsInPlaylist = idOfSongsInPlaylist;
@@ -43,11 +43,11 @@ public class Playlist {
         this.howManySongs = howManySongs;
     }
 
-    public int getTotalReproductionTime() {
+    public String getTotalReproductionTime() {
         return totalReproductionTime;
     }
 
-    public void setTotalReproductionTime(int totalReproductionTime) {
+    public void setTotalReproductionTime(String totalReproductionTime) {
         this.totalReproductionTime = totalReproductionTime;
     }
 

@@ -14,7 +14,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="841.0" style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.MainViewController">
    <children>
-      <TableView fx:id="playlistTableView" layoutX="43.0" layoutY="125.0" prefHeight="408.0" prefWidth="186.0">
+      <TableView fx:id="playlistListView" layoutX="43.0" layoutY="125.0" prefHeight="408.0" prefWidth="186.0">
         <columns>
           <TableColumn fx:id="playlistNameColumn" prefWidth="75.0" text="Name" />
           <TableColumn fx:id="playlistNSongsColumn" prefWidth="75.0" text="Songs" />
@@ -25,7 +25,7 @@
          </columnResizePolicy>
       </TableView>
       <ListView fx:id="songsOnPlaylistListView" layoutX="247.0" layoutY="125.0" onMouseClicked="#playSongFromPlaylist" prefHeight="408.0" prefWidth="200.0" />
-      <TableView fx:id="SongsListView" layoutX="518.0" layoutY="125.0" onMouseClicked="#playSongFromSongs" prefHeight="408.0" prefWidth="286.0">
+      <TableView fx:id="songsListView" layoutX="518.0" layoutY="125.0" onMouseClicked="#playSongFromSongs" prefHeight="408.0" prefWidth="286.0">
         <columns>
           <TableColumn fx:id="songTitleColumn" prefWidth="75.0" text="Title" />
           <TableColumn fx:id="songArtistColumn" prefWidth="75.0" text="Artist" />

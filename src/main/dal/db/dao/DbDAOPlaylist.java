@@ -26,10 +26,10 @@ public class DbDAOPlaylist implements IPLaylistRepository {
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
                 allPlaylists.add(new Playlist(rs.getInt("Id"),
-                        rs.getString("Name"),
+                        rs.getString("Title"),
                         rs.getString("IdOfSongsInPLaylist"),
                         rs.getInt("NumberOfSongs"),
-                        rs.getInt("TotalReproductionTime")));
+                        rs.getString("TotalReproductionTime")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -57,7 +57,7 @@ public class DbDAOPlaylist implements IPLaylistRepository {
             st.execute();
             ResultSet rs = st.getGeneratedKeys();
             rs.next();
-            addedPLaylist = new Playlist(rs.getInt(1), name, "null", 0, 0);
+            addedPLaylist = new Playlist(rs.getInt(1), name, "null", 0, "0");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -105,7 +105,7 @@ public class DbDAOPlaylist implements IPLaylistRepository {
                         rs.getString("Title"),
                         rs.getString("IdOfSongsInPLaylist"),
                         rs.getInt("NumberOfSongs"),
-                        rs.getInt("TotalReproductionTime"));
+                        rs.getString("TotalReproductionTime"));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -158,7 +158,7 @@ public class DbDAOPlaylist implements IPLaylistRepository {
             st.setString(1,playlist.getName());
             st.setString(2,playlist.getIdOfSongsInPlaylist());
             st.setInt(3,playlist.getHowManySongs());
-            st.setInt(4,playlist.getTotalReproductionTime());
+            st.setString(4,playlist.getTotalReproductionTime());
             st.setInt(5,playlist.getId());
             st.execute();
         } catch (SQLException throwables) {

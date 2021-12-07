@@ -13,16 +13,13 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
 
     private final MyTunesDalFacade dalFacade;
 
-    private List<Song> allSongsDurationConverted;
-
     public MyTunesLogicController() {
         dalFacade = new MyTunesDalController();
     }
 
-
     @Override
     public List<Song> getAllSongs() {
-        allSongsDurationConverted = new ArrayList<>();
+        List<Song> allSongsDurationConverted = new ArrayList<>();
         for (Song song : dalFacade.getAllSongs()) {
             convertSongDuration(song);
             allSongsDurationConverted.add(song);
@@ -62,8 +59,6 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
         return dalFacade.getSong(id);
     }
 
-
-
     @Override
     public List<Playlist> getAllPlaylist() {
         return dalFacade.getAllPlaylist();
@@ -72,6 +67,7 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     @Override
     public Playlist addPlaylist(String name) {
         return dalFacade.addPlaylist(name);
+        //remember to add duration of songs to variable
     }
 
     @Override
