@@ -11,7 +11,11 @@ import java.util.List;
 
 public class DbDAOPlaylist implements IPLaylistRepository {
 
-    private final DBConnectionProvider connectionProvider = new DBConnectionProvider();
+    private final DBConnectionProvider connectionProvider;
+
+    public DbDAOPlaylist(){
+         connectionProvider = new DBConnectionProvider();
+    }
 
     /**
      * Collect all Playlist from database
@@ -27,7 +31,6 @@ public class DbDAOPlaylist implements IPLaylistRepository {
             while (rs.next()) {
                 allPlaylists.add(new Playlist(rs.getInt("Id"),
                         rs.getString("Title"),
-                        rs.getString("IdOfSongsInPLaylist"),
                         rs.getInt("NumberOfSongs"),
                         rs.getString("TotalReproductionTime")));
             }
@@ -46,18 +49,17 @@ public class DbDAOPlaylist implements IPLaylistRepository {
     @Override
     public Playlist addPlaylist(String name) {
         Playlist addedPLaylist = null;
-        String sql = "INSERT INTO Playlist (Title, IdOfSongsInPLaylist, NumberOfSongs, TotalReproductionTime) " +
-                "VALUES (? , ? , ? , ?)";
+        String sql = "INSERT INTO Playlist (Title, NumberOfSongs, TotalReproductionTime) " +
+                "VALUES (? , ? , ?)";
         try (Connection connection = connectionProvider.getConnection()) {
             PreparedStatement st = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             st.setString(1, name);
-            st.setString(2, "0");
+            st.setInt(2, 0);
             st.setInt(3, 0);
-            st.setInt(4, 0);
             st.execute();
             ResultSet rs = st.getGeneratedKeys();
             rs.next();
-            addedPLaylist = new Playlist(rs.getInt(1), name, "null", 0, "0");
+            addedPLaylist = new Playlist(rs.getInt(1), name, 0, "0");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -103,7 +105,6 @@ public class DbDAOPlaylist implements IPLaylistRepository {
             while (rs.next()) {
                 searched = new Playlist(rs.getInt("Id"),
                         rs.getString("Title"),
-                        rs.getString("IdOfSongsInPLaylist"),
                         rs.getInt("NumberOfSongs"),
                         rs.getString("TotalReproductionTime"));
             }
@@ -114,56 +115,18 @@ public class DbDAOPlaylist implements IPLaylistRepository {
     }
 
     @Override
-    public Playlist getSongsFromPlaylist(Playlist playlist) {
-        Playlist recollected = null;
-        String sql = "SELECT IdOfSongsInPlaylist FROM Playlist WHERE Id=?";
-        try (Connection connection = connectionProvider.getConnection()) {
-            PreparedStatement st = connection.prepareStatement(sql);
-            st.setInt(1, playlist.getId());
-            ResultSet rs = st.executeQuery(); //now it works :_)
-            while (rs.next()) { //next() selects the NEXT row... :_)
-                recollected = new Playlist(playlist.getId(), playlist.getName(), rs.getString(1), playlist.getHowManySongs(), playlist.getTotalReproductionTime());
-            }
-            } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return recollected;
-    }
-
-    @Override
-    public Playlist addSongToPlaylist(Playlist playlist, Song song) {
-        Playlist finalPlaylist = null;
-        String idOfSongs = playlist.getIdOfSongsInPlaylist();
-        String idOfNewSong = String.valueOf(song.getId());
-        int idOfPlaylist = playlist.getId();
-        String sql = "UPDATE Playlist SET IdOfSongsInPlaylist = ? WHERE Id = ?";
-        try (Connection connection = connectionProvider.getConnection()) {
-            PreparedStatement st = connection.prepareStatement(sql);
-            st.setString(1, idOfSongs + "," + idOfNewSong);
-            st.setInt(2, idOfPlaylist);
-            st.execute(); //tested and working MAYBE give some problems in a future :_)
-            finalPlaylist = new Playlist(playlist.getId(), playlist.getName(), idOfSongs + "," + idOfNewSong, playlist.getHowManySongs(), playlist.getTotalReproductionTime());
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-        return finalPlaylist;
-    }
-
-    @Override
     public Playlist updatePlaylist(Playlist playlist) {
-        String sql = "UPDATE Playlist SET Title = ?, IdOfSongsInPLaylist = ? , NumberOfSongs = ? , TotalReproductionTime = ? WHERE Id = ?;";
+        String sql = "UPDATE Playlist SET Title = ?, NumberOfSongs = ? , TotalReproductionTime = ? WHERE Id = ?;";
         try (Connection connection = connectionProvider.getConnection()) {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1,playlist.getName());
-            st.setString(2,playlist.getIdOfSongsInPlaylist());
-            st.setInt(3,playlist.getHowManySongs());
-            st.setString(4,playlist.getTotalReproductionTime());
-            st.setInt(5,playlist.getId());
+            st.setInt(2,playlist.getHowManySongs());
+            st.setString(3,playlist.getTotalReproductionTime());
+            st.setInt(4,playlist.getId());
             st.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return new Playlist(playlist.getId(), playlist.getName(), playlist.getIdOfSongsInPlaylist(), playlist.getHowManySongs(), playlist.getTotalReproductionTime());
+        return new Playlist(playlist.getId(), playlist.getName(), playlist.getHowManySongs(), playlist.getTotalReproductionTime());
     }
 }

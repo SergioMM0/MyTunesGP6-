@@ -40,7 +40,7 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     }
 
     public Song currentSongPath(){
-
+        return null;
     }
 
     @Override
@@ -87,16 +87,6 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     @Override
     public Playlist getPlaylist(int id) {
         return dalFacade.getPlaylist(id);
-    }
-
-    @Override
-    public Playlist getSongsFromPlaylist(Playlist playlist) {
-        return dalFacade.getSongsFromPlaylist(playlist);
-    }
-
-    @Override
-    public Playlist addSongToPlaylist(Playlist playlist, Song song) {
-        return dalFacade.addSongToPlaylist(playlist, song);
     }
 
     @Override
