@@ -11,7 +11,11 @@ import java.util.List;
 
 public class DbDAOSong implements ISongRepository {
 
-    private final DBConnectionProvider connectionProvider = new DBConnectionProvider();
+    private final DBConnectionProvider connectionProvider;
+
+    public DbDAOSong(){
+         connectionProvider = new DBConnectionProvider();
+    }
 
     @Override
     public List<Song> getAllSongs() {

@@ -39,6 +39,10 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
         return song;
     }
 
+    public Song currentSongPath(){
+
+    }
+
     @Override
     public Song addSong(Song song) throws SQLException {
         return dalFacade.addSong(song);
