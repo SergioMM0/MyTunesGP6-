@@ -1,7 +1,6 @@
 package gui.model;
 
 import be.Playlist;
-import be.Song;
 import bll.MyTunesLogicController;
 import bll.MyTunesLogicFacade;
 import javafx.collections.FXCollections;

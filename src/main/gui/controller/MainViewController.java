@@ -131,22 +131,6 @@ public class MainViewController implements Initializable {
         songTimeColumn.setCellValueFactory(new PropertyValueFactory<>("Duration"));
         songsListView.getItems().setAll(songModel.getSongs());
     }
-    /*
-    @FXML
-    private TableColumn<Playlist, String> playlistNameColumn;
-
-    @FXML
-    private TableColumn<Song, Integer> playlistNSongsColumn;
-
-    @FXML
-    private TableColumn<Song, String> playlistTimeColumn;
-
-    private int id;
-    private String name;
-    private String idOfSongsInPlaylist;
-    private int howManySongs;
-    private int totalReproductionTime;
-    */
 
     public void updatePLaylistTableView(){
         playlistListView.getItems().clear();
