@@ -11,7 +11,15 @@ import java.util.List;
 
 public class TestingClass {
     public static void main(String[] args) throws SQLException {
-        addSongToPlaylist();
+        for(Song s : getSongsInPlaylist()){
+            System.out.println(s);
+        }
+    }
+
+    public static List<Song> getSongsInPlaylist(){
+        DbDAOSongsInPlaylistManager db = new DbDAOSongsInPlaylistManager();
+        Playlist p = new Playlist(1,"WorkingUpdate",123456,"7890");
+        return db.getSongsFromPlaylist(p);
     }
 
     public static void addSongToPlaylist(){

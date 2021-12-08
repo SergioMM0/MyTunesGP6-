@@ -11,5 +11,5 @@ public interface ISongsInPlaylistManager {
 
     List<Song> getSongsFromPlaylist(Playlist playlist);
 
-    void updateSongsInPlaylist(int idOfPlaylist,String[] idOfSongs);
+    void deleteSongOnPlaylist(Song song);
 }
