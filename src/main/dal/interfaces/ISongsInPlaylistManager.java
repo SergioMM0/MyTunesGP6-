@@ -9,7 +9,7 @@ public interface ISongsInPlaylistManager {
 
     void addSongToPlaylist(Playlist playlist, Song song);
 
-    List<Song> getSongsFromPlaylist(Playlist playlist);
-
     void deleteSongOnPlaylist(Song song);
+
+    List<Song> getAllSongsFromPlaylist(Playlist playlist);
 }

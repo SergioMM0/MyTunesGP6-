@@ -11,21 +11,26 @@ import java.util.List;
 
 public class TestingClass {
     public static void main(String[] args) throws SQLException {
-        for(Song s : getSongsInPlaylist()){
-            System.out.println(s);
-        }
+        addSong();
+    }
+
+    public static void deleteSongInPlaylist(){
+        DbDAOSongsInPlaylistManager db = new DbDAOSongsInPlaylistManager();
+        Song s = new Song(4,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3",0);
+        Playlist p = new Playlist(1,"WorkingUpdate",123456,"7890");
+        db.deleteSongOnPlaylist(s);
     }
 
     public static List<Song> getSongsInPlaylist(){
         DbDAOSongsInPlaylistManager db = new DbDAOSongsInPlaylistManager();
         Playlist p = new Playlist(1,"WorkingUpdate",123456,"7890");
-        return db.getSongsFromPlaylist(p);
+        return db.getAllSongsFromPlaylist(p);
     }
 
     public static void addSongToPlaylist(){
         DbDAOSongsInPlaylistManager db = new DbDAOSongsInPlaylistManager();
-        Playlist p = new Playlist(12,"WorkingUpdate",123456,"7890");
-        Song s = new Song(111,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3");
+        Playlist p = new Playlist(2,"WorkingUpdate",123456,"7890");
+        Song s = new Song(4,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3",0);
         db.addSongToPlaylist(p,s);
     }
 
@@ -43,14 +48,14 @@ public class TestingClass {
 
     public static Song updateSong() throws SQLException {
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(22,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3");
+        Song s = new Song(22,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3",0);
         db.updateSong(s);
         return s;
     }
 
     public static void deleteSong(){
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(24,"Hopefully","Maroon 5","Electronic","340", "data/data.mp3");
+        Song s = new Song(24,"Hopefully","Maroon 5","Electronic","340", "data/data.mp3",0);
         db.deleteSong(s);
     }
 
@@ -61,7 +66,7 @@ public class TestingClass {
 
     public static Song addSong() throws SQLException {
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(1,"Spotless?","idk","classic","111", "data/song4.mp3");
+        Song s = new Song(4,"yeahman","pianistFamous ","piano","356", "data/song3.mp3",0);
         return db.addSong(s);
     }
 

@@ -34,4 +34,6 @@ public interface MyTunesDalFacade {
     Playlist getPlaylist(int id);
 
     Playlist updatePlaylist(Playlist playlist);
+
+    List<Song> getAllSongsInPlaylist(Playlist playlist);
 }

@@ -94,4 +94,9 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
         return dalFacade.updatePlaylist(playlist);
     }
 
+    @Override
+    public List<Song> getAllSongsInPlaylist(Playlist playlist) {
+        return dalFacade.getAllSongsInPlaylist(playlist);
+    }
+
 }

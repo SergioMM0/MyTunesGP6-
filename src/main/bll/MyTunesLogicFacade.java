@@ -32,4 +32,7 @@ public interface MyTunesLogicFacade {
 
     Playlist updatePlaylist(Playlist playlist);
 
+    //**********
+
+    List<Song> getAllSongsInPlaylist(Playlist playlist);
 }

@@ -6,9 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="The FXML">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/be/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/be/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/ISongsInPlaylistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/ISongsInPlaylistManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/model/SongsInPlaylistManagerModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/SongsInPlaylistManagerModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +55,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="liberica-17" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SECURED/Sneaky/MyTunes-master" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/MyTunesGP6" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -65,7 +74,7 @@
       <recent name="gui.view" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestingClass">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="InterfaceModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.model.InterfaceModel" />
       <module name="MyTunesGP6" />
@@ -101,8 +110,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestingClass" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.TestingClass" />
         <item itemvalue="Application.InterfaceModel" />
       </list>
     </recent_temporary>
@@ -143,7 +152,7 @@
       <workItem from="1638887998112" duration="14028000" />
       <workItem from="1638909688751" duration="186000" />
       <workItem from="1638917452723" duration="3136000" />
-      <workItem from="1638955469363" duration="10153000" />
+      <workItem from="1638955469363" duration="21973000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>

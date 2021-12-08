@@ -19,11 +19,12 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
 
     @Override
     public void addSongToPlaylist(Playlist playlist, Song song) {
-        String sql = "INSERT INTO SongsInPlaylist(IdOfPlaylist,IdOfSongInPlaylist) VALUES (?,?)";
+        String sql = "INSERT INTO SongsInPlaylist(IdOfPlaylist,IdOfSongInPlaylist, Position) VALUES (?,?,?)";
         try (Connection connection = dbConnectionProvider.getConnection()) {
             PreparedStatement st = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             st.setInt(1, playlist.getId());
             st.setInt(2, song.getId());
+            st.setInt(3, song.getPosition());
             st.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -31,7 +32,7 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
     }
 
     @Override
-    public List<Song> getSongsFromPlaylist(Playlist playlist) {
+    public List<Song> getAllSongsFromPlaylist(Playlist playlist) {
         List<Song> songsInPlaylist = new ArrayList<>();
         List<Integer> idsOfSongsInPlaylist = new ArrayList<>();
         String sql = "SELECT (IdOfSongInPlaylist) FROM SongsInPLaylist WHERE IdOfPlaylist = ?;";
@@ -49,11 +50,11 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
         String sql2 = "SELECT Song.Id AS SongID, Song.Title, Song.Artist, Song.Category, Song.Duration, Song.FilePath FROM Song INNER JOIN SongsInPlaylist ON IdOfSongInPlaylist = Song.Id WHERE SongsInPLaylist.IdOfPlaylist = ?;";
         try (Connection connection = dbConnectionProvider.getConnection()) {
             PreparedStatement st = connection.prepareStatement(sql2, Statement.RETURN_GENERATED_KEYS);
-            st.setInt(1,playlist.getId());
+            st.setInt(1, playlist.getId());
             st.execute();
             ResultSet rs = st.getResultSet();
-            while (rs.next()){
-                songsInPlaylist.add(new Song(rs.getInt("SongID"),rs.getString("Title"),rs.getString("Artist"),rs.getString("Category"),rs.getString("Duration"),rs.getString("FilePath")));
+            while (rs.next()) {
+                songsInPlaylist.add(new Song(rs.getInt("SongID"), rs.getString("Title"), rs.getString("Artist"), rs.getString("Category"), rs.getString("Duration"), rs.getString("FilePath"),rs.getInt("Position")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -64,7 +65,13 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
 
     @Override
     public void deleteSongOnPlaylist(Song song) {
-        String sql = "DELETE FROM SongsInPLaylist WHERE IdOfSongInPlaylist = ?";
+        String sql = "DELETE FROM SongsInPLaylist WHERE Position = ?";
+        try (Connection connection = dbConnectionProvider.getConnection()) {
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1, song.getPosition());
+            st.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
-
 }

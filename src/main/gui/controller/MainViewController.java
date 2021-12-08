@@ -4,6 +4,7 @@ import be.Playlist;
 import be.Song;
 import gui.model.PlaylistModel;
 import gui.model.SongModel;
+import gui.model.SongsInPlaylistManagerModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,9 +25,11 @@ public class MainViewController implements Initializable {
 
     private PlaylistModel playlistModel;
     private SongModel songModel;
+    private SongsInPlaylistManagerModel songsInPlaylistManagerModel;
     private MediaPlayer mediaPlayer;
     private Media media;
     private int currentTable;
+    private Playlist selected;
     private List<Song> allSongs;
 
     @FXML
@@ -94,9 +97,6 @@ public class MainViewController implements Initializable {
 
     @FXML
     private Button searchButton;
-    /**
-     * TIME FOR SONGS
-     */
 
     @FXML
     private TableColumn<Song, String> songTitleColumn;
@@ -111,6 +111,7 @@ public class MainViewController implements Initializable {
         try {
             playlistModel = new PlaylistModel();
             songModel = new SongModel();
+            songsInPlaylistManagerModel = new SongsInPlaylistManagerModel();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -141,6 +142,17 @@ public class MainViewController implements Initializable {
         playlistListView.getItems().setAll(playlistModel.getAllPlaylist());
 
     }
+
+    @FXML
+    void selectPlaylist(MouseEvent event) {
+        selected = playlistListView.getSelectionModel().getSelectedItem();
+        populateSongsOnPlaylistview(selected);
+    }
+
+    public void populateSongsOnPlaylistview(Playlist playlist){
+        songsOnPlaylistListView.getItems().setAll(songsInPlaylistManagerModel.getAllSongsInPlaylist(playlist));
+    }
+
 
     public void initMediaPlayer() {
         media = new Media(new File(songModel.getFilePathOfCurrentPlayingSong()).toURI().toString());
