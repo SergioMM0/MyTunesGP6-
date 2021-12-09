@@ -1,7 +1,6 @@
 package dal.db.dao;
 
 import be.Playlist;
-import be.Song;
 import dal.db.DBConnectionProvider;
 import dal.interfaces.IPLaylistRepository;
 
@@ -47,8 +46,7 @@ public class DbDAOPlaylist implements IPLaylistRepository {
      */
 
     @Override
-    public Playlist addPlaylist(String name) {
-        Playlist addedPLaylist = null;
+    public void addPlaylist(String name) {
         String sql = "INSERT INTO Playlist (Title, NumberOfSongs, TotalReproductionTime) " +
                 "VALUES (? , ? , ?)";
         try (Connection connection = connectionProvider.getConnection()) {
@@ -59,11 +57,9 @@ public class DbDAOPlaylist implements IPLaylistRepository {
             st.execute();
             ResultSet rs = st.getGeneratedKeys();
             rs.next();
-            addedPLaylist = new Playlist(rs.getInt(1), name, 0, "0");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return addedPLaylist;
     }
 
     @Override

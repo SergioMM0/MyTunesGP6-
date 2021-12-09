@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface ISongsInPlaylistManager {
 
-    void addSongToPlaylist(Playlist playlist, Song song);
+    void addSongToPlaylist(Playlist playlist, Song song, int position);
 
-    void deleteSongOnPlaylist(Song song);
+    void deleteSongOnPlaylist(int position);
 
     List<Song> getAllSongsFromPlaylist(Playlist playlist);
 }

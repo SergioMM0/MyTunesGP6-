@@ -8,14 +8,20 @@ import gui.model.SongsInPlaylistManagerModel;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Time;
 import java.util.List;
@@ -29,7 +35,7 @@ public class MainViewController implements Initializable {
     private MediaPlayer mediaPlayer;
     private Media media;
     private int currentTable;
-    private Playlist selected;
+    private Playlist selectedP;
     private List<Song> allSongs;
 
     @FXML
@@ -55,6 +61,9 @@ public class MainViewController implements Initializable {
 
     @FXML
     private TableColumn<Playlist, String> playlistTimeColumn;
+
+    @FXML
+    private Button refreshPlaylistButton; //done
 
     @FXML
     private Button addSongToPlaylist;
@@ -140,18 +149,36 @@ public class MainViewController implements Initializable {
         playlistNSongsColumn.setCellValueFactory(new PropertyValueFactory<>("HowManySongs"));
         playlistTimeColumn.setCellValueFactory(new PropertyValueFactory<>("TotalReproductionTime"));
         playlistListView.getItems().setAll(playlistModel.getAllPlaylist());
+    }
 
+    @FXML
+    void refreshPlaylist(ActionEvent event) {
+        updatePLaylistTableView();
     }
 
     @FXML
     void selectPlaylist(MouseEvent event) {
-        selected = playlistListView.getSelectionModel().getSelectedItem();
-        populateSongsOnPlaylistview(selected);
+        /*
+        songsOnPlaylistListView.getItems().clear();
+        songsOnPlaylistListView.refresh();
+        selectedP = playlistListView.getSelectionModel().getSelectedItem();
+        songsOnPlaylistListView.getItems().setAll(songsInPlaylistManagerModel.getSongs());
+        */
     }
 
-    public void populateSongsOnPlaylistview(Playlist playlist){
-        songsOnPlaylistListView.getItems().setAll(songsInPlaylistManagerModel.getAllSongsInPlaylist(playlist));
+    // NOW IT DOES NOT WORK
+    public Playlist getPlaylist(){
+        //return playlistListView.getSelectionModel().getSelectedItem();
+        return null;
     }
+/*
+    public void populateSongsOnPlaylistview(Playlist playlist){
+        songsOnPlaylistListView.getItems().clear();
+        songsOnPlaylistListView.refresh();
+        songsOnPlaylistListView.getItems().setAll(songsInPlaylistManagerModel.getSongs());
+    }
+    */
+
 
 
     public void initMediaPlayer() {
@@ -184,7 +211,27 @@ public class MainViewController implements Initializable {
 
     @FXML
     void deletePlaylist(ActionEvent event) {
-        playlistModel.deletePlaylist();
+        playlistModel.deletePlaylist(playlistListView.getSelectionModel().getSelectedItem());
+        updatePLaylistTableView();
+    }
+    @FXML
+    void openNewPlaylistView(ActionEvent event) {
+            Parent root;
+            try {
+                root = FXMLLoader.load(getClass().getClassLoader().getResource("gui/view/NewPlaylistView.fxml"));
+                Stage stage = new Stage();
+                stage.setTitle("Add playlist");
+                stage.setScene(new Scene(root, 405, 270));
+                stage.show();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+    }
+
+    @FXML
+    void openEditPlaylistView(ActionEvent event) {
+
     }
 
     @FXML

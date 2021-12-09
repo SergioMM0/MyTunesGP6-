@@ -9,16 +9,16 @@ import javafx.stage.Stage;
 
 public class NewPlaylistController {
 
-    private PlaylistModel playlistModel;
-
     @FXML
-    private Button addPlaylistButton; //It works I guess :_)
+    private Button addPlaylistButton;
 
     @FXML
     private Button closeWindowButton;
 
     @FXML
     private TextField nameOfNewPlaylist;
+
+    private PlaylistModel playlistModel;
 
     public NewPlaylistController(){
         try{
@@ -31,14 +31,19 @@ public class NewPlaylistController {
     @FXML
     void addPlaylist(ActionEvent event) {
         if(nameOfNewPlaylist != null){
-            playlistModel.addPlaylist();
+            String newPlaylist = nameOfNewPlaylist.getText();
+            playlistModel.addPlaylist(newPlaylist);
+            closeWindow();
         }
     }
 
     @FXML
     void closeWindow(ActionEvent event) {
+        closeWindow();
+    }
+
+    private void closeWindow(){
         Stage st = (Stage) closeWindowButton.getScene().getWindow();
         st.close();
     }
-
 }

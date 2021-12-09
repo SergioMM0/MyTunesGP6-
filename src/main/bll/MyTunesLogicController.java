@@ -69,9 +69,8 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     }
 
     @Override
-    public Playlist addPlaylist(String name) {
-        return dalFacade.addPlaylist(name);
-        //remember to add duration of songs to variable
+    public void addPlaylist(String name) {
+        dalFacade.addPlaylist(name);
     }
 
     @Override

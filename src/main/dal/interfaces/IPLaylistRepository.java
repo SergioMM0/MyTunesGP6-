@@ -10,7 +10,7 @@ public interface IPLaylistRepository {
 
     List<Playlist> getAllPlaylist();
 
-    Playlist addPlaylist(String name);
+    void addPlaylist(String name);
 
     void deletePlaylist(Playlist playlist);
 

@@ -55,8 +55,8 @@ public class MyTunesDalController implements MyTunesDalFacade {
     }
 
     @Override
-    public Playlist addPlaylist(String name) {
-        return playlistRepository.addPlaylist(name);
+    public void addPlaylist(String name) {
+        playlistRepository.addPlaylist(name);
     }
 
     @Override

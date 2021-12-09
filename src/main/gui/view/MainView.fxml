@@ -43,8 +43,8 @@
          <effect>
             <Glow />
          </effect></Slider>
-      <Button fx:id="newPlaylistButton" layoutX="43.0" layoutY="544.0" mnemonicParsing="false" text="New" />
-      <Button fx:id="editPlaylistButton" layoutX="110.0" layoutY="544.0" mnemonicParsing="false" onAction="#updatePlaylistButton" text="Edit" />
+      <Button fx:id="newPlaylistButton" layoutX="43.0" layoutY="544.0" mnemonicParsing="false" onAction="#openNewPlaylistView" text="New" />
+      <Button fx:id="editPlaylistButton" layoutX="110.0" layoutY="544.0" mnemonicParsing="false" onAction="#openEditPlaylistView" text="Edit" />
       <Button fx:id="deletePlaylistButton" layoutX="181.0" layoutY="544.0" mnemonicParsing="false" onAction="#deletePlaylist" text="Delete" />
       <Button fx:id="moveUpButton" layoutX="247.0" layoutY="544.0" mnemonicParsing="false" onAction="#moveUpSongInPlaylist" text="Up" />
       <Button fx:id="deleteFromPlaylist" layoutX="321.0" layoutY="544.0" mnemonicParsing="false" onAction="#deleteSongFromPlaylist" text="Delete" />
@@ -100,5 +100,6 @@
             <Glow />
          </effect>
       </Text>
+      <Button fx:id="refreshPlaylistButton" layoutX="202.0" layoutY="95.0" mnemonicParsing="false" onAction="#refreshPlaylist" prefHeight="20.0" prefWidth="2.0" text="Button" />
    </children>
 </AnchorPane>

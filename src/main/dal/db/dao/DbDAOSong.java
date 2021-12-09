@@ -30,8 +30,7 @@ public class DbDAOSong implements ISongRepository {
                         rs.getString("Artist"),
                         rs.getString("Category"),
                         rs.getString("Duration"),
-                        rs.getString("FilePath"),
-                        rs.getInt("Position")));
+                        rs.getString("FilePath")));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -42,7 +41,7 @@ public class DbDAOSong implements ISongRepository {
     @Override
     public Song addSong(Song song) throws SQLException {
         Song addedSong = null;
-        String sql = ("INSERT INTO Song(Title, Artist, Category, Duration, FilePath, Position) VALUES (?,?,?,?,?,?)");
+        String sql = ("INSERT INTO Song(Title, Artist, Category, Duration, FilePath) VALUES (?,?,?,?,?)");
         try (Connection connection = connectionProvider.getConnection()) {
             PreparedStatement st = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             st.setString(1, song.getName());
@@ -50,12 +49,11 @@ public class DbDAOSong implements ISongRepository {
             st.setString(3, song.getCategory());
             st.setString(4, song.getDuration());
             st.setString(5, song.getFilePath());
-            st.setInt(6,song.getPosition());
             st.execute();
             ResultSet rs = st.getGeneratedKeys();
             rs.next();
                 addedSong = new Song(rs.getInt(1 ),song.getName(), song.getArtist(),
-                            song.getCategory(), song.getDuration(), song.getFilePath(),song.getPosition());
+                            song.getCategory(), song.getDuration(), song.getFilePath());
         } catch (SQLServerException throwables) {
             throwables.printStackTrace();
         }
@@ -77,14 +75,13 @@ public class DbDAOSong implements ISongRepository {
 
     @Override
     public void updateSong(Song song) throws SQLException {
-        String sql = ("UPDATE Song SET Title = ? , Artist = ? , Category = ? , Duration = ? , FilePath = ?, Position = ? WHERE Id = ?");
+        String sql = ("UPDATE Song SET Title = ? , Artist = ? , Category = ? , Duration = ? , FilePath = ? WHERE Id = ?");
         int id = song.getId();
         String name = song.getName();
         String artist = song.getArtist();
         String category = song.getCategory();
         String duration = song.getDuration();
         String filepath = song.getFilePath();
-        int position = song.getPosition();
         try(Connection connection = connectionProvider.getConnection()){
             PreparedStatement st = connection.prepareStatement(sql);
             st.setString(1,name);
@@ -92,8 +89,7 @@ public class DbDAOSong implements ISongRepository {
             st.setString(3,category);
             st.setString(4,duration);
             st.setString(5,filepath);
-            st.setInt(6,position);
-            st.setInt(7,id);
+            st.setInt(6,id);
             st.execute();
         } catch (SQLServerException throwables) {
             throwables.printStackTrace();
@@ -115,8 +111,7 @@ public class DbDAOSong implements ISongRepository {
                         rs.getString("Artist"),
                         rs.getString("Category"),
                         rs.getString("Duration"),
-                        rs.getString("FilePath"),
-                        rs.getInt("Position")
+                        rs.getString("FilePath")
                 );
             }
         } catch (SQLServerException throwables) {
