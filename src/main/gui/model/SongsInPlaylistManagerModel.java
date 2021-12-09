@@ -1,6 +1,5 @@
 package gui.model;
 
-import be.Playlist;
 import be.Song;
 import bll.MyTunesLogicController;
 import bll.MyTunesLogicFacade;
@@ -21,7 +20,7 @@ public class SongsInPlaylistManagerModel {
         logicFacade = new MyTunesLogicController();
         controller = new MainViewController();
         songs = FXCollections.observableArrayList();
-        //songs.addAll(logicFacade.getAllSongsInPlaylist(controller.getPlaylist()));
+        songs.addAll(logicFacade.getAllSongsInPlaylist(controller.getPlaylist()));
     }
     public ObservableList<Song> getSongs(){
         return songs;

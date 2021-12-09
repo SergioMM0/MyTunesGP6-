@@ -158,26 +158,24 @@ public class MainViewController implements Initializable {
 
     @FXML
     void selectPlaylist(MouseEvent event) {
-        /*
+
         songsOnPlaylistListView.getItems().clear();
         songsOnPlaylistListView.refresh();
         selectedP = playlistListView.getSelectionModel().getSelectedItem();
         songsOnPlaylistListView.getItems().setAll(songsInPlaylistManagerModel.getSongs());
-        */
+
     }
 
-    // NOW IT DOES NOT WORK
     public Playlist getPlaylist(){
-        //return playlistListView.getSelectionModel().getSelectedItem();
-        return null;
+        return playlistListView.getSelectionModel().getSelectedItem();
     }
-/*
+
     public void populateSongsOnPlaylistview(Playlist playlist){
         songsOnPlaylistListView.getItems().clear();
         songsOnPlaylistListView.refresh();
         songsOnPlaylistListView.getItems().setAll(songsInPlaylistManagerModel.getSongs());
     }
-    */
+
 
 
 
