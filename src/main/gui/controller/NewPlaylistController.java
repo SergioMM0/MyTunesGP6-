@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 
 public class NewPlaylistController {
 
+    public Button renamePlaylistButton;
     @FXML
     private Button addPlaylistButton;
 

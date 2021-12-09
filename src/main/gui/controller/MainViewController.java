@@ -4,8 +4,6 @@ import be.Playlist;
 import be.Song;
 import gui.model.PlaylistModel;
 import gui.model.SongModel;
-import gui.model.SongsInPlaylistManagerModel;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +29,6 @@ public class MainViewController implements Initializable {
 
     private PlaylistModel playlistModel;
     private SongModel songModel;
-    private SongsInPlaylistManagerModel songsInPlaylistManagerModel;
     private MediaPlayer mediaPlayer;
     private Media media;
     private int currentTable;
@@ -120,7 +117,6 @@ public class MainViewController implements Initializable {
         try {
             playlistModel = new PlaylistModel();
             songModel = new SongModel();
-            songsInPlaylistManagerModel = new SongsInPlaylistManagerModel();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -159,11 +155,6 @@ public class MainViewController implements Initializable {
     @FXML
     void selectPlaylist(MouseEvent event) {
 
-        songsOnPlaylistListView.getItems().clear();
-        songsOnPlaylistListView.refresh();
-        selectedP = playlistListView.getSelectionModel().getSelectedItem();
-        songsOnPlaylistListView.getItems().setAll(songsInPlaylistManagerModel.getSongs());
-
     }
 
     public Playlist getPlaylist(){
@@ -171,9 +162,7 @@ public class MainViewController implements Initializable {
     }
 
     public void populateSongsOnPlaylistview(Playlist playlist){
-        songsOnPlaylistListView.getItems().clear();
-        songsOnPlaylistListView.refresh();
-        songsOnPlaylistListView.getItems().setAll(songsInPlaylistManagerModel.getSongs());
+
     }
 
 
