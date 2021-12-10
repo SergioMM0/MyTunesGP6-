@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="The FXML">
-      <change afterPath="$PROJECT_DIR$/src/main/gui/model/SPModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/model/SongModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/SongModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +166,7 @@
       <workItem from="1639088264489" duration="1016000" />
       <workItem from="1639089315808" duration="8000" />
       <workItem from="1639132169380" duration="8655000" />
-      <workItem from="1639146707488" duration="1307000" />
+      <workItem from="1639146707488" duration="1645000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>
@@ -225,20 +221,6 @@
     <MESSAGE value="The FXML" />
     <MESSAGE value="." />
     <option name="LAST_COMMIT_MESSAGE" value="." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/gui/controller/MainViewController.java</url>
-          <line>185</line>
-          <properties class="gui.controller.MainViewController" method="openNewPlaylistView">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MyTunesGP6$Main.ic" NAME="Main Coverage Results" MODIFIED="1639065111503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

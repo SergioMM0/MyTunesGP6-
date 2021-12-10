@@ -26,10 +26,7 @@ public class MainViewController implements Initializable {
 
     private PlaylistModel playlistModel;
     private SongModel songModel;
-    private MediaPlayer mediaPlayer;
-    private Media media;
     private Playlist selectedP;
-    private List<Song> allSongs;
 
     @FXML
     private TableView<Song> songsListView;
@@ -159,11 +156,6 @@ public class MainViewController implements Initializable {
         selectedP = playlistListView.getSelectionModel().getSelectedItem();
     }
 
-    public void initMediaPlayer() {
-        //media = new Media(new File(songModel.getFilePathOfCurrentPlayingSong()).toURI().toString());
-        mediaPlayer = new MediaPlayer(media);
-    }
-
     @FXML
     void addSongToPlaylist(ActionEvent event) {
         playlistModel.addSongToPlaylist();
@@ -221,7 +213,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     void handleVolume(MouseEvent event) {
-        
+
     }
 
     @FXML
@@ -240,7 +232,6 @@ public class MainViewController implements Initializable {
 
     @FXML
     void playSong(ActionEvent event) {
-        mediaPlayer.play();
     }
 
     @FXML
