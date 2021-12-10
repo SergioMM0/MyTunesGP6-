@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -152,23 +153,20 @@ public class MainViewController implements Initializable {
         updatePLaylistTableView();
     }
 
+    private final List<Playlist> playlists = new ArrayList<>(1);
+
     @FXML
     void selectPlaylist(MouseEvent event) {
-
+        selectedP = playlistListView.getSelectionModel().getSelectedItem();
+        playlists.add(selectedP);
     }
+
 
     public Playlist getPlaylist(){
-        selectedP = playlistListView.getSelectionModel().getSelectedItem();
-        Playlist choosen = selectedP;
-        return choosen;
+        Playlist thisP = playlists.get(0);
+        int id = thisP.getId();
+        return playlistModel.getPlaylist(id);
     }
-
-    public void populateSongsOnPlaylistview(Playlist playlist){
-
-    }
-
-
-
 
     public void initMediaPlayer() {
         media = new Media(new File(songModel.getFilePathOfCurrentPlayingSong()).toURI().toString());
@@ -224,7 +222,7 @@ public class MainViewController implements Initializable {
         try{
             root = FXMLLoader.load(getClass().getClassLoader().getResource("gui/view/EditPlaylistView.fxml"));
             Stage stage = new Stage();
-            stage.setTitle("Add playlist");
+            stage.setTitle("Edit selected playlist");
             stage.setScene(new Scene(root, 405, 270));
             stage.show();
 

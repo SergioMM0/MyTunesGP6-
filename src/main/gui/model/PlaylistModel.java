@@ -46,7 +46,11 @@ public class PlaylistModel {
     public void updatePlaylist() {
     }
 
-    public void renamePlaylist(Playlist playlist) {
+    public void renamePlaylist(Playlist playlist){
+        logicFacade.renamePlaylist(playlist);
+    }
 
+    public Playlist getPlaylist(int id) {
+        return logicFacade.getPlaylist(id);
     }
 }

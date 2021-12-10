@@ -47,8 +47,7 @@ public class EditPlaylistController {
 
     @FXML
     void renamePlaylistACT(ActionEvent event) {
-        Playlist p = mController.getPlaylist();
-        model.renamePlaylist(p);
+        model.renamePlaylist(mController.getPlaylist());
         closeWindow();
     }
 
