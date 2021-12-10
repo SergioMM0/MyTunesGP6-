@@ -17,7 +17,6 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
@@ -165,15 +164,10 @@ public class MainViewController implements Initializable {
         mediaPlayer = new MediaPlayer(media);
     }
 
-    //************************ TODO LATER
-
-
     @FXML
     void addSongToPlaylist(ActionEvent event) {
         playlistModel.addSongToPlaylist();
     }
-
-    //*********************** END OF TODO LATER
 
     @FXML
     void deletePlaylist(ActionEvent event) {
@@ -218,8 +212,6 @@ public class MainViewController implements Initializable {
         stage.setTitle("Edit selected playlist");
         stage.setScene(new Scene(root, 405, 270));
         stage.show();
-
-
     }
 
     @FXML
@@ -229,7 +221,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     void handleVolume(MouseEvent event) {
-        //TODO
+        
     }
 
     @FXML
@@ -253,22 +245,17 @@ public class MainViewController implements Initializable {
 
     @FXML
     void previousSong(ActionEvent event) {
-        //songModel.getPreviousSong();
+
     }
 
     @FXML
     void searchSong(ActionEvent event) {
-        //TODO
+
     }
 
     @FXML
     void searchSongTextField(ActionEvent event) {
-        //TODO
-    }
 
-    @FXML
-    void updatePlaylistButton(ActionEvent event) {
-       // playlistModel.updatePlaylist();
     }
 
     public void playSongFromPlaylist(MouseEvent mouseEvent) {
