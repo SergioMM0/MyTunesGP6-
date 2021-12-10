@@ -8,7 +8,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -21,8 +20,6 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Time;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -129,7 +126,7 @@ public class MainViewController implements Initializable {
         updatePLaylistTableView();
     }
 
-    public void updateSongTableView(){
+    public void updateSongTableView() {
         songsListView.getItems().clear();
         songsListView.refresh();
         songTitleColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
@@ -139,7 +136,7 @@ public class MainViewController implements Initializable {
         songsListView.getItems().setAll(songModel.getSongs());
     }
 
-    public void updatePLaylistTableView(){
+    public void updatePLaylistTableView() {
         playlistListView.getItems().clear();
         playlistListView.refresh();
         playlistNameColumn.setCellValueFactory(new PropertyValueFactory<>("Name"));
@@ -153,31 +150,22 @@ public class MainViewController implements Initializable {
         updatePLaylistTableView();
     }
 
-    private final List<Playlist> playlists = new ArrayList<>(1);
-
     @FXML
     void selectPlaylist(MouseEvent event) {
         selectedP = playlistListView.getSelectionModel().getSelectedItem();
-        playlists.add(selectedP);
-    }
-
-
-    public Playlist getPlaylist(){
-        Playlist thisP = playlists.get(0);
-        int id = thisP.getId();
-        return playlistModel.getPlaylist(id);
     }
 
     public void initMediaPlayer() {
         media = new Media(new File(songModel.getFilePathOfCurrentPlayingSong()).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
     }
+
     //************************ TODO LATER
-    public String filePathOfNextSongInPlaylist(){
+    public String filePathOfNextSongInPlaylist() {
         return null;
     }
 
-    public String filePathOfNextSongInAllSongs(){
+    public String filePathOfNextSongInAllSongs() {
         return null;
     }
 
@@ -201,36 +189,46 @@ public class MainViewController implements Initializable {
         playlistModel.deletePlaylist(playlistListView.getSelectionModel().getSelectedItem());
         updatePLaylistTableView();
     }
+
     @FXML
     void openNewPlaylistView(ActionEvent event) {
-            Parent root;
-            try {
-                root = FXMLLoader.load(getClass().getClassLoader().getResource("gui/view/NewPlaylistView.fxml"));
-                Stage stage = new Stage();
-                stage.setTitle("Add playlist");
-                stage.setScene(new Scene(root, 405, 270));
-                stage.show();
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("gui/view/NewPlaylistView.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        NewPlaylistController newPlaylistController = loader.getController();
+        newPlaylistController.setmController(this);
+        Stage stage = new Stage();
+        stage.setTitle("Add playlist");
+        stage.setScene(new Scene(root, 405, 270));
+        stage.show();
     }
 
     @FXML
     void openEditPlaylistView(ActionEvent event) {
-        Parent root;
-        try{
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("gui/view/EditPlaylistView.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("Edit selected playlist");
-            stage.setScene(new Scene(root, 405, 270));
-            stage.show();
-
-        }
-        catch (IOException e) {
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("gui/view/EditPlaylistView.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
             e.printStackTrace();
-
         }
+        EditPlaylistController editPlaylistController = loader.getController();
+        editPlaylistController.setController(this);
+        try {
+            editPlaylistController.setSelectedPlaylist(playlistModel.getPlaylist(selectedP.getId()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Stage stage = new Stage();
+        stage.setTitle("Edit selected playlist");
+        stage.setScene(new Scene(root, 405, 270));
+        stage.show();
+
+
     }
 
     @FXML

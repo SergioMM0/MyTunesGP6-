@@ -8,8 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/controller/EditPlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/EditPlaylistController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/controller/NewPlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/NewPlaylistController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/controller/NewPlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controller/NewPlaylistController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +170,7 @@
       <workItem from="1639065833796" duration="285000" />
       <workItem from="1639088264489" duration="1016000" />
       <workItem from="1639089315808" duration="8000" />
-      <workItem from="1639132169380" duration="5655000" />
+      <workItem from="1639132169380" duration="8572000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>
@@ -228,10 +229,13 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/gui/controller/MainViewController.java</url>
-          <line>165</line>
-          <option name="timeStamp" value="3" />
+          <line>193</line>
+          <properties class="gui.controller.MainViewController" method="openNewPlaylistView">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

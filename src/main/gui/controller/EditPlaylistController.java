@@ -4,13 +4,17 @@ import be.Playlist;
 import gui.model.PlaylistModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class EditPlaylistController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class EditPlaylistController implements Initializable {
 
     @FXML
     private Label PlainText1;
@@ -29,6 +33,7 @@ public class EditPlaylistController {
 
     private static PlaylistModel model;
     private MainViewController mController;
+    private Playlist selected;
 
     public EditPlaylistController(){
         try{
@@ -45,10 +50,23 @@ public class EditPlaylistController {
         closeWindow();
     }
 
+
+
     @FXML
     void renamePlaylistACT(ActionEvent event) {
-        model.renamePlaylist(mController.getPlaylist());
-        closeWindow();
+        if( newName != null || newName.getText() != ""){ //not working if statement
+            selected.setName(newName.getText());
+            model.renamePlaylist(selected);
+            mController.updatePLaylistTableView();
+            closeWindow();
+        }
+        else {
+            PlainText1.setText("Introduce a new name");
+        }
+    }
+
+    public void setSelectedPlaylist(Playlist playlist){
+        this.selected = playlist;
     }
 
     private void closeWindow(){
@@ -56,4 +74,12 @@ public class EditPlaylistController {
         st.close();
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
+
+    public void setController(MainViewController mainViewController) {
+        this.mController = mainViewController;
+    }
 }
