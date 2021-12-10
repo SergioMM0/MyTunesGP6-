@@ -158,7 +158,9 @@ public class MainViewController implements Initializable {
     }
 
     public Playlist getPlaylist(){
-        return playlistListView.getSelectionModel().getSelectedItem();
+        selectedP = playlistListView.getSelectionModel().getSelectedItem();
+        Playlist choosen = selectedP;
+        return choosen;
     }
 
     public void populateSongsOnPlaylistview(Playlist playlist){
@@ -218,7 +220,19 @@ public class MainViewController implements Initializable {
 
     @FXML
     void openEditPlaylistView(ActionEvent event) {
+        Parent root;
+        try{
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("gui/view/EditPlaylistView.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Add playlist");
+            stage.setScene(new Scene(root, 405, 270));
+            stage.show();
 
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+
+        }
     }
 
     @FXML

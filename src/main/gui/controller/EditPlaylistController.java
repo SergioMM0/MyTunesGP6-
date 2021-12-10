@@ -5,45 +5,56 @@ import gui.model.PlaylistModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class EditPlaylistController {
 
     @FXML
+    private Label PlainText1;
+
+    @FXML
+    private Text TXT;
+
+    @FXML
     private Button closeWindowButton;
 
     @FXML
-    private TextField newNameOfPlaylist;
+    private TextField newName;
 
     @FXML
     private Button renamePlaylistButton;
 
-    PlaylistModel playlistModel;
+    private static PlaylistModel model;
+    private MainViewController mController;
 
     public EditPlaylistController(){
         try{
-            playlistModel = new PlaylistModel();
+            model = new PlaylistModel();
+            mController = new MainViewController();
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        catch (Exception e) {
-            e.printStackTrace();}
     }
 
     @FXML
-    void closeWindow(ActionEvent event) {
+    void closeWindowACT(ActionEvent event) {
         closeWindow();
     }
 
     @FXML
-    void renamePlaylist(ActionEvent event, Playlist playlist) {
-        if (newNameOfPlaylist != null){
-            playlistModel.renamePlaylist(playlist);
-        }
+    void renamePlaylistACT(ActionEvent event) {
+        Playlist p = mController.getPlaylist();
+        model.renamePlaylist(p);
+        closeWindow();
     }
 
-    private void closeWindow() {
+    private void closeWindow(){
         Stage st = (Stage) closeWindowButton.getScene().getWindow();
         st.close();
     }
-}
 
+}

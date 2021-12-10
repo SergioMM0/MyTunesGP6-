@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="The FXML">
+      <change afterPath="$PROJECT_DIR$/src/main/gui/view/EditPlaylistView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/controller/EditPlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/EditPlaylistController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/controller/NewPlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/NewPlaylistController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/model/SongsInPlaylistManagerModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/view/EditPlaylistView.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/view/NewPlaylistView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/NewPlaylistView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/controller/NewPlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controller/NewPlaylistController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/model/SongsInPlaylistManagerModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/view/EditPlaylistView.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/view/MainView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/view/NewPlaylistView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/view/NewPlaylistView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -177,6 +171,7 @@
       <workItem from="1639065833796" duration="285000" />
       <workItem from="1639088264489" duration="1016000" />
       <workItem from="1639089315808" duration="8000" />
+      <workItem from="1639132169380" duration="2705000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>
