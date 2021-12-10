@@ -3,7 +3,6 @@ package gui.controller;
 import be.Playlist;
 import be.Song;
 import gui.model.PlaylistModel;
-import gui.model.SPModel;
 import gui.model.SongModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,7 +23,6 @@ public class MainViewController implements Initializable {
 
     private PlaylistModel playlistModel;
     private SongModel songModel;
-    private SPModel spModel;
     private Playlist selectedP;
 
     @FXML
@@ -106,9 +104,12 @@ public class MainViewController implements Initializable {
     private Slider volumeSlider;
 
     public MainViewController() {
-        playlistModel = new PlaylistModel();
-        songModel = new SongModel();
-        spModel = new SPModel();
+        try {
+            playlistModel = new PlaylistModel();
+            songModel = new SongModel();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -136,24 +137,20 @@ public class MainViewController implements Initializable {
         playlistListView.getItems().setAll(playlistModel.getAllPlaylist());
     }
 
-    @FXML
-    void selectPlaylist(MouseEvent event) {
-        selectedP = playlistListView.getSelectionModel().getSelectedItem();
-        spModel.setSelectedPlaylist(selectedP);
+    public void updateSongsInPlaylistView(){
         songsOnPlaylistListView.getItems().clear();
         songsOnPlaylistListView.refresh();
-        updateSongsInPlaylistView();
-    }
-
-    public void updateSongsInPlaylistView() {
-        songsOnPlaylistListView.getItems().clear();
-        songsOnPlaylistListView.refresh();
-        songsOnPlaylistListView.getItems().setAll(spModel.getAllSongsInPlaylist());
+        songsOnPlaylistListView.getItems().setAll();
     }
 
     @FXML
     void refreshPlaylist(ActionEvent event) {
         updatePLaylistTableView();
+    }
+
+    @FXML
+    void selectPlaylist(MouseEvent event) {
+        selectedP = playlistListView.getSelectionModel().getSelectedItem();
     }
 
     @FXML
