@@ -20,8 +20,4 @@ public class SongModel {
     public ObservableList<Song> getSongs() {
         return songs;
     }
-
-    public String getFilePathOfCurrentPlayingSong() {
-        return null;
-    }
 }

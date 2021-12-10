@@ -29,7 +29,6 @@ public class MainViewController implements Initializable {
     private SongModel songModel;
     private MediaPlayer mediaPlayer;
     private Media media;
-    private int currentTable;
     private Playlist selectedP;
     private List<Song> allSongs;
 
@@ -145,6 +144,12 @@ public class MainViewController implements Initializable {
         playlistListView.getItems().setAll(playlistModel.getAllPlaylist());
     }
 
+    public void updateSongsInPlaylistView(){
+        songsOnPlaylistListView.getItems().clear();
+        songsOnPlaylistListView.refresh();
+        songsOnPlaylistListView.getItems().setAll();
+    }
+
     @FXML
     void refreshPlaylist(ActionEvent event) {
         updatePLaylistTableView();
@@ -156,26 +161,12 @@ public class MainViewController implements Initializable {
     }
 
     public void initMediaPlayer() {
-        media = new Media(new File(songModel.getFilePathOfCurrentPlayingSong()).toURI().toString());
+        //media = new Media(new File(songModel.getFilePathOfCurrentPlayingSong()).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
     }
 
     //************************ TODO LATER
-    public String filePathOfNextSongInPlaylist() {
-        return null;
-    }
 
-    public String filePathOfNextSongInAllSongs() {
-        return null;
-    }
-
-    public void playSongFromPlaylist(MouseEvent mouseEvent) {
-        currentTable = 1;
-    }
-
-    public void playSongFromSongs(MouseEvent mouseEvent) {
-        currentTable = 2;
-    }
 
     @FXML
     void addSongToPlaylist(ActionEvent event) {
@@ -253,9 +244,6 @@ public class MainViewController implements Initializable {
 
     @FXML
     void nextSong(ActionEvent event) {
-        if (currentTable == 1) {
-
-        }
     }
 
     @FXML
@@ -280,7 +268,12 @@ public class MainViewController implements Initializable {
 
     @FXML
     void updatePlaylistButton(ActionEvent event) {
-        playlistModel.updatePlaylist();
+       // playlistModel.updatePlaylist();
     }
 
+    public void playSongFromPlaylist(MouseEvent mouseEvent) {
+    }
+
+    public void playSongFromSongs(MouseEvent mouseEvent) {
+    }
 }
