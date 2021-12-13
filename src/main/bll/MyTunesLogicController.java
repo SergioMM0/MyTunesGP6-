@@ -97,5 +97,4 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     public List<Song> getAllSongsInPlaylist(Playlist playlist) {
         return dalFacade.getAllSongsInPlaylist(playlist);
     }
-
 }

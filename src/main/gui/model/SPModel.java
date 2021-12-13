@@ -33,4 +33,8 @@ public class SPModel {
         songsP.addAll(logicFacade.getAllSongsInPlaylist(getSelectedPlaylist()));
         return songsP;
     }
+
+    public void updateSongPosition(Playlist playlist,Song selected, Song pushed) {
+        //COMPLETE
+    }
 }

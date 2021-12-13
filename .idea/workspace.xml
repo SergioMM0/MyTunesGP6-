@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="The FXML">
+    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="Debugged songsOnPlaylist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/ISongsInPlaylistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/ISongsInPlaylistManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/model/SPModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/SPModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/model/SPModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/model/SPModel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +177,7 @@
       <workItem from="1639146707488" duration="1645000" />
       <workItem from="1639154984600" duration="179000" />
       <workItem from="1639239066575" duration="1118000" />
-      <workItem from="1639412652033" duration="1914000" />
+      <workItem from="1639412652033" duration="11844000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>
@@ -201,7 +207,21 @@
       <option name="project" value="LOCAL" />
       <updated>1638441375819</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Debugged songsOnPlaylist">
+      <created>1639414622293</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1639414622293</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Debugged songsOnPlaylist">
+      <created>1639414654752</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639414654752</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,7 +256,22 @@
     </ignored-roots>
     <MESSAGE value="The FXML" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Debugged songsOnPlaylist" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debugged songsOnPlaylist" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/gui/controller/MainViewController.java</url>
+          <line>218</line>
+          <properties class="gui.controller.MainViewController" method="moveDownSongInPlaylist">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MyTunesGP6$Main.ic" NAME="Main Coverage Results" MODIFIED="1639065111503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

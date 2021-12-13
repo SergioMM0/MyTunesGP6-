@@ -37,12 +37,6 @@ public class PlaylistModel {
     public void deleteSongFromPlaylist() {
     }
 
-    public void moveDownSongInPlaylist() {
-    }
-
-    public void moveUpSongInPlaylist() {
-    }
-
     public void renamePlaylist(Playlist playlist){
         logicFacade.renamePlaylist(playlist);
     }

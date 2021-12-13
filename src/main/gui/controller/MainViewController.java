@@ -18,6 +18,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainViewController implements Initializable {
@@ -144,9 +147,7 @@ public class MainViewController implements Initializable {
     }
 
     public void updateSongsInPlaylistView() {
-
         songsOnPlaylistListView.getItems().setAll(spModel.getAllSongsInPlaylist());
-
     }
 
     @FXML
@@ -216,12 +217,39 @@ public class MainViewController implements Initializable {
 
     @FXML
     void moveDownSongInPlaylist(ActionEvent event) {
-        playlistModel.moveDownSongInPlaylist();
+        int position = songsOnPlaylistListView.getSelectionModel().getSelectedIndex();
+        if(position != -1 && position-1 >= 0){
+            spModel.updateSongPosition(playlistListView.getSelectionModel().getSelectedItem(),songsOnPlaylistListView.getItems().get(position),songsOnPlaylistListView.getItems().get(position-1));
+        }
+        /*
+        List<Song> songs = new ArrayList<>(spModel.getAllSongsInPlaylist());
+        int oldposition = 0;
+        int newposition = oldposition+1;
+        for (Song s : songs){ //testing
+            System.out.println(s);
+        }
+        System.out.println("---------------");
+        for (Song song : songs){
+            if (song.getId() == songsOnPlaylistListView.getSelectionModel().getSelectedItem().getId()){
+                oldposition = songs.indexOf(song);
+            }
+        }
+        if (newposition == songs.size()-1){
+            newposition = oldposition;
+        }
+
+        Collections.swap(songs,oldposition,newposition);
+        for(Song s : songs){
+            System.out.println(s);
+        }
+        System.out.println("---------------");
+
+         */
     }
 
     @FXML
     void moveUpSongInPlaylist(ActionEvent event) {
-        playlistModel.moveUpSongInPlaylist();
+
     }
 
     @FXML

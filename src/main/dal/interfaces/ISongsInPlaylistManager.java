@@ -12,4 +12,6 @@ public interface ISongsInPlaylistManager {
     void deleteSongOnPlaylist(int position);
 
     List<Song> getAllSongsFromPlaylist(Playlist playlist);
+
+    void updateSongPosition(Playlist playlist,Song selected, Song pushed);
 }

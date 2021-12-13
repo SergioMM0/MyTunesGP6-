@@ -68,6 +68,13 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
     }
 
     @Override
+    public void updateSongPosition(Playlist playlist, Song selected, Song pushed) {
+
+
+        String sql = "UPDATE SongsInPlaylist ";
+    }
+
+    @Override
     public void deleteSongOnPlaylist(int position) {
         String sql = "DELETE * FROM SongsInPLaylist WHERE Position = ?";
         try (Connection connection = dbConnectionProvider.getConnection()) {
@@ -78,4 +85,6 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
             throwables.printStackTrace();
         }
     }
+
+
 }
