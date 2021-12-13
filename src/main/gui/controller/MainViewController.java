@@ -25,7 +25,6 @@ public class MainViewController implements Initializable {
     private PlaylistModel playlistModel;
     private SongModel songModel;
     private SPModel spModel;
-    private Playlist selectedP;
 
     @FXML
     private TableView<Song> songsListView;
@@ -138,17 +137,16 @@ public class MainViewController implements Initializable {
 
     @FXML
     void selectPlaylist(MouseEvent event) {
-        selectedP = playlistListView.getSelectionModel().getSelectedItem();
-        spModel.setSelectedPlaylist(selectedP);
+        spModel.setSelectedPlaylist(playlistListView.getSelectionModel().getSelectedItem());
         songsOnPlaylistListView.getItems().clear();
         songsOnPlaylistListView.refresh();
         updateSongsInPlaylistView();
     }
 
     public void updateSongsInPlaylistView() {
-        songsOnPlaylistListView.getItems().clear();
-        songsOnPlaylistListView.refresh();
+
         songsOnPlaylistListView.getItems().setAll(spModel.getAllSongsInPlaylist());
+
     }
 
     @FXML
@@ -196,7 +194,7 @@ public class MainViewController implements Initializable {
         EditPlaylistController editPlaylistController = loader.getController();
         editPlaylistController.setController(this);
         try {
-            editPlaylistController.setSelectedPlaylist(playlistModel.getPlaylist(selectedP.getId()));
+            editPlaylistController.setSelectedPlaylist(playlistModel.getPlaylist(playlistListView.getSelectionModel().getSelectedItem().getId()));
         } catch (Exception e) {
             e.printStackTrace();
         }

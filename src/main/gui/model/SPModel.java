@@ -13,12 +13,11 @@ import java.util.List;
 public class SPModel {
 
     private MyTunesLogicFacade logicFacade;
-    private final ObservableList<Song> songsP;
+    private ObservableList<Song> songsP;
     private Playlist selectedPlaylist;
 
     public SPModel() {
         logicFacade = new MyTunesLogicController();
-        songsP = FXCollections.observableArrayList();
     }
 
     public void setSelectedPlaylist(Playlist playlist){
@@ -30,6 +29,7 @@ public class SPModel {
     }
 
     public List<Song> getAllSongsInPlaylist(){
+        songsP = FXCollections.observableArrayList();
         songsP.addAll(logicFacade.getAllSongsInPlaylist(getSelectedPlaylist()));
         return songsP;
     }
