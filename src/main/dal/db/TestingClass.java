@@ -19,10 +19,9 @@ public class TestingClass {
 
     public static void deleteSongInPlaylist(){
         DbDAOSongsInPlaylistManager db = new DbDAOSongsInPlaylistManager();
-        Song s = new Song(4,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3");
+        Song s = new Song(4,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3",0);
         Playlist p = new Playlist(1,"WorkingUpdate",123456,"7890");
-        int position = 1;
-        db.deleteSongOnPlaylist(position);
+        db.deleteSongOnPlaylist(s);
     }
 
     public static List<Song> getSongsInPlaylist(){
@@ -34,9 +33,9 @@ public class TestingClass {
     public static void addSongToPlaylist(){
         DbDAOSongsInPlaylistManager db = new DbDAOSongsInPlaylistManager();
         Playlist p = new Playlist(2,"WorkingUpdate",123456,"7890");
-        Song s = new Song(4,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3");
+        Song s = new Song(4,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3",0);
         int position = 1;
-        db.addSongToPlaylist(p,s,position);
+        db.addSongToPlaylist(p,s);
     }
 
     public static Playlist updatePlaylist(){
@@ -53,14 +52,14 @@ public class TestingClass {
 
     public static Song updateSong() throws SQLException {
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(22,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3");
+        Song s = new Song(22,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3",0);
         db.updateSong(s);
         return s;
     }
 
     public static void deleteSong(){
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(24,"Hopefully","Maroon 5","Electronic","340", "data/data.mp3");
+        Song s = new Song(24,"Hopefully","Maroon 5","Electronic","340", "data/data.mp3",0);
         db.deleteSong(s);
     }
 
@@ -71,7 +70,7 @@ public class TestingClass {
 
     public static Song addSong() throws SQLException {
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(4,"Microwave","Misco","Dustedezo","333", "data/song4.mp3");
+        Song s = new Song(4,"Microwave","Misco","Dustedezo","333", "data/song4.mp3",0);
         return db.addSong(s);
     }
 
