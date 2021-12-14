@@ -8,14 +8,17 @@ public class Song {
     private String category;
     private String duration;
     private String filePath;
+    private int position;
 
-    public Song(int id, String name, String artist, String category, String duration,String filePath) {
+    //DELETE POSITION - STORE IT IN AN ARRAYLIST ON A METHOD ON MODEL
+    public Song(int id, String name, String artist, String category, String duration,String filePath,int position) {
         this.id = id;
         this.name = name;
         this.artist = artist;
         this.category = category;
         this.duration = duration;
         this.filePath = filePath;
+        this.position = position;
     }
 
     public int getId() {
@@ -64,6 +67,14 @@ public class Song {
 
     public void setFilePath(String filePath) {
         this.filePath = filePath;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 
     @Override

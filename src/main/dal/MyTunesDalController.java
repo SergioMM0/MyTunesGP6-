@@ -4,8 +4,10 @@ import be.Playlist;
 import be.Song;
 import dal.db.dao.DbDAOPlaylist;
 import dal.db.dao.DbDAOSong;
+import dal.db.dao.DbDAOSongsInPlaylistManager;
 import dal.interfaces.IPLaylistRepository;
 import dal.interfaces.ISongRepository;
+import dal.interfaces.ISongsInPlaylistManager;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -14,10 +16,12 @@ public class MyTunesDalController implements MyTunesDalFacade {
 
     private final IPLaylistRepository playlistRepository;
     private final ISongRepository songRepository;
+    private final ISongsInPlaylistManager songsInPlaylistManager;
 
     public MyTunesDalController(){
     playlistRepository = new DbDAOPlaylist();
     songRepository = new DbDAOSong();
+    songsInPlaylistManager = new DbDAOSongsInPlaylistManager();
     }
 
     @Override
@@ -51,8 +55,8 @@ public class MyTunesDalController implements MyTunesDalFacade {
     }
 
     @Override
-    public Playlist addPlaylist(String name) {
-        return playlistRepository.addPlaylist(name);
+    public void addPlaylist(String name) {
+        playlistRepository.addPlaylist(name);
     }
 
     @Override
@@ -71,17 +75,19 @@ public class MyTunesDalController implements MyTunesDalFacade {
     }
 
     @Override
-    public Playlist getSongsFromPlaylist(Playlist playlist) {
-        return playlistRepository.getSongsFromPlaylist(playlist);
-    }
-
-    @Override
-    public Playlist addSongToPlaylist(Playlist playlist, Song song) {
-        return playlistRepository.addSongToPlaylist(playlist,song);
-    }
-
-    @Override
     public Playlist updatePlaylist(Playlist playlist) {
         return playlistRepository.updatePlaylist(playlist);
+    }
+
+    @Override
+    public List<Song> getAllSongsInPlaylist(Playlist playlist) {
+        return songsInPlaylistManager.getAllSongsFromPlaylist(playlist);
+    }
+    public void deleteRemainingSongs(Playlist playlist){
+        songsInPlaylistManager.deleteRemainingSongs(playlist);
+    }
+
+    public void updateSongPosition(Playlist playlist, Song selected, Song pushed){
+        songsInPlaylistManager.updateSongPosition(playlist,selected,pushed);
     }
 }

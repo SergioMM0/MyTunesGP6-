@@ -40,7 +40,7 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     }
 
     public Song currentSongPath(){
-
+        return null;
     }
 
     @Override
@@ -69,9 +69,8 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     }
 
     @Override
-    public Playlist addPlaylist(String name) {
-        return dalFacade.addPlaylist(name);
-        //remember to add duration of songs to variable
+    public void addPlaylist(String name) {
+        dalFacade.addPlaylist(name);
     }
 
     @Override
@@ -90,18 +89,20 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     }
 
     @Override
-    public Playlist getSongsFromPlaylist(Playlist playlist) {
-        return dalFacade.getSongsFromPlaylist(playlist);
-    }
-
-    @Override
-    public Playlist addSongToPlaylist(Playlist playlist, Song song) {
-        return dalFacade.addSongToPlaylist(playlist, song);
-    }
-
-    @Override
     public Playlist updatePlaylist(Playlist playlist) {
         return dalFacade.updatePlaylist(playlist);
     }
 
+    @Override
+    public List<Song> getAllSongsInPlaylist(Playlist playlist) {
+        return dalFacade.getAllSongsInPlaylist(playlist);
+    }
+
+    public void updateSongPosition(Playlist playlist, Song selected, Song pushed){
+        dalFacade.updateSongPosition(playlist,selected,pushed);
+    }
+
+    public void deleteRemainingSongs(Playlist playlist){
+        dalFacade.deleteRemainingSongs(playlist);
+    }
 }

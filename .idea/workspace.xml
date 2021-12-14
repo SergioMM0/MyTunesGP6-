@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="The FXML">
-      <change afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/dal/interfaces/ISongsInPlaylistManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/gui/model/SongsInPlaylistManagerModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/IPLaylistRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/IPLaylistRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" afterDir="false" />
-    </list>
+    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -40,6 +30,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="2" />
+  </component>
   <component name="ProjectId" id="21RuWOapGxQ7j2ztxwiD9VgNfgh" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -51,17 +44,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="liberica-17" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/MyTunesAssignment-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Sergio M\IdeaProjects\MyTunesGP6\src\main\gui\view" />
+      <recent name="C:\Users\Sergio M\IdeaProjects\MyTunesGP6\src\main\gui\model" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Sergio M\IdeaProjects\MyTunesGP6" />
       <recent name="C:\Users\Sergio M\IdeaProjects\MyTunesGP6\src\main\gui\view" />
@@ -104,6 +102,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.InterfaceModel" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.TestingClass" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -148,6 +151,25 @@
       <workItem from="1638887998112" duration="14028000" />
       <workItem from="1638909688751" duration="186000" />
       <workItem from="1638917452723" duration="3136000" />
+      <workItem from="1638955469363" duration="24269000" />
+      <workItem from="1638993066822" duration="777000" />
+      <workItem from="1639001624212" duration="697000" />
+      <workItem from="1639038959454" duration="8825000" />
+      <workItem from="1639051174201" duration="4925000" />
+      <workItem from="1639060561716" duration="2880000" />
+      <workItem from="1639063514510" duration="455000" />
+      <workItem from="1639064612684" duration="656000" />
+      <workItem from="1639065610500" duration="204000" />
+      <workItem from="1639065833796" duration="285000" />
+      <workItem from="1639088264489" duration="1016000" />
+      <workItem from="1639089315808" duration="8000" />
+      <workItem from="1639132169380" duration="8655000" />
+      <workItem from="1639146707488" duration="1645000" />
+      <workItem from="1639154984600" duration="179000" />
+      <workItem from="1639239066575" duration="1118000" />
+      <workItem from="1639412652033" duration="11844000" />
+      <workItem from="1639434993835" duration="6360000" />
+      <workItem from="1639441508859" duration="24000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>
@@ -177,11 +199,57 @@
       <option name="project" value="LOCAL" />
       <updated>1638441375819</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Debugged songsOnPlaylist">
+      <created>1639414622293</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1639414622293</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Debugged songsOnPlaylist">
+      <created>1639414654752</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639414654752</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Sorting up and down proccess start">
+      <created>1639435281687</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1639435281687</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updating, now working">
+      <created>1639436634269</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1639436634269</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB">
+      <created>1639441405108</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1639441405108</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -201,6 +269,20 @@
     </ignored-roots>
     <MESSAGE value="The FXML" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="Debugged songsOnPlaylist" />
+    <MESSAGE value="Sorting up and down proccess start" />
+    <MESSAGE value="Updating, now working" />
+    <MESSAGE value="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="javafx.beans.property.SimpleObjectProperty" memberName="name" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MyTunesGP6$Main.ic" NAME="Main Coverage Results" MODIFIED="1639065111503" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

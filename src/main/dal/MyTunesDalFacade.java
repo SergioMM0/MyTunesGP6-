@@ -25,7 +25,7 @@ public interface MyTunesDalFacade {
 
     List<Playlist> getAllPlaylist();
 
-    Playlist addPlaylist(String name);
+    void addPlaylist(String name);
 
     void deletePlaylist(Playlist playlist);
 
@@ -33,9 +33,13 @@ public interface MyTunesDalFacade {
 
     Playlist getPlaylist(int id);
 
-    Playlist getSongsFromPlaylist(Playlist playlist);
-
-    Playlist addSongToPlaylist(Playlist playlist,Song song);
-
     Playlist updatePlaylist(Playlist playlist);
+
+    //*******
+
+    List<Song> getAllSongsInPlaylist(Playlist playlist);
+
+    void deleteRemainingSongs(Playlist playlist);
+
+    void updateSongPosition(Playlist playlist, Song selected, Song pushed);
 }

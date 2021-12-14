@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PlaylistModel {
 
-    private MyTunesLogicFacade logicFacade;
+    private final MyTunesLogicFacade logicFacade;
     private final ObservableList<Playlist> playlists;
 
     public PlaylistModel(){
@@ -23,25 +23,26 @@ public class PlaylistModel {
         return logicFacade.getAllPlaylist();
     }
 
-    public void addPlaylist() {
-        //logicFacade.addPlaylist();
+    public void addPlaylist(String newPlaylist) {
+        logicFacade.addPlaylist(newPlaylist);
     }
 
     public void addSongToPlaylist() {
     }
 
-    public void deletePlaylist() {
+    public void deletePlaylist(Playlist playlist) {
+        logicFacade.deletePlaylist(playlist);
+        logicFacade.deleteRemainingSongs(playlist);//delete remaining songs in SongsInPlaylist table
     }
 
     public void deleteSongFromPlaylist() {
     }
 
-    public void moveDownSongInPlaylist() {
+    public void renamePlaylist(Playlist playlist){
+        logicFacade.renamePlaylist(playlist);
     }
 
-    public void moveUpSongInPlaylist() {
-    }
-
-    public void updatePlaylist() {
+    public Playlist getPlaylist(int id) {
+        return logicFacade.getPlaylist(id);
     }
 }

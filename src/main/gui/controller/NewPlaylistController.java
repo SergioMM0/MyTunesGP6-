@@ -3,16 +3,19 @@ package gui.controller;
 import gui.model.PlaylistModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class NewPlaylistController {
+import java.net.URL;
+import java.util.ResourceBundle;
 
-    private PlaylistModel playlistModel;
+public class NewPlaylistController implements Initializable {
 
+    public Button renamePlaylistButton;
     @FXML
-    private Button addPlaylistButton; //It works I guess :_)
+    private Button addPlaylistButton;
 
     @FXML
     private Button closeWindowButton;
@@ -20,25 +23,44 @@ public class NewPlaylistController {
     @FXML
     private TextField nameOfNewPlaylist;
 
+    private PlaylistModel playlistModel;
+    private MainViewController mController;
+
     public NewPlaylistController(){
         try{
             playlistModel = new PlaylistModel();
+            mController = new MainViewController();
         }
         catch (Exception e) {
             e.printStackTrace();}
     }
 
+    public void setmController(MainViewController mainViewController){
+        this.mController = mainViewController;
+    }
+
     @FXML
     void addPlaylist(ActionEvent event) {
         if(nameOfNewPlaylist != null){
-            playlistModel.addPlaylist();
+            String newPlaylist = nameOfNewPlaylist.getText();
+            playlistModel.addPlaylist(newPlaylist);
+            mController.updatePLaylistTableView();
+            closeWindow();
         }
     }
 
     @FXML
     void closeWindow(ActionEvent event) {
+        closeWindow();
+    }
+
+    private void closeWindow(){
         Stage st = (Stage) closeWindowButton.getScene().getWindow();
         st.close();
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }
