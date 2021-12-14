@@ -32,6 +32,10 @@ public class SPModel {
         songsP = FXCollections.observableArrayList();
         songsP.clear();
         songsP.addAll(logicFacade.getAllSongsInPlaylist(getSelectedPlaylist()));
+        for (Song s : songsP) {
+            System.out.println(s);
+        }
+        System.out.println("----------");
         return songsP;
     }
 

@@ -219,15 +219,18 @@ public class MainViewController implements Initializable {
     @FXML
     void moveDownSongInPlaylist(ActionEvent event) {
         int position = songsOnPlaylistListView.getSelectionModel().getSelectedIndex();
-        if(position < songsOnPlaylistListView.getItems().size()){
+        if(position <= songsOnPlaylistListView.getItems().size()){
             spModel.updateSongPosition(playlistListView.getSelectionModel().getSelectedItem(),songsOnPlaylistListView.getItems().get(position),songsOnPlaylistListView.getItems().get(position+1));
         }
         updateSongsInPlaylistView();
+
     }
 
     @FXML
     void moveUpSongInPlaylist(ActionEvent event) {
-
+        int position = songsOnPlaylistListView.getSelectionModel().getSelectedIndex();
+        spModel.updateSongPosition(playlistListView.getSelectionModel().getSelectedItem(),songsOnPlaylistListView.getItems().get(position), songsOnPlaylistListView.getItems().get(position-1));
+        updateSongsInPlaylistView();
     }
 
     @FXML
