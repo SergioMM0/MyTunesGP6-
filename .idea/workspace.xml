@@ -4,25 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="Updating, now working">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/ISongsInPlaylistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/ISongsInPlaylistManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/model/SPModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/SPModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/Song.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/db/TestingClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/TestingClass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOSong.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOSong.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOSongsInPlaylistManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOSongsInPlaylistManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/interfaces/ISongsInPlaylistManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/interfaces/ISongsInPlaylistManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/model/PlaylistModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/model/PlaylistModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/gui/model/SPModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/model/SPModel.class" afterDir="false" />
+    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB">
+      <change beforePath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/MyTunesDalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/MyTunesDalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/MyTunesDalFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/MyTunesDalFacade.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +173,7 @@
       <workItem from="1639154984600" duration="179000" />
       <workItem from="1639239066575" duration="1118000" />
       <workItem from="1639412652033" duration="11844000" />
-      <workItem from="1639434993835" duration="6248000" />
+      <workItem from="1639434993835" duration="6360000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>
@@ -245,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639436634269</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB">
+      <created>1639441405108</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1639441405108</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +276,8 @@
     <MESSAGE value="Debugged songsOnPlaylist" />
     <MESSAGE value="Sorting up and down proccess start" />
     <MESSAGE value="Updating, now working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating, now working" />
+    <MESSAGE value="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
