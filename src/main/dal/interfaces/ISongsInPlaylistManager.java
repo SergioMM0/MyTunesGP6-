@@ -14,4 +14,6 @@ public interface ISongsInPlaylistManager {
     void updateSongPosition(Playlist playlist,Song selected, Song pushed);
 
     void deleteSongOnPlaylist(Song song);
+
+    void deleteRemainingSongs(Playlist playlist);
 }

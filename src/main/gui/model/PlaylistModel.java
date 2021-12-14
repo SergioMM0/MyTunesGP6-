@@ -32,6 +32,7 @@ public class PlaylistModel {
 
     public void deletePlaylist(Playlist playlist) {
         logicFacade.deletePlaylist(playlist);
+        logicFacade.deleteRemainingSongs(playlist);//delete remaining songs in SongsInPlaylist table
     }
 
     public void deleteSongFromPlaylist() {

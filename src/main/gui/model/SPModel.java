@@ -30,11 +30,12 @@ public class SPModel {
 
     public List<Song> getAllSongsInPlaylist(){
         songsP = FXCollections.observableArrayList();
+        songsP.clear();
         songsP.addAll(logicFacade.getAllSongsInPlaylist(getSelectedPlaylist()));
         return songsP;
     }
 
     public void updateSongPosition(Playlist playlist,Song selected, Song pushed) {
-        //COMPLETE
+        logicFacade.updateSongPosition(playlist,selected,pushed);
     }
 }

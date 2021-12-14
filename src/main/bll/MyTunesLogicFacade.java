@@ -35,4 +35,8 @@ public interface MyTunesLogicFacade {
     //**********
 
     List<Song> getAllSongsInPlaylist(Playlist playlist);
+
+    void deleteRemainingSongs(Playlist playlist);
+
+    void updateSongPosition(Playlist playlist, Song selected, Song pushed);
 }

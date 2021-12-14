@@ -83,4 +83,11 @@ public class MyTunesDalController implements MyTunesDalFacade {
     public List<Song> getAllSongsInPlaylist(Playlist playlist) {
         return songsInPlaylistManager.getAllSongsFromPlaylist(playlist);
     }
+    public void deleteRemainingSongs(Playlist playlist){
+        songsInPlaylistManager.deleteRemainingSongs(playlist);
+    }
+
+    public void updateSongPosition(Playlist playlist, Song selected, Song pushed){
+        songsInPlaylistManager.updateSongPosition(playlist,selected,pushed);
+    }
 }

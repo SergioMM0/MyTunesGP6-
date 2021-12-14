@@ -21,12 +21,26 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
 
     @Override
     public void addSongToPlaylist(Playlist playlist, Song song) {
-        String sql = "INSERT INTO SongsInPlaylist(IdOfPlaylist,IdOfSongInPlaylist) VALUES (?,?,?)";
+        int newPosition = 0;
+        String sql2 = "SELECT TOP (1) [Position] FROM SongsInPLaylist WHERE IdOfPlaylist = ? AND [Position] > ? ORDER BY Position DESC";
+        try (Connection connection = dbConnectionProvider.getConnection()) {
+            PreparedStatement st = connection.prepareStatement(sql2, Statement.RETURN_GENERATED_KEYS);
+            st.setInt(1,playlist.getId());
+            st.setInt(2,0);
+            ResultSet rs =st.executeQuery();
+            while (rs.next()){
+                newPosition = rs.getInt("Position")+1;
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        String sql = "INSERT INTO SongsInPlaylist(IdOfPlaylist,IdOfSongInPlaylist,Position) VALUES (?,?,?)";
         try (Connection connection = dbConnectionProvider.getConnection()) {
             PreparedStatement st = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             st.setInt(1, playlist.getId());
             st.setInt(2, song.getId());
-            st.setInt(3, song.getPosition());
+            st.setInt(3, newPosition);
             st.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -67,7 +81,26 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
 
     @Override
     public void updateSongPosition(Playlist playlist, Song selected, Song pushed) {
-
+        String sql = "UPDATE SongsInPlaylist SET POSITION = ? WHERE IdOfPlaylist = ? AND IdOfSongInPlaylist = ? AND Position = ?";
+        try (Connection connection = dbConnectionProvider.getConnection()) {
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1,pushed.getPosition());
+            st.setInt(2,playlist.getId());
+            st.setInt(3,selected.getId());
+            st.setInt(4,selected.getPosition());
+            st.addBatch();
+            st.setInt(1,selected.getPosition());
+            st.setInt(2,playlist.getId());
+            st.setInt(3,pushed.getId());
+            st.setInt(4,pushed.getPosition());
+            st.addBatch();
+            st.executeBatch();
+            int temporalPosition = selected.getPosition();
+            selected.setPosition(pushed.getPosition());
+            pushed.setPosition(temporalPosition);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     @Override
@@ -82,5 +115,16 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
         }
     }
 
+    public void deleteRemainingSongs(Playlist playlist){
+        String sql = "DELETE * FROM SongsInPlaylist WHERE IdOfPlaylist = ?";
+        try(Connection connection = dbConnectionProvider.getConnection()){
+            PreparedStatement st = connection.prepareStatement(sql);
+            st.setInt(1,playlist.getId());
+            st.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+    }
 
 }

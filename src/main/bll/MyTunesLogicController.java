@@ -97,4 +97,12 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     public List<Song> getAllSongsInPlaylist(Playlist playlist) {
         return dalFacade.getAllSongsInPlaylist(playlist);
     }
+
+    public void updateSongPosition(Playlist playlist, Song selected, Song pushed){
+        dalFacade.updateSongPosition(playlist,selected,pushed);
+    }
+
+    public void deleteRemainingSongs(Playlist playlist){
+        dalFacade.deleteRemainingSongs(playlist);
+    }
 }
