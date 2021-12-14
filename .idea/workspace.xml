@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB">
-      <change beforePath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicFacade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/MyTunesDalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/MyTunesDalController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dal/MyTunesDalFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/MyTunesDalFacade.class" afterDir="false" />
-    </list>
+    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,6 +169,7 @@
       <workItem from="1639239066575" duration="1118000" />
       <workItem from="1639412652033" duration="11844000" />
       <workItem from="1639434993835" duration="6360000" />
+      <workItem from="1639441508859" duration="24000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>
