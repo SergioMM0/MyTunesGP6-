@@ -38,7 +38,7 @@
    <Button fx:id="playSongButton" layoutX="111.0" layoutY="30.0" mnemonicParsing="false" onAction="#playSong" text="Play" />
    <Button fx:id="previousSongButton" layoutX="36.0" layoutY="30.0" mnemonicParsing="false" onAction="#previousSong" text="Previous" />
    <Button fx:id="nextSongButton" layoutX="160.0" layoutY="30.0" mnemonicParsing="false" onAction="#nextSong" text="Next" />
-   <Slider fx:id="volumeSlider" layoutX="60.0" layoutY="74.0" onDragDetected="#handleVolume">
+   <Slider fx:id="volumeSlider" layoutX="58.0" layoutY="73.0" onDragDetected="#handleVolume">
       <effect>
          <Glow />
       </effect>
@@ -46,13 +46,13 @@
    <Button fx:id="newPlaylistButton" layoutX="43.0" layoutY="544.0" mnemonicParsing="false" onAction="#openNewPlaylistView" text="New" />
    <Button fx:id="editPlaylistButton" layoutX="110.0" layoutY="544.0" mnemonicParsing="false" onAction="#openEditPlaylistView" text="Edit" />
    <Button fx:id="deletePlaylistButton" layoutX="181.0" layoutY="544.0" mnemonicParsing="false" onAction="#deletePlaylist" text="Delete" />
-   <Button fx:id="moveUpButton" layoutX="247.0" layoutY="544.0" mnemonicParsing="false" onAction="#moveUpSongInPlaylist" text="Up" />
-   <Button fx:id="deleteFromPlaylist" layoutX="321.0" layoutY="544.0" mnemonicParsing="false" onAction="#deleteSongFromPlaylist" text="Delete" />
-   <Button fx:id="moveDownButton" layoutX="395.0" layoutY="544.0" mnemonicParsing="false" onAction="#moveDownSongInPlaylist" text="Down" />
-   <Button fx:id="addSongToPlaylist" layoutX="455.0" layoutY="152.0" mnemonicParsing="false" onAction="#addSongToPlaylist" text="Pa'lao" />
-   <Button fx:id="newSongButton" layoutX="501.0" layoutY="544.0" mnemonicParsing="false" text="New" />
-   <Button layoutX="575.0" layoutY="544.0" mnemonicParsing="false" text="Edit" />
-   <Button layoutX="644.0" layoutY="544.0" mnemonicParsing="false" text="Delete" />
+   <Button fx:id="moveUpButton" layoutX="247.0" layoutY="544.0" mnemonicParsing="false" onAction="#moveUpSongInPlaylist" text="Move UP" />
+   <Button fx:id="deleteFromPlaylist" layoutX="315.0" layoutY="544.0" mnemonicParsing="false" onAction="#deleteSongFromPlaylist" text="Delete" />
+   <Button fx:id="moveDownButton" layoutX="370.0" layoutY="544.0" mnemonicParsing="false" onAction="#moveDownSongInPlaylist" text="Move Down" />
+   <Button fx:id="addSongToPlaylist" layoutX="455.0" layoutY="152.0" mnemonicParsing="false" onAction="#addSongToPlaylist" text="Add" />
+   <Button fx:id="newSongButton" layoutX="518.0" layoutY="544.0" mnemonicParsing="false" text="New" />
+   <Button layoutX="650.0" layoutY="544.0" mnemonicParsing="false" text="Edit" />
+   <Button layoutX="753.0" layoutY="544.0" mnemonicParsing="false" text="Delete" />
    <Button fx:id="searchButton" layoutX="734.0" layoutY="30.0" mnemonicParsing="false" onAction="#searchSong" text="Search" />
    <Text fill="WHITE" layoutX="530.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter:">
       <font>

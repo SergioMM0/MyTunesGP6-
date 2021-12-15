@@ -102,6 +102,16 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
         dalFacade.updateSongPosition(playlist,selected,pushed);
     }
 
+    @Override
+    public void deleteSongOnPlaylist(Playlist playlist, Song song) {
+        dalFacade.deleteSongOnPlaylist(playlist,song);
+    }
+
+    @Override
+    public void addSongToPlaylist(Playlist playlist, Song song) {
+        dalFacade.addSongToPlaylist(playlist,song);
+    }
+
     public void deleteRemainingSongs(Playlist playlist){
         dalFacade.deleteRemainingSongs(playlist);
     }

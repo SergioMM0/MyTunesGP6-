@@ -18,6 +18,7 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
     }
 
     //add y delete deben funcionar. Last check 14.12 / 00:03
+    //delete already implemented and add por implementar, should be easy
 
     @Override
     public void addSongToPlaylist(Playlist playlist, Song song) {
@@ -91,11 +92,12 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
     }
 
     @Override
-    public void deleteSongOnPlaylist(Song song) {
-        String sql = "DELETE * FROM SongsInPLaylist WHERE Position = ?";
+    public void deleteSongOnPlaylist(Playlist playlist, Song song) {
+        String sql = "DELETE FROM SongsInPLaylist WHERE Position = ? AND IdOfPlaylist = ?";
         try (Connection connection = dbConnectionProvider.getConnection()) {
             PreparedStatement st = connection.prepareStatement(sql);
             st.setInt(1, song.getPosition());
+            st.setInt(2, playlist.getId());
             st.execute();
         } catch (SQLException throwables) {
             throwables.printStackTrace();

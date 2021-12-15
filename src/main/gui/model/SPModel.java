@@ -42,4 +42,12 @@ public class SPModel {
     public void updateSongPosition(Playlist playlist,Song selected, Song pushed) {
         logicFacade.updateSongPosition(playlist,selected,pushed);
     }
+
+    public void deleteSongOnPlaylist(Playlist playlist, Song song){
+        logicFacade.deleteSongOnPlaylist(playlist, song);
+    }
+
+    public void addSongToPlaylist(Playlist playlist, Song song){
+        logicFacade.addSongToPlaylist(playlist,song);
+    }
 }

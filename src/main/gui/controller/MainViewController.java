@@ -156,9 +156,14 @@ public class MainViewController implements Initializable {
         updatePLaylistTableView();
     }
 
+    /**
+     * Should be working 16:14 14/12 impl need to debugg if needed *************************************************** (Add song)
+     */
+
     @FXML
     void addSongToPlaylist(ActionEvent event) {
-        playlistModel.addSongToPlaylist();
+        spModel.addSongToPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsListView.getSelectionModel().getSelectedItem());
+        updateSongsInPlaylistView();
     }
 
     @FXML
@@ -208,7 +213,8 @@ public class MainViewController implements Initializable {
 
     @FXML
     void deleteSongFromPlaylist(ActionEvent event) {
-        playlistModel.deleteSongFromPlaylist();
+        spModel.deleteSongOnPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsOnPlaylistListView.getSelectionModel().getSelectedItem());
+        updateSongsInPlaylistView();
     }
 
     @FXML

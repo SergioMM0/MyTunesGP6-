@@ -90,4 +90,14 @@ public class MyTunesDalController implements MyTunesDalFacade {
     public void updateSongPosition(Playlist playlist, Song selected, Song pushed){
         songsInPlaylistManager.updateSongPosition(playlist,selected,pushed);
     }
+
+    @Override
+    public void deleteSongOnPlaylist(Playlist playlist, Song song) {
+        songsInPlaylistManager.deleteSongOnPlaylist(playlist,song);
+    }
+
+    @Override
+    public void addSongToPlaylist(Playlist playlist, Song song) {
+        songsInPlaylistManager.addSongToPlaylist(playlist,song);
+    }
 }

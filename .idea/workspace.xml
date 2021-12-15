@@ -5,10 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB">
+      <change afterPath="$PROJECT_DIR$/src/main/gui/controller/NewSongController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/gui/view/NewSongView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/TestingClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/interfaces/ISongsInPlaylistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/interfaces/ISongsInPlaylistManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/PlaylistModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/model/SPModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/SPModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/bll/MyTunesLogicFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/MyTunesDalController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/MyTunesDalController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/MyTunesDalFacade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/MyTunesDalFacade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/db/TestingClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/TestingClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOSongsInPlaylistManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/db/dao/DbDAOSongsInPlaylistManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dal/interfaces/ISongsInPlaylistManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dal/interfaces/ISongsInPlaylistManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/controller/MainViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/model/PlaylistModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/model/PlaylistModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/model/SPModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/model/SPModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/gui/view/MainView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +196,11 @@
       <workItem from="1639412652033" duration="11844000" />
       <workItem from="1639434993835" duration="6360000" />
       <workItem from="1639441508859" duration="24000" />
-      <workItem from="1639472463920" duration="1909000" />
+      <workItem from="1639472463920" duration="3534000" />
+      <workItem from="1639480078802" duration="1106000" />
+      <workItem from="1639481229947" duration="19000" />
+      <workItem from="1639494233781" duration="2739000" />
+      <workItem from="1639583090113" duration="281000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>

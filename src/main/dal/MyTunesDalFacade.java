@@ -42,4 +42,8 @@ public interface MyTunesDalFacade {
     void deleteRemainingSongs(Playlist playlist);
 
     void updateSongPosition(Playlist playlist, Song selected, Song pushed);
+
+    void deleteSongOnPlaylist(Playlist playlist,Song song);
+
+    void addSongToPlaylist(Playlist playlist, Song song);
 }
