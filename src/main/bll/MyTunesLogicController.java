@@ -64,6 +64,11 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     }
 
     @Override
+    public List<String> getCategories() {
+        return dalFacade.getCategories();
+    }
+
+    @Override
     public List<Playlist> getAllPlaylist() {
         return dalFacade.getAllPlaylist();
     }

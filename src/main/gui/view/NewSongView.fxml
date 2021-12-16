@@ -12,7 +12,7 @@
    <children>
       <Button layoutX="518.0" layoutY="345.0" mnemonicParsing="false" text="Add song" textAlignment="CENTER" />
       <Button layoutX="14.0" layoutY="345.0" mnemonicParsing="false" text="Cancel" textAlignment="CENTER" />
-      <TextField layoutX="113.0" layoutY="70.0" prefHeight="26.0" prefWidth="438.0" promptText="Example: Thriller" />
+      <TextField layoutX="113.0" layoutY="70.0" prefHeight="26.0" prefWidth="438.0" promptText="Thriller" />
       <Text fill="WHITE" layoutX="65.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:">
          <font>
             <Font size="15.0" />
@@ -26,7 +26,7 @@
             <Glow />
          </effect>
       </Line>
-      <Text fill="WHITE" layoutX="61.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:">
+      <Text fill="WHITE" layoutX="57.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:">
          <font>
             <Font size="15.0" />
          </font>
@@ -39,5 +39,20 @@
             <Glow />
          </effect>
       </Line>
+      <TextField layoutX="113.0" layoutY="136.0" prefHeight="26.0" prefWidth="438.0" promptText="Michael Jackson" />
+      <Text fill="WHITE" layoutX="33.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category:">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <Line endX="-100.0" endY="-110.80000305175781" layoutX="204.0" layoutY="301.0" startX="-100.0" startY="-63.59999084472656" stroke="WHITE">
+         <effect>
+            <Glow />
+         </effect>
+      </Line>
+      <TextField layoutX="113.0" layoutY="199.0" prefHeight="26.0" prefWidth="438.0" promptText="Michael Jackson" />
    </children>
 </AnchorPane>

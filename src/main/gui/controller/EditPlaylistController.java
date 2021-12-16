@@ -50,8 +50,6 @@ public class EditPlaylistController implements Initializable {
         closeWindow();
     }
 
-
-
     @FXML
     void renamePlaylistACT(ActionEvent event) {
         if( newName != null || newName.getText() != ""){ //not working if statement

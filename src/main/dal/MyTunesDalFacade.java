@@ -21,6 +21,8 @@ public interface MyTunesDalFacade {
 
     List<Song> getAllSongs();
 
+    List<String> getCategories();
+
     //******
 
     List<Playlist> getAllPlaylist();

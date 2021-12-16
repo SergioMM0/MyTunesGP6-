@@ -50,6 +50,11 @@ public class MyTunesDalController implements MyTunesDalFacade {
     }
 
     @Override
+    public List<String> getCategories() {
+        return songRepository.getCategories();
+    }
+
+    @Override
     public List<Playlist> getAllPlaylist() {
         return playlistRepository.getAllPlaylist();
     }

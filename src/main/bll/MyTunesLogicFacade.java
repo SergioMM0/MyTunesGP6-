@@ -18,6 +18,8 @@ public interface MyTunesLogicFacade {
 
     Song getSong(int id) throws SQLException;
 
+    List<String> getCategories();
+
     //*************
 
     List<Playlist> getAllPlaylist();
