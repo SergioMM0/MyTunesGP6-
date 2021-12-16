@@ -35,7 +35,9 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
+        if (newPosition == 0){
+            newPosition = 1;
+        }
         String sql = "INSERT INTO SongsInPlaylist(IdOfPlaylist,IdOfSongInPlaylist,Position) VALUES (?,?,?)";
         try (Connection connection = dbConnectionProvider.getConnection()) {
             PreparedStatement st = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -105,7 +107,7 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
     }
 
     public void deleteRemainingSongs(Playlist playlist){
-        String sql = "DELETE * FROM SongsInPlaylist WHERE IdOfPlaylist = ?";
+        String sql = "DELETE FROM SongsInPlaylist WHERE IdOfPlaylist = ?";
         try(Connection connection = dbConnectionProvider.getConnection()){
             PreparedStatement st = connection.prepareStatement(sql);
             st.setInt(1,playlist.getId());

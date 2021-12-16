@@ -156,10 +156,6 @@ public class MainViewController implements Initializable {
         updatePLaylistTableView();
     }
 
-    /**
-     * Should be working 16:14 14/12 impl need to debugg if needed *************************************************** (Add song)
-     */
-
     @FXML
     void addSongToPlaylist(ActionEvent event) {
         spModel.addSongToPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsListView.getSelectionModel().getSelectedItem());
@@ -170,6 +166,8 @@ public class MainViewController implements Initializable {
     void deletePlaylist(ActionEvent event) {
         playlistModel.deletePlaylist(playlistListView.getSelectionModel().getSelectedItem());
         updatePLaylistTableView();
+        songsOnPlaylistListView.getItems().clear();
+        songsOnPlaylistListView.refresh();
     }
 
     @FXML
@@ -218,11 +216,6 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    void handleVolume(MouseEvent event) {
-
-    }
-
-    @FXML
     void moveDownSongInPlaylist(ActionEvent event) {
         int position = songsOnPlaylistListView.getSelectionModel().getSelectedIndex();
         if(position <= songsOnPlaylistListView.getItems().size()){
@@ -240,6 +233,21 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    public void OpenAddSongView(ActionEvent actionEvent) {
+
+    }
+
+    @FXML
+    public void openEditSongButton(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void deleteSong(ActionEvent actionEvent) {
+    }
+
+    //MEDIA PLAYER
+
+    @FXML
     void nextSong(ActionEvent event) {
     }
 
@@ -253,6 +261,11 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    void handleVolume(MouseEvent event) {
+
+    }
+
+    @FXML
     void searchSong(ActionEvent event) {
 
     }
@@ -262,9 +275,13 @@ public class MainViewController implements Initializable {
 
     }
 
+    @FXML
     public void playSongFromPlaylist(MouseEvent mouseEvent) {
     }
 
+    @FXML
     public void playSongFromSongs(MouseEvent mouseEvent) {
     }
+
+
 }

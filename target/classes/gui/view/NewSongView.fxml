@@ -8,7 +8,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #282828;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.NewSongController">
    <children>
       <Button layoutX="518.0" layoutY="345.0" mnemonicParsing="false" text="Add song" textAlignment="CENTER" />
@@ -27,7 +26,7 @@
             <Glow />
          </effect>
       </Line>
-      <Text fill="WHITE" layoutX="61.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:">
+      <Text fill="WHITE" layoutX="61.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:">
          <font>
             <Font size="15.0" />
          </font>
