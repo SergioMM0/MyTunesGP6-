@@ -19,28 +19,7 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
 
     @Override
     public List<Song> getAllSongs() {
-        List<Song> allSongsDurationConverted = new ArrayList<>();
-        for (Song song : dalFacade.getAllSongs()) {
-            convertSongDuration(song);
-            allSongsDurationConverted.add(song);
-        }
-        return allSongsDurationConverted;
-    }
-
-    private Song convertSongDuration(Song song) {
-        String oldDuration = song.getDuration();
-        if (!oldDuration.contains(":")) {
-            int intDuration = Integer.parseInt(oldDuration);
-            String nMinutes = String.valueOf(intDuration / 60);
-            String nSeconds = String.valueOf(intDuration % 60);
-            String newDuration = nMinutes + ":" + nSeconds;
-            song.setDuration(newDuration);
-        }
-        return song;
-    }
-
-    public Song currentSongPath(){
-        return null;
+        return dalFacade.getAllSongs();
     }
 
     @Override
@@ -61,6 +40,11 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     @Override
     public Song getSong(int id) throws SQLException {
         return dalFacade.getSong(id);
+    }
+
+    @Override
+    public List<String> getCategories() {
+        return dalFacade.getCategories();
     }
 
     @Override
@@ -100,6 +84,24 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
 
     public void updateSongPosition(Playlist playlist, Song selected, Song pushed){
         dalFacade.updateSongPosition(playlist,selected,pushed);
+    }
+
+    @Override
+    public void deleteSongOnPlaylist(Playlist playlist, Song song) {
+        dalFacade.deleteSongOnPlaylist(playlist,song);
+        if (playlist.getHowManySongs()==0){
+            playlist.setHowManySongs(0);
+        }
+        else playlist.setHowManySongs(playlist.getHowManySongs()-1);
+        dalFacade.updatePlaylist(playlist);
+
+    }
+
+    @Override
+    public void addSongToPlaylist(Playlist playlist, Song song) {
+        dalFacade.addSongToPlaylist(playlist,song);
+        playlist.setHowManySongs(playlist.getHowManySongs()+1);
+        dalFacade.updatePlaylist(playlist);
     }
 
     public void deleteRemainingSongs(Playlist playlist){

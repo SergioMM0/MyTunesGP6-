@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB" />
+    <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/be/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/be/Playlist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOPlaylist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/controller/EditSongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/EditSongController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/model/SPModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/SPModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/model/SongModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/SongModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/view/EditSongView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/EditSongView.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +56,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="liberica-17" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/MyTunesAssignment-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SECURED/Sneaky/MyTunes-master" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -56,6 +68,9 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="bll" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Sergio M\IdeaProjects\MyTunesGP6\src\main\gui\view" />
       <recent name="C:\Users\Sergio M\IdeaProjects\MyTunesGP6\src\main\gui\model" />
@@ -170,6 +185,16 @@
       <workItem from="1639412652033" duration="11844000" />
       <workItem from="1639434993835" duration="6360000" />
       <workItem from="1639441508859" duration="24000" />
+      <workItem from="1639472463920" duration="3534000" />
+      <workItem from="1639480078802" duration="1106000" />
+      <workItem from="1639481229947" duration="19000" />
+      <workItem from="1639494233781" duration="2739000" />
+      <workItem from="1639583090113" duration="281000" />
+      <workItem from="1639649102443" duration="3850000" />
+      <workItem from="1639680320953" duration="3577000" />
+      <workItem from="1639736743828" duration="6814000" />
+      <workItem from="1639744293823" duration="115000" />
+      <workItem from="1639750597755" duration="6894000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>
@@ -276,6 +301,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/dal/MyTunesDalFacade.java</url>
+          <line>37</line>
+          <properties class="dal.MyTunesDalFacade" method="updatePlaylist">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="javafx.beans.property.SimpleObjectProperty" memberName="name" />

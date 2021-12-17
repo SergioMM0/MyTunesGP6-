@@ -17,4 +17,6 @@ public interface ISongRepository {
 
     List<Song> getAllSongs();
 
+    List<String> getCategories();
+
 }

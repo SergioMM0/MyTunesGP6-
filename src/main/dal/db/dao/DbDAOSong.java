@@ -35,6 +35,7 @@ public class DbDAOSong implements ISongRepository {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        System.out.println("getting all songs...");
         return allSongs;
     }
 
@@ -94,6 +95,7 @@ public class DbDAOSong implements ISongRepository {
         } catch (SQLServerException throwables) {
             throwables.printStackTrace();
         }
+        System.out.println("updated");
     }
 
     @Override
@@ -101,7 +103,7 @@ public class DbDAOSong implements ISongRepository {
         Song songSearched = null;
         String sql = ("SELECT * FROM SONG WHERE id=?");
         try(Connection connection = connectionProvider.getConnection()){
-            PreparedStatement st = connection.prepareStatement(sql);
+            PreparedStatement st = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
             st.setInt(1,id);
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
@@ -119,5 +121,22 @@ public class DbDAOSong implements ISongRepository {
             throwables.printStackTrace();
         }
         return songSearched;
+    }
+
+    public List<String> getCategories(){
+        List<String> allcategories = new ArrayList<>();
+        String sql = "SELECT [Category] FROM Song GROUP BY Category";
+        try(Connection connection = connectionProvider.getConnection()){
+            PreparedStatement st = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()) {
+                allcategories.add(rs.getString("Category"));
+            }
+        } catch (SQLServerException throwables) {
+            throwables.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return allcategories;
     }
 }

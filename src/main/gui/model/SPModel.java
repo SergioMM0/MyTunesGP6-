@@ -4,7 +4,6 @@ import be.Playlist;
 import be.Song;
 import bll.MyTunesLogicController;
 import bll.MyTunesLogicFacade;
-import gui.controller.MainViewController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -32,10 +31,22 @@ public class SPModel {
         songsP = FXCollections.observableArrayList();
         songsP.clear();
         songsP.addAll(logicFacade.getAllSongsInPlaylist(getSelectedPlaylist()));
-        return songsP;
+        for (Song s : songsP) {
+            System.out.println(s);
+        }
+        System.out.println("----------");
+        return logicFacade.getAllSongsInPlaylist(getSelectedPlaylist());
     }
 
     public void updateSongPosition(Playlist playlist,Song selected, Song pushed) {
         logicFacade.updateSongPosition(playlist,selected,pushed);
+    }
+
+    public void deleteSongOnPlaylist(Playlist playlist, Song song){
+        logicFacade.deleteSongOnPlaylist(playlist, song);
+    }
+
+    public void addSongToPlaylist(Playlist playlist, Song song){
+        logicFacade.addSongToPlaylist(playlist,song);
     }
 }

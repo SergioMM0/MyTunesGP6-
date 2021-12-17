@@ -33,6 +33,9 @@ public class MainViewController implements Initializable {
     private TableView<Song> songsListView;
 
     @FXML
+    private Button RefreshSongsButton;
+
+    @FXML
     private TableColumn<Song, String> songArtistColumn;
 
     @FXML
@@ -157,14 +160,23 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    public void RefreshSongs(ActionEvent actionEvent) {
+        updateSongTableView();
+    }
+
+    @FXML
     void addSongToPlaylist(ActionEvent event) {
-        playlistModel.addSongToPlaylist();
+        spModel.addSongToPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsListView.getSelectionModel().getSelectedItem());
+        updateSongsInPlaylistView();
+        updatePLaylistTableView();
     }
 
     @FXML
     void deletePlaylist(ActionEvent event) {
         playlistModel.deletePlaylist(playlistListView.getSelectionModel().getSelectedItem());
         updatePLaylistTableView();
+        songsOnPlaylistListView.getItems().clear();
+        songsOnPlaylistListView.refresh();
     }
 
     @FXML
@@ -207,28 +219,77 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    void deleteSongFromPlaylist(ActionEvent event) {
-        playlistModel.deleteSongFromPlaylist();
+    public void OpenAddSongView(ActionEvent actionEvent) {
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("gui/view/NewSongView.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        NewSongController newSongController = loader.getController();
+        newSongController.setController(this);
+
+        Stage stage = new Stage();
+        stage.setTitle("Add a new Song");
+        stage.setScene(new Scene(root, 600, 400));
+        stage.show();
     }
 
     @FXML
-    void handleVolume(MouseEvent event) {
+    public void OpenEditSongView(ActionEvent actionEvent) {
 
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("gui/view/EditSongView.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        EditSongController editSongController = loader.getController();
+        editSongController.setController(this);
+        try {
+            editSongController.setSelectedSong(songsListView.getSelectionModel().getSelectedItem());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Stage stage = new Stage();
+        stage.setTitle("Edit selected song");
+        stage.setScene(new Scene(root, 600, 400));
+        stage.show();
+
+    }
+
+    @FXML
+    void deleteSongFromPlaylist(ActionEvent event) {
+        spModel.deleteSongOnPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsOnPlaylistListView.getSelectionModel().getSelectedItem());
+        updateSongsInPlaylistView();
     }
 
     @FXML
     void moveDownSongInPlaylist(ActionEvent event) {
         int position = songsOnPlaylistListView.getSelectionModel().getSelectedIndex();
-        if(position < songsOnPlaylistListView.getItems().size()){
+        if(position <= songsOnPlaylistListView.getItems().size()){
             spModel.updateSongPosition(playlistListView.getSelectionModel().getSelectedItem(),songsOnPlaylistListView.getItems().get(position),songsOnPlaylistListView.getItems().get(position+1));
         }
         updateSongsInPlaylistView();
+
     }
 
     @FXML
     void moveUpSongInPlaylist(ActionEvent event) {
-
+        int position = songsOnPlaylistListView.getSelectionModel().getSelectedIndex();
+        spModel.updateSongPosition(playlistListView.getSelectionModel().getSelectedItem(),songsOnPlaylistListView.getItems().get(position), songsOnPlaylistListView.getItems().get(position-1));
+        updateSongsInPlaylistView();
     }
+
+    @FXML
+    public void deleteSong(ActionEvent actionEvent) {
+        songModel.deleteSong(songsListView.getSelectionModel().getSelectedItem());
+        updateSongTableView();
+    }
+
+    //MEDIA PLAYER
 
     @FXML
     void nextSong(ActionEvent event) {
@@ -244,6 +305,11 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    void handleVolume(MouseEvent event) {
+
+    }
+
+    @FXML
     void searchSong(ActionEvent event) {
 
     }
@@ -253,9 +319,11 @@ public class MainViewController implements Initializable {
 
     }
 
+    @FXML
     public void playSongFromPlaylist(MouseEvent mouseEvent) {
     }
 
+    @FXML
     public void playSongFromSongs(MouseEvent mouseEvent) {
     }
 }

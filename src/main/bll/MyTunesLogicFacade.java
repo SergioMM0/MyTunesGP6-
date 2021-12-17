@@ -18,6 +18,8 @@ public interface MyTunesLogicFacade {
 
     Song getSong(int id) throws SQLException;
 
+    List<String> getCategories();
+
     //*************
 
     List<Playlist> getAllPlaylist();
@@ -39,4 +41,8 @@ public interface MyTunesLogicFacade {
     void deleteRemainingSongs(Playlist playlist);
 
     void updateSongPosition(Playlist playlist, Song selected, Song pushed);
+
+    void deleteSongOnPlaylist(Playlist playlist, Song song);
+
+    void addSongToPlaylist(Playlist playlist, Song song);
 }

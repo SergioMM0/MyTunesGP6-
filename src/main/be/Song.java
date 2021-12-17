@@ -10,7 +10,6 @@ public class Song {
     private String filePath;
     private int position;
 
-    //DELETE POSITION - STORE IT IN AN ARRAYLIST ON A METHOD ON MODEL
     public Song(int id, String name, String artist, String category, String duration,String filePath,int position) {
         this.id = id;
         this.name = name;

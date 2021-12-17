@@ -21,7 +21,7 @@ public class TestingClass {
         DbDAOSongsInPlaylistManager db = new DbDAOSongsInPlaylistManager();
         Song s = new Song(4,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3",0);
         Playlist p = new Playlist(1,"WorkingUpdate",123456,"7890");
-        db.deleteSongOnPlaylist(s);
+        db.deleteSongOnPlaylist(p,s);
     }
 
     public static List<Song> getSongsInPlaylist(){

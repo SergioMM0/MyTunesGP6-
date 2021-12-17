@@ -21,6 +21,8 @@ public interface MyTunesDalFacade {
 
     List<Song> getAllSongs();
 
+    List<String> getCategories();
+
     //******
 
     List<Playlist> getAllPlaylist();
@@ -42,4 +44,8 @@ public interface MyTunesDalFacade {
     void deleteRemainingSongs(Playlist playlist);
 
     void updateSongPosition(Playlist playlist, Song selected, Song pushed);
+
+    void deleteSongOnPlaylist(Playlist playlist,Song song);
+
+    void addSongToPlaylist(Playlist playlist, Song song);
 }
