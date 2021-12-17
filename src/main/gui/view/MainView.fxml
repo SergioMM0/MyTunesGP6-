@@ -51,7 +51,7 @@
    <Button fx:id="moveDownButton" layoutX="370.0" layoutY="544.0" mnemonicParsing="false" onAction="#moveDownSongInPlaylist" text="Move Down" />
    <Button fx:id="addSongToPlaylist" layoutX="455.0" layoutY="152.0" mnemonicParsing="false" onAction="#addSongToPlaylist" text="Add" />
    <Button fx:id="newSongButton" layoutX="518.0" layoutY="544.0" mnemonicParsing="false" onAction="#OpenAddSongView" text="New" />
-   <Button fx:id="editSongButton" layoutX="650.0" layoutY="544.0" mnemonicParsing="false" onAction="#openEditSongButton" text="Edit" />
+   <Button fx:id="editSongButton" layoutX="650.0" layoutY="544.0" mnemonicParsing="false" onAction="#OpenEditSongView" text="Edit" />
    <Button fx:id="deleteSongButton" layoutX="753.0" layoutY="544.0" mnemonicParsing="false" onAction="#deleteSong" text="Delete" />
    <Button fx:id="searchButton" layoutX="734.0" layoutY="30.0" mnemonicParsing="false" onAction="#searchSong" text="Search" />
    <Text fill="WHITE" layoutX="530.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filter:">

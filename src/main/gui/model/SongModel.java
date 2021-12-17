@@ -6,6 +6,8 @@ import bll.MyTunesLogicFacade;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.SQLException;
+
 public class SongModel {
 
     private final ObservableList<Song> songs;
@@ -19,5 +21,9 @@ public class SongModel {
 
     public ObservableList<Song> getSongs() {
         return songs;
+    }
+
+    public void addSong(Song song) throws SQLException {
+        logicFacade.addSong(song);
     }
 }

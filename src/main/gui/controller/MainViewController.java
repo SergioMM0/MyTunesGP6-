@@ -210,6 +210,44 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    public void OpenAddSongView(ActionEvent actionEvent) {
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("gui/view/NewSongView.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        NewSongController newSongController = loader.getController();
+        newSongController.setController(this);
+
+        Stage stage = new Stage();
+        stage.setTitle("Add a new Song");
+        stage.setScene(new Scene(root, 600, 400));
+        stage.show();
+    }
+
+    @FXML
+    public void OpenEditSongView(ActionEvent actionEvent) {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("gui/view/NewSongView.fxml"));
+        Parent root = null;
+        try {
+            root = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        EditSongController editSongController = loader.getController();
+        editSongController.setController(this);
+
+        Stage stage = new Stage();
+        stage.setTitle("Edit selected song");
+        stage.setScene(new Scene(root, 600, 400));
+        stage.show();
+
+    }
+
+    @FXML
     void deleteSongFromPlaylist(ActionEvent event) {
         spModel.deleteSongOnPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsOnPlaylistListView.getSelectionModel().getSelectedItem());
         updateSongsInPlaylistView();
@@ -230,15 +268,6 @@ public class MainViewController implements Initializable {
         int position = songsOnPlaylistListView.getSelectionModel().getSelectedIndex();
         spModel.updateSongPosition(playlistListView.getSelectionModel().getSelectedItem(),songsOnPlaylistListView.getItems().get(position), songsOnPlaylistListView.getItems().get(position-1));
         updateSongsInPlaylistView();
-    }
-
-    @FXML
-    public void OpenAddSongView(ActionEvent actionEvent) {
-
-    }
-
-    @FXML
-    public void openEditSongButton(ActionEvent actionEvent) {
     }
 
     @FXML
