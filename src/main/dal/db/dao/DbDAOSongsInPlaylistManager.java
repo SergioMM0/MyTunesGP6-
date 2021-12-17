@@ -17,9 +17,6 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
         dbConnectionProvider = new DBConnectionProvider();
     }
 
-    //add y delete deben funcionar. Last check 14.12 / 00:03
-    //delete already implemented and add por implementar, should be easy
-
     @Override
     public void addSongToPlaylist(Playlist playlist, Song song) {
         int newPosition = 0;

@@ -4,7 +4,6 @@ import be.Playlist;
 import be.Song;
 import bll.MyTunesLogicController;
 import bll.MyTunesLogicFacade;
-import gui.controller.MainViewController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -36,7 +35,7 @@ public class SPModel {
             System.out.println(s);
         }
         System.out.println("----------");
-        return songsP;
+        return logicFacade.getAllSongsInPlaylist(getSelectedPlaylist());
     }
 
     public void updateSongPosition(Playlist playlist,Song selected, Song pushed) {

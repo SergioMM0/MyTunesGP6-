@@ -36,6 +36,7 @@ public class DbDAOPlaylist implements IPLaylistRepository {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+        System.out.println("getting all playlist");
         return allPlaylists;
     }
 

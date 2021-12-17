@@ -168,6 +168,7 @@ public class MainViewController implements Initializable {
     void addSongToPlaylist(ActionEvent event) {
         spModel.addSongToPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsListView.getSelectionModel().getSelectedItem());
         updateSongsInPlaylistView();
+        updatePLaylistTableView();
     }
 
     @FXML
@@ -284,6 +285,8 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void deleteSong(ActionEvent actionEvent) {
+        songModel.deleteSong(songsListView.getSelectionModel().getSelectedItem());
+        updateSongTableView();
     }
 
     //MEDIA PLAYER

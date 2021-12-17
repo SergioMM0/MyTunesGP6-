@@ -29,6 +29,10 @@ public class Playlist {
         this.name = name;
     }
 
+    public void setHowManySongs(int howManySongs) {
+        this.howManySongs = howManySongs;
+    }
+
     public int getHowManySongs() {
         return howManySongs;
     }
