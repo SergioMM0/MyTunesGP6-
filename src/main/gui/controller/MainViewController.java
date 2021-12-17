@@ -33,6 +33,9 @@ public class MainViewController implements Initializable {
     private TableView<Song> songsListView;
 
     @FXML
+    private Button RefreshSongsButton;
+
+    @FXML
     private TableColumn<Song, String> songArtistColumn;
 
     @FXML
@@ -157,6 +160,11 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
+    public void RefreshSongs(ActionEvent actionEvent) {
+        updateSongTableView();
+    }
+
+    @FXML
     void addSongToPlaylist(ActionEvent event) {
         spModel.addSongToPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsListView.getSelectionModel().getSelectedItem());
         updateSongsInPlaylistView();
@@ -230,7 +238,7 @@ public class MainViewController implements Initializable {
     @FXML
     public void OpenEditSongView(ActionEvent actionEvent) {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("gui/view/NewSongView.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("gui/view/EditSongView.fxml"));
         Parent root = null;
         try {
             root = loader.load();
@@ -239,7 +247,11 @@ public class MainViewController implements Initializable {
         }
         EditSongController editSongController = loader.getController();
         editSongController.setController(this);
-
+        try {
+            editSongController.setSelectedSong(songsListView.getSelectionModel().getSelectedItem());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Stage stage = new Stage();
         stage.setTitle("Edit selected song");
         stage.setScene(new Scene(root, 600, 400));
@@ -311,6 +323,4 @@ public class MainViewController implements Initializable {
     @FXML
     public void playSongFromSongs(MouseEvent mouseEvent) {
     }
-
-
 }

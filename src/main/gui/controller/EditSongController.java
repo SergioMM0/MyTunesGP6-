@@ -1,5 +1,7 @@
 package gui.controller;
 
+import be.Playlist;
+import be.Song;
 import gui.model.SongModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,8 +34,12 @@ public class EditSongController implements Initializable {
     @FXML
     private TextField TitleTextField;
 
+    @FXML
+    private TextField DurationTextField;
+
     private SongModel songModel;
     private MainViewController mController;
+    private Song selectedS;
 
     public EditSongController(){
         try{
@@ -76,5 +82,9 @@ public class EditSongController implements Initializable {
     private void closeWindow(){
         Stage st = (Stage) CloseWindowButton.getScene().getWindow();
         st.close();
+    }
+
+    public void setSelectedSong(Song song) {
+        this.selectedS = song;
     }
 }

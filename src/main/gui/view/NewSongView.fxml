@@ -13,8 +13,8 @@
    <children>
       <Button layoutX="518.0" layoutY="345.0" mnemonicParsing="false" onAction="#AddSong" text="Add song" textAlignment="CENTER" />
       <Button fx:id="CloseWindowButton" layoutX="14.0" layoutY="345.0" mnemonicParsing="false" onAction="#CloseWindow" text="Cancel" textAlignment="CENTER" />
-      <TextField fx:id="TitleTextField" layoutX="113.0" layoutY="70.0" prefHeight="26.0" prefWidth="438.0" promptText="Thriller" />
-      <Text fill="WHITE" layoutX="65.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:">
+      <TextField fx:id="TitleTextField" layoutX="119.0" layoutY="40.0" prefHeight="26.0" prefWidth="438.0" promptText="Thriller" />
+      <Text fill="WHITE" layoutX="71.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:">
          <font>
             <Font size="15.0" />
          </font>
@@ -22,12 +22,12 @@
             <Glow />
          </effect>
       </Text>
-      <Line endX="-100.0" endY="-110.80000305175781" layoutX="204.0" layoutY="170.0" startX="-100.0" startY="-63.59999084472656" stroke="WHITE">
+      <Line endX="-100.0" endY="-110.80000305175781" layoutX="210.0" layoutY="140.0" startX="-100.0" startY="-63.59999084472656" stroke="WHITE">
          <effect>
             <Glow />
          </effect>
       </Line>
-      <Text fill="WHITE" layoutX="57.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:">
+      <Text fill="WHITE" layoutX="63.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist:">
          <font>
             <Font size="15.0" />
          </font>
@@ -35,13 +35,13 @@
             <Glow />
          </effect>
       </Text>
-      <Line endX="-100.0" endY="-110.80000305175781" layoutX="204.0" layoutY="238.0" startX="-100.0" startY="-63.59999084472656" stroke="WHITE">
+      <Line endX="-100.0" endY="-110.80000305175781" layoutX="210.0" layoutY="208.0" startX="-100.0" startY="-63.59999084472656" stroke="WHITE">
          <effect>
             <Glow />
          </effect>
       </Line>
-      <TextField fx:id="ArtistTextField" layoutX="113.0" layoutY="136.0" prefHeight="26.0" prefWidth="438.0" promptText="Michael Jackson" />
-      <Text fill="WHITE" layoutX="33.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category:">
+      <TextField fx:id="CategoryTextField" layoutX="119.0" layoutY="169.0" prefHeight="26.0" prefWidth="373.0" promptText="Rock" />
+      <Text fill="WHITE" layoutX="39.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category:">
          <font>
             <Font size="15.0" />
          </font>
@@ -49,15 +49,15 @@
             <Glow />
          </effect>
       </Text>
-      <Line endX="-100.0" endY="-110.80000305175781" layoutX="204.0" layoutY="301.0" startX="-100.0" startY="-63.59999084472656" stroke="WHITE">
+      <Line endX="-100.0" endY="-110.80000305175781" layoutX="210.0" layoutY="271.0" startX="-100.0" startY="-63.59999084472656" stroke="WHITE">
          <effect>
             <Glow />
          </effect>
       </Line>
-      <ComboBox fx:id="CategoriesComboBox" layoutX="113.0" layoutY="201.0" prefHeight="26.0" prefWidth="223.0" promptText="Categories" />
-      <Button fx:id="NewCategoryButton" layoutX="351.0" layoutY="200.0" mnemonicParsing="false" onAction="#WriteNewCategory" text="New category" textAlignment="CENTER" />
-      <TextField fx:id="FilePathTextField" layoutX="113.0" layoutY="267.0" prefHeight="26.0" prefWidth="366.0" promptText="C:/Users/data/thriller.mp3" />
-      <Text fill="WHITE" layoutX="33.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File path:">
+      <ComboBox fx:id="CategoriesComboBox" layoutX="119.0" layoutY="171.0" prefHeight="26.0" prefWidth="223.0" promptText="Categories" />
+      <Button fx:id="NewCategoryButton" layoutX="357.0" layoutY="170.0" mnemonicParsing="false" onAction="#WriteNewCategory" text="New category" textAlignment="CENTER" />
+      <TextField fx:id="FilePathTextField" layoutX="119.0" layoutY="237.0" prefHeight="26.0" prefWidth="366.0" promptText="C:/Users/data/thriller.mp3" />
+      <Text fill="WHITE" layoutX="39.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="File path:">
          <font>
             <Font size="15.0" />
          </font>
@@ -65,11 +65,27 @@
             <Glow />
          </effect>
       </Text>
-      <Line endX="-100.0" endY="-110.80000305175781" layoutX="204.0" layoutY="367.0" startX="-100.0" startY="-63.59999084472656" stroke="WHITE">
+      <Line endX="-100.0" endY="-110.80000305175781" layoutX="210.0" layoutY="337.0" startX="-100.0" startY="-63.59999084472656" stroke="WHITE">
          <effect>
             <Glow />
          </effect>
       </Line>
-      <Button layoutX="500.0" layoutY="267.0" mnemonicParsing="false" onAction="#ChooseFilePath" text="Choose" textAlignment="CENTER" />
+      <Button layoutX="506.0" layoutY="237.0" mnemonicParsing="false" onAction="#ChooseFilePath" text="Choose" textAlignment="CENTER" />
+      <Text fill="WHITE" layoutX="39.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration:">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <Line endX="-100.0" endY="-110.80000305175781" layoutX="210.0" layoutY="397.0" startX="-100.0" startY="-63.59999084472656" stroke="WHITE">
+         <effect>
+            <Glow />
+         </effect>
+      </Line>
+      <Button fx:id="CancelAddCategoryButton" layoutX="508.0" layoutY="169.0" mnemonicParsing="false" onAction="#CancelAddCategory" text="Cancel" textAlignment="CENTER" />
+      <TextField fx:id="ArtistTextField" layoutX="119.0" layoutY="107.0" prefHeight="26.0" prefWidth="438.0" promptText="Michael Jackson" />
+      <TextField fx:id="DurationTextField" layoutX="119.0" layoutY="297.0" promptText="In seconds" />
    </children>
 </AnchorPane>

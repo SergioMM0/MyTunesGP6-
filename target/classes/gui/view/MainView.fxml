@@ -101,4 +101,5 @@
       </effect>
    </Text>
    <Button fx:id="refreshPlaylistButton" layoutX="202.0" layoutY="95.0" mnemonicParsing="false" onAction="#refreshPlaylist" prefHeight="20.0" prefWidth="2.0" text="Button" />
+   <Button fx:id="RefreshSongsButton" layoutX="778.0" layoutY="95.0" mnemonicParsing="false" onAction="#RefreshSongs" prefHeight="20.0" prefWidth="2.0" text="Button" />
 </AnchorPane>

@@ -52,7 +52,7 @@ public class EditPlaylistController implements Initializable {
 
     @FXML
     void renamePlaylistACT(ActionEvent event) {
-        if( newName != null || newName.getText() != ""){ //not working if statement
+        if( newName != null || newName.getText() != ""){
             selected.setName(newName.getText());
             model.renamePlaylist(selected);
             mController.updatePLaylistTableView();

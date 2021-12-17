@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class SongModel {
 
@@ -25,5 +26,9 @@ public class SongModel {
 
     public void addSong(Song song) throws SQLException {
         logicFacade.addSong(song);
+    }
+
+    public List<String> getCategories(){
+        return logicFacade.getCategories();
     }
 }
