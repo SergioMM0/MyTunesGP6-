@@ -19,7 +19,7 @@ public class TestingClass {
 
     public static void deleteSongInPlaylist(){
         DbDAOSongsInPlaylistManager db = new DbDAOSongsInPlaylistManager();
-        Song s = new Song(4,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3",0);
+        Song s = new Song(4,"itWorks","Worked","Dubstep","555", "data/song.mp3",0);
         Playlist p = new Playlist(1,"WorkingUpdate",123456,"7890");
         db.deleteSongOnPlaylist(p,s);
     }
@@ -33,7 +33,7 @@ public class TestingClass {
     public static void addSongToPlaylist(){
         DbDAOSongsInPlaylistManager db = new DbDAOSongsInPlaylistManager();
         Playlist p = new Playlist(2,"WorkingUpdate",123456,"7890");
-        Song s = new Song(4,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3",0);
+        Song s = new Song(4,"itWorks","Worked","Dubstep","555", "data/song.mp3",0);
         int position = 1;
         db.addSongToPlaylist(p,s);
     }
@@ -52,7 +52,7 @@ public class TestingClass {
 
     public static Song updateSong() throws SQLException {
         DbDAOSong db = new DbDAOSong();
-        Song s = new Song(22,"itWorks","Worked","Dubstep","555", "data/notanormaldata.mp3",0);
+        Song s = new Song(22,"itWorks","Worked","Dubstep","555", "data/song.mp3",0);
         db.updateSong(s);
         return s;
     }

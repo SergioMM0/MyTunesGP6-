@@ -40,11 +40,6 @@ public class DbDAOPlaylist implements IPLaylistRepository {
         return allPlaylists;
     }
 
-    /**
-     * Adds a Playlist to the database based on name
-     * @param name
-     * @return Playlist
-     */
 
     @Override
     public void addPlaylist(String name) {
@@ -54,7 +49,7 @@ public class DbDAOPlaylist implements IPLaylistRepository {
             PreparedStatement st = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             st.setString(1, name);
             st.setInt(2, 0);
-            st.setInt(3, 0);
+            st.setString(3, "00:00:00");
             st.execute();
             ResultSet rs = st.getGeneratedKeys();
             rs.next();

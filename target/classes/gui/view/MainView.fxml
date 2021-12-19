@@ -23,8 +23,8 @@
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
       </columnResizePolicy>
    </TableView>
-   <ListView fx:id="songsOnPlaylistListView" layoutX="247.0" layoutY="125.0" onMouseClicked="#playSongFromPlaylist" prefHeight="408.0" prefWidth="200.0" />
-   <TableView fx:id="songsListView" layoutX="518.0" layoutY="125.0" onMouseClicked="#playSongFromSongs" prefHeight="408.0" prefWidth="286.0">
+   <ListView fx:id="songsOnPlaylistListView" layoutX="247.0" layoutY="125.0" onMouseClicked="#ClickOnPlaylist" prefHeight="408.0" prefWidth="200.0" />
+   <TableView fx:id="songsListView" layoutX="518.0" layoutY="125.0" onMouseClicked="#ClickOnSongs" prefHeight="408.0" prefWidth="286.0">
       <columns>
          <TableColumn fx:id="songTitleColumn" prefWidth="75.0" text="Title" />
          <TableColumn fx:id="songArtistColumn" prefWidth="75.0" text="Artist" />
@@ -35,10 +35,10 @@
          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
       </columnResizePolicy>
    </TableView>
-   <Button fx:id="playSongButton" layoutX="111.0" layoutY="30.0" mnemonicParsing="false" onAction="#playSong" text="Play" />
+   <Button fx:id="playSongButton" layoutX="111.0" layoutY="30.0" mnemonicParsing="false" onAction="#playStopSong" text="Play" />
    <Button fx:id="previousSongButton" layoutX="36.0" layoutY="30.0" mnemonicParsing="false" onAction="#previousSong" text="Previous" />
    <Button fx:id="nextSongButton" layoutX="160.0" layoutY="30.0" mnemonicParsing="false" onAction="#nextSong" text="Next" />
-   <Slider fx:id="volumeSlider" layoutX="58.0" layoutY="73.0" onDragDetected="#handleVolume">
+   <Slider fx:id="volumeSlider" blockIncrement="1.0" layoutX="58.0" layoutY="73.0" max="200.0" value="50.0">
       <effect>
          <Glow />
       </effect>

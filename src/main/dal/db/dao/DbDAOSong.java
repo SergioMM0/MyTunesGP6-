@@ -132,9 +132,7 @@ public class DbDAOSong implements ISongRepository {
             while(rs.next()) {
                 allcategories.add(rs.getString("Category"));
             }
-        } catch (SQLServerException throwables) {
-            throwables.printStackTrace();
-        } catch (SQLException throwables) {
+        }  catch (SQLException throwables) {
             throwables.printStackTrace();
         }
         return allcategories;
