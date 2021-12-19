@@ -40,11 +40,6 @@ public class DbDAOPlaylist implements IPLaylistRepository {
         return allPlaylists;
     }
 
-    /**
-     * Adds a Playlist to the database based on name
-     * @param name
-     * @return Playlist
-     */
 
     @Override
     public void addPlaylist(String name) {

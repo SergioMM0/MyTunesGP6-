@@ -60,9 +60,6 @@ public class MainViewController implements Initializable {
     private TableColumn<Playlist, String> playlistTimeColumn;
 
     @FXML
-    private Button refreshPlaylistButton; //done
-
-    @FXML
     private Button addSongToPlaylist;
 
     @FXML
