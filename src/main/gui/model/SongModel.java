@@ -9,6 +9,11 @@ import javafx.collections.ObservableList;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on Github
+ */
+
 public class SongModel {
 
     private final MyTunesLogicFacade logicFacade;

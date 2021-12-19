@@ -9,6 +9,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on Github
+ */
+
 public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
 
     private final DBConnectionProvider dbConnectionProvider;
@@ -62,7 +67,6 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
         return songsInPlaylist;
     }
 
@@ -112,7 +116,5 @@ public class DbDAOSongsInPlaylistManager implements ISongsInPlaylistManager {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
     }
-
 }

@@ -1,5 +1,10 @@
 package be;
 
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on Github
+ */
+
 public class Song {
 
     private int id;

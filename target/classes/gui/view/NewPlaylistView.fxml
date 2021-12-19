@@ -32,7 +32,7 @@
          <Glow/>
       </effect>
    </Text>
-   <Button fx:id="addPlaylistButton" layoutX="321.0" layoutY="201.0" mnemonicParsing="false" onAction="#addPlaylist"
+   <Button layoutX="321.0" layoutY="201.0" mnemonicParsing="false" onAction="#addPlaylist"
            text="Add..."/>
    <Button fx:id="closeWindowButton" layoutX="35.0" layoutY="201.0" mnemonicParsing="false" onAction="#closeWindow"
            text="Cancel"/>

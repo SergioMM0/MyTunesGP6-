@@ -1,5 +1,10 @@
 package be;
 
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on Github
+ */
+
 public class Playlist {
     private int id;
     private String name;

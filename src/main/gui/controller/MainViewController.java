@@ -29,11 +29,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on Github
+ */
+
 public class MainViewController implements Initializable {
 
-    private PlaylistModel playlistModel;
-    private SongModel songModel;
-    private SPModel spModel;
+    private final PlaylistModel playlistModel;
+    private final SongModel songModel;
+    private final SPModel spModel;
     private List<Song> songsRecord;
     private MediaPlayer mediaPlayer;
     private boolean playingFromSongs = false;
@@ -42,9 +47,6 @@ public class MainViewController implements Initializable {
 
     @FXML
     private TableView<Song> songsListView;
-
-    @FXML
-    private Button RefreshSongsButton;
 
     @FXML
     private TableColumn<Song, String> songArtistColumn;
@@ -68,46 +70,7 @@ public class MainViewController implements Initializable {
     private TableColumn<Playlist, String> playlistTimeColumn;
 
     @FXML
-    private Button addSongToPlaylist;
-
-    @FXML
     private Label currentlyPlayingSongLabel;
-
-    @FXML
-    private Button deleteFromPlaylist;
-
-    @FXML
-    private Button deletePlaylistButton;
-
-    @FXML
-    private Button editPlaylistButton;
-
-    @FXML
-    private TextField filterTextField;
-
-    @FXML
-    private Button moveDownButton;
-
-    @FXML
-    private Button moveUpButton;
-
-    @FXML
-    private Button newPlaylistButton;
-
-    @FXML
-    private Button newSongButton;
-
-    @FXML
-    private Button nextSongButton;
-
-    @FXML
-    private Button playSongButton;
-
-    @FXML
-    private Button previousSongButton;
-
-    @FXML
-    private Button searchButton;
 
     @FXML
     private TableColumn<Song, String> songTitleColumn;
@@ -122,7 +85,6 @@ public class MainViewController implements Initializable {
         playlistModel = new PlaylistModel();
         songModel = new SongModel();
         spModel = new SPModel();
-
     }
 
     @Override
@@ -132,6 +94,10 @@ public class MainViewController implements Initializable {
         songsRecord = new ArrayList<>();
         addListener();
     }
+
+    /**
+     * The following 5 methods handle the refresh of the List View.
+     */
 
     public void updateSongTableView() {
         songsListView.getItems().clear();
@@ -152,12 +118,6 @@ public class MainViewController implements Initializable {
         playlistListView.getItems().setAll(playlistModel.getAllPlaylist());
     }
 
-    @FXML
-    void selectPlaylist(MouseEvent event) {
-        spModel.setSelectedPlaylist(playlistListView.getSelectionModel().getSelectedItem());
-        updateSongsInPlaylistView();
-    }
-
     public void updateSongsInPlaylistView() {
         songsOnPlaylistListView.getItems().clear();
         songsOnPlaylistListView.refresh();
@@ -174,11 +134,18 @@ public class MainViewController implements Initializable {
         updateSongTableView();
     }
 
+    //
+
     @FXML
-    void addSongToPlaylist(ActionEvent event) {
-        spModel.addSongToPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsListView.getSelectionModel().getSelectedItem());
+    public void deleteSong(ActionEvent actionEvent) {
+        songModel.deleteSong(songsListView.getSelectionModel().getSelectedItem());
+        updateSongTableView();
+    }
+
+    @FXML
+    void selectPlaylist(MouseEvent event) {
+        spModel.setSelectedPlaylist(playlistListView.getSelectionModel().getSelectedItem());
         updateSongsInPlaylistView();
-        playlistListView.refresh();
     }
 
     @FXML
@@ -188,6 +155,10 @@ public class MainViewController implements Initializable {
         songsOnPlaylistListView.getItems().clear();
         songsOnPlaylistListView.refresh();
     }
+
+    /**
+     * The following 4 methods handle the open of new windows.
+     */
 
     @FXML
     void openNewPlaylistView(ActionEvent event) {
@@ -199,7 +170,7 @@ public class MainViewController implements Initializable {
             e.printStackTrace();
         }
         NewPlaylistController newPlaylistController = loader.getController();
-        newPlaylistController.setmController(this);
+        newPlaylistController.setmController(this); //establishes the main controller as the controller.
         Stage stage = new Stage();
         stage.setTitle("Add playlist");
         stage.setScene(new Scene(root, 405, 270));
@@ -270,11 +241,22 @@ public class MainViewController implements Initializable {
 
     }
 
+    /**
+     * The following 4 methods handle operations in between song and playlist.
+     */
+
     @FXML
     void deleteSongFromPlaylist(ActionEvent event) {
         spModel.deleteSongOnPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsOnPlaylistListView.getSelectionModel().getSelectedItem());
         playlistListView.refresh();
         updateSongsInPlaylistView();
+    }
+
+    @FXML
+    void addSongToPlaylist(ActionEvent event) {
+        spModel.addSongToPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsListView.getSelectionModel().getSelectedItem());
+        updateSongsInPlaylistView();
+        playlistListView.refresh();
     }
 
     @FXML
@@ -294,13 +276,9 @@ public class MainViewController implements Initializable {
         updateSongsInPlaylistView();
     }
 
-    @FXML
-    public void deleteSong(ActionEvent actionEvent) {
-        songModel.deleteSong(songsListView.getSelectionModel().getSelectedItem());
-        updateSongTableView();
-    }
-
-    //MEDIA PLAYER
+    /**
+     * The following 8 methods handle the media player operations.
+     */
 
     @FXML
     void playStopSong(ActionEvent event) {
@@ -420,7 +398,7 @@ public class MainViewController implements Initializable {
         }
     }
 
-    // Handle Search Song
+    // Handle Search Song TO BE IMPLEMENTED (Lack of time...)
 
     @FXML
     void searchSong(ActionEvent event) {

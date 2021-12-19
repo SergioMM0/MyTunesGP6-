@@ -8,6 +8,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on GitHub
+ */
+
 public class DbDAOPlaylist implements IPLaylistRepository {
 
     private final DBConnectionProvider connectionProvider;
@@ -16,10 +21,6 @@ public class DbDAOPlaylist implements IPLaylistRepository {
          connectionProvider = new DBConnectionProvider();
     }
 
-    /**
-     * Collect all Playlist from database
-     * @return List of PLaylist
-     */
     @Override
     public List<Playlist> getAllPlaylist() {
         List<Playlist> allPlaylists = new ArrayList<>();
@@ -36,7 +37,6 @@ public class DbDAOPlaylist implements IPLaylistRepository {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        System.out.println("getting all playlist");
         return allPlaylists;
     }
 

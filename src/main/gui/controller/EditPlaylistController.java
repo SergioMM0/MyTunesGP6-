@@ -14,22 +14,21 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on Github
+ */
+
 public class EditPlaylistController implements Initializable {
 
     @FXML
     private Label PlainText1;
 
     @FXML
-    private Text TXT;
-
-    @FXML
     private Button closeWindowButton;
 
     @FXML
     private TextField newName;
-
-    @FXML
-    private Button renamePlaylistButton;
 
     private static PlaylistModel model;
     private MainViewController mController;
