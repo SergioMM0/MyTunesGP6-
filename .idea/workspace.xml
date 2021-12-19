@@ -6,16 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="73cbb60d-7bd0-4013-9c7a-cdc7a2cc8936" name="Changes" comment="Methods on DAO Implemented and working, bugged on refresh observable list of songsOnPlaylistListView but working on DB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/be/Playlist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/be/Playlist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/bll/MyTunesLogicController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOPlaylist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOPlaylist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSong.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/dal/db/dao/DbDAOSongsInPlaylistManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/controller/EditSongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/EditSongController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/controller/MainViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/model/SPModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/SPModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/model/SongModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/model/SongModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/gui/view/EditSongView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/EditSongView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/gui/view/MainView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +188,8 @@
       <workItem from="1639680320953" duration="3577000" />
       <workItem from="1639736743828" duration="6814000" />
       <workItem from="1639744293823" duration="115000" />
-      <workItem from="1639750597755" duration="6894000" />
+      <workItem from="1639750597755" duration="7335000" />
+      <workItem from="1639906609181" duration="10157000" />
     </task>
     <task id="LOCAL-00001" summary="The FXML">
       <created>1638294215195</created>

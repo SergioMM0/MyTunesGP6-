@@ -14,8 +14,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -168,7 +171,7 @@ public class MainViewController implements Initializable {
     void addSongToPlaylist(ActionEvent event) {
         spModel.addSongToPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsListView.getSelectionModel().getSelectedItem());
         updateSongsInPlaylistView();
-        updatePLaylistTableView();
+        playlistListView.refresh();
     }
 
     @FXML
@@ -263,6 +266,7 @@ public class MainViewController implements Initializable {
     @FXML
     void deleteSongFromPlaylist(ActionEvent event) {
         spModel.deleteSongOnPlaylist(playlistListView.getSelectionModel().getSelectedItem(),songsOnPlaylistListView.getSelectionModel().getSelectedItem());
+        playlistListView.refresh();
         updateSongsInPlaylistView();
     }
 
@@ -291,12 +295,19 @@ public class MainViewController implements Initializable {
 
     //MEDIA PLAYER
 
+    private MediaPlayer mediaPlayer;
+    private boolean isPlaying = false;
+
     @FXML
     void nextSong(ActionEvent event) {
     }
 
     @FXML
-    void playSong(ActionEvent event) {
+    void playStopSong(ActionEvent event) {
+        if (!isPlaying){
+            play();
+        }
+        else stop();
     }
 
     @FXML
@@ -320,10 +331,31 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    public void playSongFromPlaylist(MouseEvent mouseEvent) {
+    public void ClickOnPlaylist(MouseEvent mouseEvent) {
+        if (mediaPlayer != null){
+            stop();
+        }
+        File f = new File(songsOnPlaylistListView.getSelectionModel().getSelectedItem().getFilePath());
+        mediaPlayer = new MediaPlayer(new Media(f.toURI().toString()));
+        play();
     }
 
     @FXML
-    public void playSongFromSongs(MouseEvent mouseEvent) {
+    public void ClickOnSongs(MouseEvent mouseEvent) {
+        if (mediaPlayer != null){
+            stop();
+        }
+        File f = new File(songsListView.getSelectionModel().getSelectedItem().getFilePath());
+        mediaPlayer = new MediaPlayer(new Media(f.toURI().toString()));
+        play();
+        isPlaying = true;
+    }
+
+    private void play(){
+        mediaPlayer.play();
+    }
+
+    private void stop(){
+        mediaPlayer.stop();
     }
 }
