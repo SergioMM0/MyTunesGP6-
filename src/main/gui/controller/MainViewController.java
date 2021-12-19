@@ -5,6 +5,8 @@ import be.Song;
 import gui.model.PlaylistModel;
 import gui.model.SPModel;
 import gui.model.SongModel;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +23,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -31,6 +34,11 @@ public class MainViewController implements Initializable {
     private PlaylistModel playlistModel;
     private SongModel songModel;
     private SPModel spModel;
+    private List<Song> songsRecord;
+    private MediaPlayer mediaPlayer;
+    private boolean playingFromSongs = false;
+    private boolean playingFromPlaylist = false;
+    private int numberOfListener = 0; //Keeps track. 1 for playing a song from all songs table or 2 for playing a song from Playlist table
 
     @FXML
     private TableView<Song> songsListView;
@@ -121,6 +129,8 @@ public class MainViewController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         updateSongTableView();
         updatePLaylistTableView();
+        songsRecord = new ArrayList<>();
+        addListener();
     }
 
     public void updateSongTableView() {
@@ -292,30 +302,125 @@ public class MainViewController implements Initializable {
 
     //MEDIA PLAYER
 
-    private MediaPlayer mediaPlayer;
-    private boolean isPlaying = false;
-
     @FXML
-    void nextSong(ActionEvent event) {
+    void playStopSong(ActionEvent event) {
+        if (playingFromSongs){
+            mediaPlayer.pause();
+            playingFromSongs = false;
+        }
+        else if (playingFromPlaylist){
+            mediaPlayer.pause();
+            playingFromPlaylist = false;
+        }
+        else {
+            if (numberOfListener == 1 && mediaPlayer != null){
+                playingFromSongs = true;
+                mediaPlayer.play();
+            }
+            else if (numberOfListener == 2 && mediaPlayer != null){
+                playingFromPlaylist = true;
+                mediaPlayer.play();
+            }
+        }
     }
 
     @FXML
-    void playStopSong(ActionEvent event) {
-        if (!isPlaying){
-            play();
+    void nextSong(ActionEvent event) {
+        stopPlaying();
+        if (numberOfListener == 1){
+            songsListView.getSelectionModel().selectNext();
+            File f = new File(songsListView.getSelectionModel().getSelectedItem().getFilePath());
+            mediaPlayer = new MediaPlayer(new Media(f.toURI().toString()));
+            mediaPlayer.play();
+            playingFromSongs = true;
+            songsRecord.add(songsListView.getSelectionModel().getSelectedItem());
+            currentlyPlayingSongLabel.setText(songsListView.getSelectionModel().getSelectedItem().getName());
         }
-        else stop();
+        else if (numberOfListener == 2){
+            songsOnPlaylistListView.getSelectionModel().selectNext();
+            File f = new File(songsOnPlaylistListView.getSelectionModel().getSelectedItem().getFilePath());
+            mediaPlayer = new MediaPlayer(new Media(f.toURI().toString()));
+            mediaPlayer.play();
+            playingFromPlaylist = true;
+            songsRecord.add(songsOnPlaylistListView.getSelectionModel().getSelectedItem());
+            currentlyPlayingSongLabel.setText(songsOnPlaylistListView.getSelectionModel().getSelectedItem().getName());
+        }
     }
 
     @FXML
     void previousSong(ActionEvent event) {
+        stopPlaying();
+        if (numberOfListener == 1){
+            Song previous = getLastSong(songsRecord);
+            File f = new File(previous.getFilePath());
+            mediaPlayer = new MediaPlayer(new Media(f.toURI().toString()));
+            mediaPlayer.play();
+            playingFromSongs = true;
+            currentlyPlayingSongLabel.setText(previous.getName());
+        }
+        else if (numberOfListener == 2) {
+            Song previous = getLastSong(songsRecord);
+            File f = new File(previous.getFilePath());
+            mediaPlayer = new MediaPlayer(new Media(f.toURI().toString()));
+            mediaPlayer.play();
+            playingFromPlaylist = true;
+            currentlyPlayingSongLabel.setText(previous.getName());
+        }
+    }
+
+    public Song getLastSong(List<Song> list){
+        if (list.size() != 0){
+            Song last = list.get(list.size()-1);
+            list.remove(list.size()-1);
+            System.out.println("Deleted last song");
+            return last;
+        }
+        else return null;
+    }
+
+    public void addListener(){
+        volumeSlider.valueProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                mediaPlayer.setVolume(volumeSlider.getValue() * 0.01);
+            }
+        });
+    }
+
+    @FXML
+    public void ClickOnPlaylist(MouseEvent mouseEvent) {
+        stopPlaying();
+        File f = new File(songsOnPlaylistListView.getSelectionModel().getSelectedItem().getFilePath());
+        mediaPlayer = new MediaPlayer(new Media(f.toURI().toString()));
+        mediaPlayer.play();
+        numberOfListener = 2;
+        playingFromPlaylist = true;
+        songsRecord.add(songsOnPlaylistListView.getSelectionModel().getSelectedItem());
+        currentlyPlayingSongLabel.setText(songsOnPlaylistListView.getSelectionModel().getSelectedItem().getName());
 
     }
 
     @FXML
-    void handleVolume(MouseEvent event) {
-
+    public void ClickOnSongs(MouseEvent mouseEvent) {
+        stopPlaying();
+        File f = new File(songsListView.getSelectionModel().getSelectedItem().getFilePath());
+        mediaPlayer = new MediaPlayer(new Media(f.toURI().toString()));
+        mediaPlayer.play();
+        numberOfListener = 1;
+        playingFromSongs = true;
+        songsRecord.add(songsListView.getSelectionModel().getSelectedItem());
+        currentlyPlayingSongLabel.setText(songsListView.getSelectionModel().getSelectedItem().getName());
     }
+
+    private void stopPlaying(){
+        if (mediaPlayer != null || playingFromPlaylist || playingFromSongs){
+            mediaPlayer.stop();
+            playingFromPlaylist = false;
+            playingFromSongs = false;
+        }
+    }
+
+    // Handle Search Song
 
     @FXML
     void searchSong(ActionEvent event) {
@@ -325,34 +430,5 @@ public class MainViewController implements Initializable {
     @FXML
     void searchSongTextField(ActionEvent event) {
 
-    }
-
-    @FXML
-    public void ClickOnPlaylist(MouseEvent mouseEvent) {
-        if (mediaPlayer != null){
-            stop();
-        }
-        File f = new File(songsOnPlaylistListView.getSelectionModel().getSelectedItem().getFilePath());
-        mediaPlayer = new MediaPlayer(new Media(f.toURI().toString()));
-        play();
-    }
-
-    @FXML
-    public void ClickOnSongs(MouseEvent mouseEvent) {
-        if (mediaPlayer != null){
-            stop();
-        }
-        File f = new File(songsListView.getSelectionModel().getSelectedItem().getFilePath());
-        mediaPlayer = new MediaPlayer(new Media(f.toURI().toString()));
-        play();
-        isPlaying = true;
-    }
-
-    private void play(){
-        mediaPlayer.play();
-    }
-
-    private void stop(){
-        mediaPlayer.stop();
     }
 }
