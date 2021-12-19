@@ -9,6 +9,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on Github
+ */
+
 public class DbDAOSong implements ISongRepository {
 
     private final DBConnectionProvider connectionProvider;
@@ -35,7 +40,6 @@ public class DbDAOSong implements ISongRepository {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        System.out.println("getting all songs...");
         return allSongs;
     }
 
@@ -95,7 +99,6 @@ public class DbDAOSong implements ISongRepository {
         } catch (SQLServerException throwables) {
             throwables.printStackTrace();
         }
-        System.out.println("updated");
     }
 
     @Override

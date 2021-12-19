@@ -8,6 +8,11 @@ import javafx.collections.ObservableList;
 
 import java.util.List;
 
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on Github
+ */
+
 public class PlaylistModel {
 
     private final MyTunesLogicFacade logicFacade;

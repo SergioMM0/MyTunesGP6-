@@ -11,11 +11,12 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class NewPlaylistController implements Initializable {
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on Github
+ */
 
-    public Button renamePlaylistButton;
-    @FXML
-    private Button addPlaylistButton;
+public class NewPlaylistController implements Initializable {
 
     @FXML
     private Button closeWindowButton;

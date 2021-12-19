@@ -12,6 +12,11 @@ import dal.interfaces.ISongsInPlaylistManager;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on Github
+ */
+
 public class MyTunesDalController implements MyTunesDalFacade {
 
     private final IPLaylistRepository playlistRepository;

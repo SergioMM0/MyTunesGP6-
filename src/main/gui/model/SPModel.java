@@ -7,6 +7,11 @@ import bll.MyTunesLogicFacade;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on Github
+ */
+
 import java.util.List;
 
 public class SPModel {
@@ -31,10 +36,6 @@ public class SPModel {
         songsP = FXCollections.observableArrayList();
         songsP.clear();
         songsP.addAll(logicFacade.getAllSongsInPlaylist(getSelectedPlaylist()));
-        for (Song s : songsP) {
-            System.out.println(s);
-        }
-        System.out.println("----------");
         return logicFacade.getAllSongsInPlaylist(getSelectedPlaylist());
     }
 

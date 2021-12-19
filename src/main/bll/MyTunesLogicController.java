@@ -6,13 +6,16 @@ import dal.MyTunesDalController;
 import dal.MyTunesDalFacade;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
+
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on GitHub
+ */
 
 public class MyTunesLogicController implements MyTunesLogicFacade {
 
     private final MyTunesDalFacade dalFacade;
-    private List<Song> allSongs;
 
     public MyTunesLogicController() {
         dalFacade = new MyTunesDalController();
@@ -36,11 +39,6 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     @Override
     public void updateSong(Song song) throws SQLException {
         dalFacade.updateSong(song);
-    }
-
-    @Override
-    public Song getSong(int id) throws SQLException {
-        return dalFacade.getSong(id);
     }
 
     @Override
@@ -74,15 +72,11 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
     }
 
     @Override
-    public Playlist updatePlaylist(Playlist playlist) {
-        return dalFacade.updatePlaylist(playlist);
-    }
-
-    @Override
     public List<Song> getAllSongsInPlaylist(Playlist playlist) {
         return dalFacade.getAllSongsInPlaylist(playlist);
     }
 
+    @Override
     public void updateSongPosition(Playlist playlist, Song selected, Song pushed){
         dalFacade.updateSongPosition(playlist,selected,pushed);
     }
@@ -107,6 +101,11 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
         dalFacade.updatePlaylist(playlist);
     }
 
+    @Override
+    public void deleteRemainingSongs(Playlist playlist){
+        dalFacade.deleteRemainingSongs(playlist);
+    }
+
     private void addDuration(Playlist playlist,Song song){
         int durationPlaylist = getDurationOfPlaylist(playlist);
         int durationSong = getDurationOfSong(song);
@@ -125,10 +124,10 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
 
     private int getDurationOfPlaylist(Playlist playlist){
         String playlistTotalTime = playlist.getTotalReproductionTime();
-        String[] pSplitted = playlistTotalTime.split(":");
-        int hourInS = Integer.parseInt(pSplitted[0])*3600;
-        int minInS = Integer.parseInt(pSplitted[1])*60;
-        int seconds = Integer.parseInt(pSplitted[2]);
+        String[] pSplit = playlistTotalTime.split(":");
+        int hourInS = Integer.parseInt(pSplit[0])*3600;
+        int minInS = Integer.parseInt(pSplit[1])*60;
+        int seconds = Integer.parseInt(pSplit[2]);
         int total = hourInS+minInS+seconds;
         System.out.println("Playlist actual rep time: " + total);
         return total;
@@ -136,8 +135,8 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
 
     private int getDurationOfSong(Song song){
         String duration = song.getDuration();
-        String[] splitted = duration.split(":");
-        int songInSeconds = (Integer.parseInt(splitted[0])*60) + Integer.parseInt(splitted[1]);
+        String[] split = duration.split(":");
+        int songInSeconds = (Integer.parseInt(split[0])*60) + Integer.parseInt(split[1]);
         System.out.println("Song rep time: "+ songInSeconds);
         return songInSeconds;
     }
@@ -164,9 +163,5 @@ public class MyTunesLogicController implements MyTunesLogicFacade {
         String totalRepTime = fixedH + ":" + fixedM + ":" + fixedS;
         System.out.println(totalRepTime);
         return totalRepTime;
-    }
-
-    public void deleteRemainingSongs(Playlist playlist){
-        dalFacade.deleteRemainingSongs(playlist);
     }
 }

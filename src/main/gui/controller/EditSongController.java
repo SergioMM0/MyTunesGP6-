@@ -20,6 +20,11 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+/**
+ * Author: Sergio M.
+ * @SergioMM0 on Github
+ */
+
 public class EditSongController implements Initializable {
 
     @FXML
@@ -63,6 +68,10 @@ public class EditSongController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Allows to open a window in window explorer to select where is the song stored.
+     */
 
     @FXML
     void ChooseFilePath(ActionEvent event) {

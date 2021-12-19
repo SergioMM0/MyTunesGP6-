@@ -18,7 +18,7 @@
          </font>
       </Label>
       <Line endX="178.4000244140625" layoutX="200.0" layoutY="69.0" startX="-179.20001220703125" stroke="WHITE" />
-      <Text fx:id="TXT" fill="WHITE" layoutX="47.0" layoutY="131.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="New name:">
+      <Text fill="WHITE" layoutX="47.0" layoutY="131.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="New name:">
          <font>
             <Font size="15.0" />
          </font>
@@ -28,6 +28,6 @@
       </Text>
       <TextField fx:id="newName" layoutX="129.0" layoutY="112.0" prefHeight="26.0" prefWidth="244.0" promptText="Study Music..." />
       <Button fx:id="closeWindowButton" layoutX="32.0" layoutY="210.0" mnemonicParsing="false" onAction="#closeWindowACT" text="Cancel" />
-      <Button fx:id="renamePlaylistButton" layoutX="339.0" layoutY="210.0" mnemonicParsing="false" onAction="#renamePlaylistACT" text="Add..." />
+      <Button layoutX="339.0" layoutY="210.0" mnemonicParsing="false" onAction="#renamePlaylistACT" text="Add..." />
    </children>
 </AnchorPane>
