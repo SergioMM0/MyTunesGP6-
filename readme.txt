@@ -24,6 +24,6 @@ when needed.
 
 4. DBDAO is commented on respective interfaces.
 
-4. Thanks to Nedas when help was required. @Metallist1 on GitHub.
+5. Thanks to Nedas when help was required. @Metallist1 on GitHub.
 
 Music credits to: https://www.bensound.com
