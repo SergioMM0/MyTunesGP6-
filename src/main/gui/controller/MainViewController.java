@@ -81,6 +81,9 @@ public class MainViewController implements Initializable {
     @FXML
     private Slider volumeSlider;
 
+    @FXML
+    private Button PlayStopButton;
+
     public MainViewController() {
         playlistModel = new PlaylistModel();
         songModel = new SongModel();
@@ -122,6 +125,7 @@ public class MainViewController implements Initializable {
         songsOnPlaylistListView.getItems().clear();
         songsOnPlaylistListView.refresh();
         songsOnPlaylistListView.getItems().setAll(spModel.getAllSongsInPlaylist());
+
     }
 
     @FXML
@@ -285,19 +289,23 @@ public class MainViewController implements Initializable {
         if (playingFromSongs){
             mediaPlayer.pause();
             playingFromSongs = false;
+            PlayStopButton.setText("▶");
         }
         else if (playingFromPlaylist){
             mediaPlayer.pause();
             playingFromPlaylist = false;
+            PlayStopButton.setText("▶");
         }
         else {
             if (numberOfListener == 1 && mediaPlayer != null){
                 playingFromSongs = true;
                 mediaPlayer.play();
+                PlayStopButton.setText("||");
             }
             else if (numberOfListener == 2 && mediaPlayer != null){
                 playingFromPlaylist = true;
                 mediaPlayer.play();
+                PlayStopButton.setText("||");
             }
         }
     }
@@ -313,6 +321,7 @@ public class MainViewController implements Initializable {
             playingFromSongs = true;
             songsRecord.add(songsListView.getSelectionModel().getSelectedItem());
             currentlyPlayingSongLabel.setText(songsListView.getSelectionModel().getSelectedItem().getName());
+            PlayStopButton.setText("||");
         }
         else if (numberOfListener == 2){
             songsOnPlaylistListView.getSelectionModel().selectNext();
@@ -322,6 +331,7 @@ public class MainViewController implements Initializable {
             playingFromPlaylist = true;
             songsRecord.add(songsOnPlaylistListView.getSelectionModel().getSelectedItem());
             currentlyPlayingSongLabel.setText(songsOnPlaylistListView.getSelectionModel().getSelectedItem().getName());
+            PlayStopButton.setText("||");
         }
     }
 
@@ -335,6 +345,7 @@ public class MainViewController implements Initializable {
             mediaPlayer.play();
             playingFromSongs = true;
             currentlyPlayingSongLabel.setText(previous.getName());
+            PlayStopButton.setText("||");
         }
         else if (numberOfListener == 2) {
             Song previous = getLastSong(songsRecord);
@@ -343,6 +354,7 @@ public class MainViewController implements Initializable {
             mediaPlayer.play();
             playingFromPlaylist = true;
             currentlyPlayingSongLabel.setText(previous.getName());
+            PlayStopButton.setText("||");
         }
     }
 
@@ -375,6 +387,7 @@ public class MainViewController implements Initializable {
         playingFromPlaylist = true;
         songsRecord.add(songsOnPlaylistListView.getSelectionModel().getSelectedItem());
         currentlyPlayingSongLabel.setText(songsOnPlaylistListView.getSelectionModel().getSelectedItem().getName());
+        PlayStopButton.setText("||");
 
     }
 
@@ -388,6 +401,7 @@ public class MainViewController implements Initializable {
         playingFromSongs = true;
         songsRecord.add(songsListView.getSelectionModel().getSelectedItem());
         currentlyPlayingSongLabel.setText(songsListView.getSelectionModel().getSelectedItem().getName());
+        PlayStopButton.setText("||");
     }
 
     private void stopPlaying(){
